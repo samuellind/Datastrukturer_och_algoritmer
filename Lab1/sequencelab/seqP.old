@@ -1,0 +1,448 @@
+
+ *** Start of Sequence program 
+***************************************************************
+***                                                         ***
+***   h:   display this menu                                ***
+***   m:   display current mode (sorted/pos/stack/queue)    ***
+***   p:   display the READ_ME text (program documentation) ***
+***                                                         ***
+***   v:   sequence is sorted                               ***
+***   w:   sequence is by position                          ***
+***   x:   sequence is a stack                              ***
+***   y:   sequence is a queue                              ***
+***                                                         ***
+***   d:   display the sequence                             ***
+***   a:   add a value to the sequence                      ***
+***   f:   find a value in the sequence                     ***
+***   r:   remove a value from the sequence                 ***
+***                                                         ***
+***   i:   display the first element in the sequence        ***
+***   n:   display the next  element in the sequence        ***
+***   e:   is there a valid  element in the sequence?       ***
+***                                                         ***
+***   q:   quit the program                                 ***
+***                                                         ***
+***************************************************************
+
+
+ Enter choice => 
+ Enter choice =>  m 
+ SORTED mode 
+ Enter choice =>  a 
+ Enter a value:  5
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  a 
+ Enter a value:  1
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  a 
+ Enter a value:  3
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  a 
+ Enter a value:  7
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  i 
+
+ Enter choice =>  e 
+ element does not exist
+ Enter choice =>  n 
+
+ Enter choice =>  e 
+ element does not exist
+ Enter choice =>  n 
+
+ Enter choice =>  e 
+ element does not exist
+ Enter choice =>  n 
+
+ Enter choice =>  e 
+ element does not exist
+ Enter choice =>  n 
+
+ Enter choice =>  e 
+ element does not exist
+ Enter choice =>  n 
+
+ Enter choice =>  e 
+ element does not exist
+ Enter choice =>  r 
+
+ Error: empty sequence
+ Enter choice =>  2 
+
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***                                                         ***
+***   h:   display this menu                                ***
+***   m:   display current mode (sorted/pos/stack/queue)    ***
+***   p:   display the READ_ME text (program documentation) ***
+***                                                         ***
+***   v:   sequence is sorted                               ***
+***   w:   sequence is by position                          ***
+***   x:   sequence is a stack                              ***
+***   y:   sequence is a queue                              ***
+***                                                         ***
+***   d:   display the sequence                             ***
+***   a:   add a value to the sequence                      ***
+***   f:   find a value in the sequence                     ***
+***   r:   remove a value from the sequence                 ***
+***                                                         ***
+***   i:   display the first element in the sequence        ***
+***   n:   display the next  element in the sequence        ***
+***   e:   is there a valid  element in the sequence?       ***
+***                                                         ***
+***   q:   quit the program                                 ***
+***                                                         ***
+***************************************************************
+
+
+ Enter choice =>  r 
+
+ Error: empty sequence
+ Enter choice =>  3 
+
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***                                                         ***
+***   h:   display this menu                                ***
+***   m:   display current mode (sorted/pos/stack/queue)    ***
+***   p:   display the READ_ME text (program documentation) ***
+***                                                         ***
+***   v:   sequence is sorted                               ***
+***   w:   sequence is by position                          ***
+***   x:   sequence is a stack                              ***
+***   y:   sequence is a queue                              ***
+***                                                         ***
+***   d:   display the sequence                             ***
+***   a:   add a value to the sequence                      ***
+***   f:   find a value in the sequence                     ***
+***   r:   remove a value from the sequence                 ***
+***                                                         ***
+***   i:   display the first element in the sequence        ***
+***   n:   display the next  element in the sequence        ***
+***   e:   is there a valid  element in the sequence?       ***
+***                                                         ***
+***   q:   quit the program                                 ***
+***                                                         ***
+***************************************************************
+
+
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  f 
+ Enter a value:  2 *** 2 not found ***
+ Enter choice =>  f 
+ Enter a value:  3 *** 3 not found ***
+ Enter choice =>  f 
+ Enter a value:  7 *** 7 not found ***
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  w 
+
+ Enter choice =>  m 
+ POSITION mode 
+ Enter choice =>  a 
+
+ Enter a position (1..1):  1 Enter a value:  11
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  a 
+
+ Enter a position (1..1):  1 Enter a value:  12
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  a 
+
+ Enter a position (1..1):  11 Enter a value:  111
+ Error: invalid position
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  a 
+
+ Enter a position (1..1):  12 Enter a value:  222
+ Error: invalid position
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  r 
+
+ Error: empty sequence
+ Enter choice =>  6 
+
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***                                                         ***
+***   h:   display this menu                                ***
+***   m:   display current mode (sorted/pos/stack/queue)    ***
+***   p:   display the READ_ME text (program documentation) ***
+***                                                         ***
+***   v:   sequence is sorted                               ***
+***   w:   sequence is by position                          ***
+***   x:   sequence is a stack                              ***
+***   y:   sequence is a queue                              ***
+***                                                         ***
+***   d:   display the sequence                             ***
+***   a:   add a value to the sequence                      ***
+***   f:   find a value in the sequence                     ***
+***   r:   remove a value from the sequence                 ***
+***                                                         ***
+***   i:   display the first element in the sequence        ***
+***   n:   display the next  element in the sequence        ***
+***   e:   is there a valid  element in the sequence?       ***
+***                                                         ***
+***   q:   quit the program                                 ***
+***                                                         ***
+***************************************************************
+
+
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  r 
+
+ Error: empty sequence
+ Enter choice =>  5 
+
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***                                                         ***
+***   h:   display this menu                                ***
+***   m:   display current mode (sorted/pos/stack/queue)    ***
+***   p:   display the READ_ME text (program documentation) ***
+***                                                         ***
+***   v:   sequence is sorted                               ***
+***   w:   sequence is by position                          ***
+***   x:   sequence is a stack                              ***
+***   y:   sequence is a queue                              ***
+***                                                         ***
+***   d:   display the sequence                             ***
+***   a:   add a value to the sequence                      ***
+***   f:   find a value in the sequence                     ***
+***   r:   remove a value from the sequence                 ***
+***                                                         ***
+***   i:   display the first element in the sequence        ***
+***   n:   display the next  element in the sequence        ***
+***   e:   is there a valid  element in the sequence?       ***
+***                                                         ***
+***   q:   quit the program                                 ***
+***                                                         ***
+***************************************************************
+
+
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  r 
+
+ Error: empty sequence
+ Enter choice =>  4 
+
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***                                                         ***
+***   h:   display this menu                                ***
+***   m:   display current mode (sorted/pos/stack/queue)    ***
+***   p:   display the READ_ME text (program documentation) ***
+***                                                         ***
+***   v:   sequence is sorted                               ***
+***   w:   sequence is by position                          ***
+***   x:   sequence is a stack                              ***
+***   y:   sequence is a queue                              ***
+***                                                         ***
+***   d:   display the sequence                             ***
+***   a:   add a value to the sequence                      ***
+***   f:   find a value in the sequence                     ***
+***   r:   remove a value from the sequence                 ***
+***                                                         ***
+***   i:   display the first element in the sequence        ***
+***   n:   display the next  element in the sequence        ***
+***   e:   is there a valid  element in the sequence?       ***
+***                                                         ***
+***   q:   quit the program                                 ***
+***                                                         ***
+***************************************************************
+
+
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  w 
+
+ Enter choice =>  m 
+ POSITION mode 
+ Enter choice =>  h 
+
+***************************************************************
+***                                                         ***
+***   h:   display this menu                                ***
+***   m:   display current mode (sorted/pos/stack/queue)    ***
+***   p:   display the READ_ME text (program documentation) ***
+***                                                         ***
+***   v:   sequence is sorted                               ***
+***   w:   sequence is by position                          ***
+***   x:   sequence is a stack                              ***
+***   y:   sequence is a queue                              ***
+***                                                         ***
+***   d:   display the sequence                             ***
+***   a:   add a value to the sequence                      ***
+***   f:   find a value in the sequence                     ***
+***   r:   remove a value from the sequence                 ***
+***                                                         ***
+***   i:   display the first element in the sequence        ***
+***   n:   display the next  element in the sequence        ***
+***   e:   is there a valid  element in the sequence?       ***
+***                                                         ***
+***   q:   quit the program                                 ***
+***                                                         ***
+***************************************************************
+
+
+ Enter choice =>  r 
+
+ Error: empty sequence
+ Enter choice =>  4 
+
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***                                                         ***
+***   h:   display this menu                                ***
+***   m:   display current mode (sorted/pos/stack/queue)    ***
+***   p:   display the READ_ME text (program documentation) ***
+***                                                         ***
+***   v:   sequence is sorted                               ***
+***   w:   sequence is by position                          ***
+***   x:   sequence is a stack                              ***
+***   y:   sequence is a queue                              ***
+***                                                         ***
+***   d:   display the sequence                             ***
+***   a:   add a value to the sequence                      ***
+***   f:   find a value in the sequence                     ***
+***   r:   remove a value from the sequence                 ***
+***                                                         ***
+***   i:   display the first element in the sequence        ***
+***   n:   display the next  element in the sequence        ***
+***   e:   is there a valid  element in the sequence?       ***
+***                                                         ***
+***   q:   quit the program                                 ***
+***                                                         ***
+***************************************************************
+
+
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  r 
+
+ Error: empty sequence
+ Enter choice =>  0 
+
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***                                                         ***
+***   h:   display this menu                                ***
+***   m:   display current mode (sorted/pos/stack/queue)    ***
+***   p:   display the READ_ME text (program documentation) ***
+***                                                         ***
+***   v:   sequence is sorted                               ***
+***   w:   sequence is by position                          ***
+***   x:   sequence is a stack                              ***
+***   y:   sequence is a queue                              ***
+***                                                         ***
+***   d:   display the sequence                             ***
+***   a:   add a value to the sequence                      ***
+***   f:   find a value in the sequence                     ***
+***   r:   remove a value from the sequence                 ***
+***                                                         ***
+***   i:   display the first element in the sequence        ***
+***   n:   display the next  element in the sequence        ***
+***   e:   is there a valid  element in the sequence?       ***
+***                                                         ***
+***   q:   quit the program                                 ***
+***                                                         ***
+***************************************************************
+
+
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  x 
+
+ Enter choice =>  m 
+ STACK mode 
+ Enter choice =>  h 
+
+***************************************************************
+***                                                         ***
+***   h:   display this menu                                ***
+***   m:   display current mode (sorted/pos/stack/queue)    ***
+***   p:   display the READ_ME text (program documentation) ***
+***                                                         ***
+***   v:   sequence is sorted                               ***
+***   w:   sequence is by position                          ***
+***   x:   sequence is a stack                              ***
+***   y:   sequence is a queue                              ***
+***                                                         ***
+***   d:   display the stack                                ***
+***   a:   add a value to the stack (push)                  ***
+***   f:   find a value in the stack                        ***
+***   r:   remove a value from the stack (pop)              ***
+***                                                         ***
+***   q:   quit the program                                 ***
+***                                                         ***
+***************************************************************
+
+
+ Enter choice =>  a 
+ Enter a value:  44
+ Enter choice =>  a 
+ Enter a value:  55
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  r 
+
+ Error: empty stack
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  y 
+
+ Enter choice =>  m 
+ QUEUE mode 
+ Enter choice =>  h 
+
+***************************************************************
+***                                                         ***
+***   h:   display this menu                                ***
+***   m:   display current mode (sorted/pos/stack/queue)    ***
+***   p:   display the READ_ME text (program documentation) ***
+***                                                         ***
+***   v:   sequence is sorted                               ***
+***   w:   sequence is by position                          ***
+***   x:   sequence is a stack                              ***
+***   y:   sequence is a queue                              ***
+***                                                         ***
+***   d:   display the queue                                ***
+***   a:   add a value to the queue (enqueue)               ***
+***   f:   find a value in the queue                        ***
+***   r:   remove a value from the queue (dequeue)          ***
+***                                                         ***
+***   q:   quit the program                                 ***
+***                                                         ***
+***************************************************************
+
+
+ Enter choice =>  a 
+ Enter a value:  99
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  r 
+
+ Error: empty queue
+ Enter choice =>  d 
+ SEQUENCE (size 0) is: 
+ Enter choice =>  q 
+ *** BYE BYE! ***
+ *** End of Sequence program 

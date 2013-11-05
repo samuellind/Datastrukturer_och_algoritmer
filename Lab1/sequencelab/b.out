@@ -1,0 +1,18 @@
+*** Tests starting
+*** Compiling frontend modules
+*** Compiling backend  modules
+*** Saving previous outputs
+*** Compiling seqA - array version
+*** Compiling seqP - pointer version
+*** Compiling seqR - recursive version
+*** Test running: SeqA - array version 
+*** Test running: SeqP - pointer version 
+*** Test running: SeqR - recursive version 
+*** Comparing previous output SeqA (diff)
+*** Comparing previous output SeqP (diff)
+*** Comparing previous output SeqR (diff)
+*** Comparing current  output SeqA vs SeqP (diff)
+*** Comparing current  output SeqP vs SeqR (diff)
+*** Comparing current  output SeqR vs SeqA (diff)
+*** Cleaning up ...
+...Tests finished
