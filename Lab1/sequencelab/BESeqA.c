@@ -432,15 +432,22 @@ static void b_rem(int v) {
 								set_prev(pcurr,pprev);
 								printf("Removed %d\n",get_value(pos));
 								if(pos==liststart){
-									liststart=pcurr;
+									/*liststart=pcurr;
 									printf("pcurr: %d\n",pcurr);
-									set_prev(pcurr,NULLREF);
+									set_prev(pcurr,NULLREF);*/printf("forsta");
+									liststart=get_next(liststart);
+									printf("pcurr: %p\n",pcurr);
+									set_prev(liststart,NULLREF
 									}
 								else if(pos==listend){
-									printf("This is listend\n");
+									/*printf("This is listend\n");
 									listend=get_prev(listend);
 									printf("listend: %d\n",listend);
-									set_next(pcurr,NULLREF);
+									set_next(pcurr,NULLREF);*/
+									printf("This is listend\n");
+									listend=get_prev(listend);
+									//printf("listend: %d\n",listend);
+									set_next(listend,NULLREF);
 									}
 								printf("*********************************\n");
 								printf("	Removing on index %d\n", pos);
