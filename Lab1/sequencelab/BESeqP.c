@@ -62,21 +62,40 @@ static int      numels    = 0;               /* number of elements          */
 /* create_e:        int                --> listref                          */
 /****************************************************************************/
 
-static int      is_empty()                      { /* TO DO */ return 1; }
+static int      is_empty(listref L)                      { return L==NULLREF; }
 
-static int      get_value(listref E)            { /* TO DO */ return 0; }
-static listref  get_next(listref E)             { /* TO DO */ return NULLREF; }
-static listref  get_prev(listref E)             { /* TO DO */ return NULLREF; }
+static int      get_value(listref E)            { return E->value; }
+static listref  get_next(listref E)             { return E->next; }
+static listref  get_prev(listref E)             { return E->prev; }
 
-static void     set_value(listref E, int v)     { /* TO DO */ }
-static void     set_next(listref E, listref t)  { /* TO DO */ }
-static void     set_prev(listref E, listref t)  { /* TO DO */ }
+static void     set_value(listref E, int v)     { E->value = v; }
+static void     set_next(listref E, listref t)  { E->next = t; }
+static void     set_prev(listref E, listref t)  { E->prev = t; }
 
 /****************************************************************************/
 /* create and initialise an element in the list                             */
 /****************************************************************************/
 
-static listref create_e(int v) { /* TO DO */ return NULLREF;  }
+static listref create_e(int v) {
+	
+	listref ret;
+	
+	if(numels<20){
+	
+		struct listelem *new=malloc(sizeof(struct listelem));
+			set_value(new, v);
+			set_next(new, NULLREF);
+			set_prev(new, NULLREF);
+			pprev=pnew;
+			ret=new;
+			numels++;
+	}
+	else{
+		printf("Too many elements!\n");
+		ret=NULLREF;
+	}
+	return ret; 
+}
 
 /****************************************************************************/
 /****************************************************************************/
@@ -99,14 +118,64 @@ static listref create_e(int v) { /* TO DO */ return NULLREF;  }
 /* e.g. for list (1, 2, 5, 7, 9) gives List: 1 2 5 7 9 EOL                  */
 /****************************************************************************/
 
-static void b_disp() { /* TO DO */ }
+static void b_disp() {
+	if(!is_empty(pcurr)){
+			printf("Display");
+			//create_e(5);
+			listref i=liststart;
+			int j=1;
+			printf("\nListstart value: %d\n", get_value(liststart));
+			while(i!=NULLREF){
+				printf("#%d	value: %d	next: %p	prev: %p \n",j,get_value(i),get_next(i),get_prev(i));
+				i=get_next(i);
+				j++;
+			}
+		}
+	printf("EOL"); 
+}
 
 /****************************************************************************/
 /* ADD to the list in ascending order by value                              */
 /* e.g. b_add(4) on list (1, 2, 5, 7, 9) gives (1, 2, 4, 5, 7, 9)           */
 /****************************************************************************/
 
-static void b_add(int v) { /* TO DO */ }
+static void b_add(int v) { 
+	listref new = create_e(v);
+	if(new!=NULLREF){
+		pcurr=liststart;
+		pprev=NULLREF;
+		if(is_empty(liststart)){
+			liststart=new;
+			listend=new;
+			pcurr=new;
+		}
+		
+		else if(v<=get_value(liststart)){
+			pprev=liststart;
+			liststart=new;
+			set_next(liststart,pprev);
+			set_prev(pprev,liststart);
+		}
+		else if(v>=get_value(listend)){
+			pprev=listend;
+			listend=new;
+			set_prev(new,pprev);
+			set_next(pprev,listend);
+		}
+		else{
+			pcurr=liststart;
+			while(v>get_value(pcurr))
+			{
+				pprev=pcurr;
+				pcurr=get_next(pcurr);
+			}
+			set_next(new, pcurr);
+			set_prev(new,pprev);
+			set_prev(pcurr,new);
+			set_next(pprev,new);
+		}
+	}
+}
 
 /****************************************************************************/
 /* Add a new element at position p of the list                              */
@@ -121,7 +190,61 @@ static void b_add(int v) { /* TO DO */ }
 /* e.g. b_addpos(8, 7) on (1, 3, 5, 7, 9) gives Error: invalid position     */
 /****************************************************************************/
 
-static void b_addpos(int v, int pos) { /* TO DO */ }
+static void b_addpos(int v, int pos) { 
+	listref new = create_e(v);
+	if(new!=NULLREF){
+		int i;
+		
+		pcurr=NULLREF;
+		printf("Hiiiiit!\n");
+		if(is_empty(liststart)){
+			liststart=new;
+			listend=new;
+			pcurr=new;
+			printf("%p", pcurr);
+		}
+	else if(pos==1 && numels!=1){
+			printf("Else if\n");
+			pcurr=liststart;
+			liststart=new;
+			set_next(new,pcurr);
+			set_prev(new,NULLREF);
+			set_prev(pcurr,new);
+		}
+	else if(pos==numels-1 && numels!=1){
+			printf("Else if 2\n");
+			listend=new;
+			set_next(new,NULLREF);
+			set_prev(new,pcurr);
+			set_next(pcurr,new);
+		}
+	else{
+		pcurr=liststart;
+		printf("%p", pcurr);
+		i=0;
+		printf("Else\n");
+		while(i<pos-1){
+			printf("While loop\n");
+			printf("%p",pprev);
+			//pprev=pcurr;
+			//pcurr=get_next(pcurr);
+			i++;
+			printf("%d",i);
+		}
+		set_next(new,pcurr);
+		set_prev(new,pprev);
+		set_prev(pcurr,new);
+		set_next(pprev,new);
+
+		if(v>=get_value(listend)){
+			listend=new;
+		}
+		else if(v<=get_value(liststart)){
+			liststart=new;
+			}
+		}
+	}
+}
 
 /****************************************************************************/
 /* REMove an element from the list by value: first occurrence for duplicates*/
@@ -160,7 +283,7 @@ static listref b_find(int v) { /* TO DO */ return NULLREF; }
 /* e.g. empty list ()         b_card returns 0                              */
 /****************************************************************************/
 
-static int b_card() { return 0; /* TO DO */ }
+static int b_card() { return numels; }
 
 /****************************************************************************/
 /* navigation & display functions                                           */
@@ -177,10 +300,14 @@ static int b_card() { return 0; /* TO DO */ }
 /* e.g. if pcurr != NULLREF return TRUE                                     */
 /****************************************************************************/
 
-static void b_disp_C()  { /* TO DO */ }  /* display current element (pcurr) */
-static void b_first()   { /* TO DO */ }
-static void b_next()    { /* TO DO */ }
-static int  b_exist_e() { /* TO DO */ return 0; }
+static void b_disp_C()  {printf("%d\n",get_value(pcurr));}  /* display current element (pcurr) */
+static void b_first()   {pcurr=liststart;}
+static void b_next()    {pcurr=get_next(pcurr);}
+static int  b_exist_e() { if(pcurr == NULLREF)
+								return 0;
+						  else	
+						  	return 1;
+}	
 
 /****************************************************************************/
 /****************************************************************************/

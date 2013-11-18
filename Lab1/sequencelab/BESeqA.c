@@ -29,6 +29,7 @@ typedef  int          listref;          /* list element reference type      */
 int     value[LSIZE];                 /* list values                        */
 listref next[LSIZE];                  /* list next references               */
 listref prev[LSIZE];                  /* list prev references               */
+int 	nextrem[LSIZE];				  /* list next  element in remstack		*/
 
 /****************************************************************************/
 /* define list instance recursive/iterative                                 */
@@ -42,6 +43,7 @@ static listref  pprev     = NULLREF;         /* ref to the previous element */
 static listref  pnew      = NULLREF;         /* ref to the new element      */
 
 static int      numels    = 0;               /* number of elements          */
+static int 		rempntr	  = 0;				 /* stack pointer nextrem array	*/
 
 /****************************************************************************/
 /****************************************************************************/
@@ -73,12 +75,51 @@ static void     set_next(listref E, listref t)  { next[E]=t; }
 static void     set_prev(listref E, listref t)  { prev[E]=t; }
 
 /****************************************************************************/
+/* All removed elements position will be stored here for reuse              */
+/* e.g. if removing (1 and then 3) it will be stored as 1 | 3 in stack      */
+/* If numels have reached 20, start using stack positions in order to swap	*/
+/* e.g. full list () == 20 elements	print "Out of space                     */
+/****************************************************************************/
+
+static void set_remstack(int v) {
+	if(rempntr<LSIZE){
+		nextrem[rempntr]=v;
+		rempntr++;
+		printf("Set remstack setting position %d to %d\n", rempntr, v);
+	}
+	else
+		printf("Out of space\n");		
+}
+
+/****************************************************************************/
+/* Returns first available element that has been previously removed         */
+/* and stored in the remstack. LIFO method is used.						    */
+/* If rempntr == 0 means list is empty										*/
+/****************************************************************************/
+
+static int get_remstack() {
+	int next;
+	printf("rempntr: %d\n", rempntr);
+	if(rempntr!=-1){
+		rempntr--;
+		next=nextrem[rempntr];
+		printf("Get remstack returning rmpntr %d position: %d\n", rempntr, nextrem[rempntr]);
+	}
+	else{
+		printf("No elements in array\n");
+		next=-1;
+	}
+	
+	return next;
+}
+/****************************************************************************/
 /* create and initialise an element in the list                             */
 /****************************************************************************/
 
 static listref create_e(int v) { 
-	int ret;
+	int ret, next;
 	if(numels<LSIZE){
+		printf("numels<LSIZE\n");
 		set_value(numels, v);
 		set_next(numels, NULLREF);
 		set_prev(numels, NULLREF);
@@ -87,10 +128,19 @@ static listref create_e(int v) {
 		numels++;
 		pnew=numels;
 	}
+	
+	/*else if(rempntr>0){
+		printf("Else if satsen i create\n");
+		next=get_remstack();
+		set_value(next, v);
+		set_next(next, NULLREF);
+		set_prev(next, NULLREF);
+		ret=next;
+	}*/
 	else{
 		printf("Too many elements, max is %d", LSIZE);
 		ret=-1;
-	}
+	}	
 	return ret; 
 }
 
@@ -120,7 +170,7 @@ static void b_disp() {
 			int i=liststart,j=1;
 			printf("\nListstart value: %d\n", get_value(liststart));
 			while(i!=-1){
-				printf("#%d	value: %d\n",j,get_value(i));
+				printf("#%d	value: %d	next: %d	prev: %d \n",j,get_value(i),get_next(i),get_prev(i));
 				i=get_next(i);
 				j++;
 			}
@@ -142,6 +192,7 @@ static void b_add(int v) {
 	listref new = create_e(v);
 	if(new!=-1){
 		pcurr=liststart;
+		pprev=NULLREF;
 		if(is_empty(liststart)){
 			printf("Tom lista");
 			liststart=new;
@@ -155,12 +206,13 @@ static void b_add(int v) {
 		}
 		
 		else if(v<=get_value(liststart)){
+			printf("test1");
 			printf("Liststart: %d\n",liststart);
 			printf("Input value: %d	prev_value: %d prev index: %d \n",v,get_value(pcurr), pcurr);
 			pprev=liststart;
 			liststart=new;
 			printf("*********************************\n");
-			printf("	Creating on index %d\n", numels-1);
+			printf("	Creating on index %d\n", new);
 			printf("#%d Liststart: %d listend: %d\n", new, liststart,listend);
 			printf("getvalueliststart: %d getvaluelistend: %d\n", get_value(liststart),get_value(listend));
 			set_next(liststart,pprev);
@@ -172,32 +224,44 @@ static void b_add(int v) {
 		else if(v>=get_value(listend)){
 			pprev=listend;
 			listend=new;
+			printf("test2");
 			printf("*********************************\n");
-			printf("	Creating on index %d\n", numels-1);
+			printf("	Creating on index %d\n", new);
 			printf("#%d Liststart: %d listend: %d\n", new, liststart,listend);
 			printf("getvalueliststart: %d getvaluelistend: %d\n", get_value(liststart),get_value(listend));
-			set_prev(listend,pprev);
+			set_prev(new,pprev);
 			set_next(pprev,listend);
 			printf("next: %d prev: %d\n", get_next(listend),get_prev(listend));
 			printf("Prevnext: %d Prevprev: %d\n", get_next(pprev),get_prev(pprev));
 			printf("*********************************\n");
 		}
 		else{
-			//printf("Går in i else");
+			printf("test3");
+			printf("Går in i else\n");
+			printf("*********************************\n");
+			printf("	Creating on index %d\n", new);
+			printf("#%d Liststart: %d listend: %d\n", new, liststart,listend);
+			printf("getvalueliststart: %d getvaluelistend: %d\n", get_value(liststart),get_value(listend));
 			pcurr=liststart;
-			while(v!=get_value(pcurr)){
+			while(v>get_value(pcurr))
+			{
+				printf("v: %d	get_value(pcurr): %d\n", v, get_value(pcurr));
 				pprev=pcurr;
 				pcurr=get_next(pcurr);
 			}
 			printf("Kan sätta in efter %d\n",pcurr);
-			pprev=get_prev(pcurr);
-			set_next(new,pcurr);
+			//pprev=pcurr;
+			//pcurr=get_next(pcurr);
+			set_next(new, pcurr);
 			set_prev(new,pprev);
-			set_next(pprev,new);
 			set_prev(pcurr,new);
-		}	
+			set_next(pprev,new);
+			printf("next: %d prev: %d\n", get_next(pcurr),get_prev(pcurr));
+			printf("Prevnext: %d Prevprev: %d\n", get_next(pprev),get_prev(pprev));
+			printf("*********************************\n");
+		}
 	}
- }
+}
 
 /****************************************************************************/
 /* Add a new element at position p of the list                              */
@@ -217,12 +281,14 @@ static void b_addpos(int v, int pos){
 	//printf("listref %d\n", new);
 	if(new!=-1){
 		int i=0;
+		
 		pcurr=0;
-		if(is_empty(new)){
+		if(is_empty(liststart)){
 		//	set_next(new, NULLREF);			
 		//	set_prev(new, NULLREF);
 			liststart=new;
 			listend=new;
+			printf("Numels %d", numels);
 			printf("*********************************\n");
 			printf("*****EMPTY LIST*********\n");
 			printf("	Creating on index %d\n", numels-1);
@@ -232,7 +298,8 @@ static void b_addpos(int v, int pos){
 			printf("*********************************\n");
 			pcurr=new;
 		}
-	else if(pos==1){
+	else if(pos==1 && numels!=1){
+			pcurr=liststart;
 			printf("pcurr %d pvalue %d pnext %d pprev %d\n", pcurr, get_value(pcurr), get_next(pcurr), get_prev(pcurr));
 			printf("*********************************\n");
 			printf("	Creating on index %d\n", numels-1);
@@ -240,35 +307,47 @@ static void b_addpos(int v, int pos){
 			printf("getvalueliststart: %d getvaluelistend: %d\n", get_value(liststart),get_value(listend));
 			printf("next: %d prev: %d\n", get_next(pcurr),get_prev(pcurr));
 			printf("*********************************\n");
-			pcurr=get_next(pcurr);
+			//pcurr=get_next(pcurr);
+			liststart=new;
+			printf("Dupcliate liststart updated\n");
+			printf("#%d Liststart: %d listend: %d\n", new, liststart,listend);
+			printf("getvalueliststart: %d getvaluelistend: %d\n", get_value(liststart),get_value(listend));
 			set_next(new,pcurr);
-			set_prev(new,pprev);
+			set_prev(new,-1);
 			set_prev(pcurr,new);
-			
-			if(v>=get_value(listend)){
-				listend=new;
-				printf("Duplicate listend updated\n");
-				printf("#%d Liststart: %d listend: %d\n", new, liststart,listend);
-				printf("getvalueliststart: %d getvaluelistend: %d\n", get_value(liststart),get_value(listend));
-			}
-			else if(v<=get_value(liststart)){
-				liststart=new;
-				printf("Dupcliate liststart updated\n");
-				printf("#%d Liststart: %d listend: %d\n", new, liststart,listend);
-				printf("getvalueliststart: %d getvaluelistend: %d\n", get_value(liststart),get_value(listend));
-			}
+		}
+	else if(pos==numels-1 && numels!=1){
+			printf("pcurr %d pvalue %d pnext %d pprev %d\n", pcurr, get_value(pcurr), get_next(pcurr), get_prev(pcurr));
+			printf("*********************************\n");
+			printf("	Creating on index %d\n", numels-1);
+			printf("#%d Liststart: %d listend: %d\n", new,liststart,listend);
+			printf("getvalueliststart: %d getvaluelistend: %d\n", get_value(liststart),get_value(listend));
+			printf("next: %d prev: %d\n", get_next(pcurr),get_prev(pcurr));
+			printf("*********************************\n");
+			//pcurr=get_prev(listend);
+			listend=new;
+			printf("Duplicate listend updated\n");
+			printf("#%d Liststart: %d listend: %d\n", new, liststart,listend);
+			printf("getvalueliststart: %d getvaluelistend: %d\n", get_value(liststart),get_value(listend));
+			set_next(new,-1);
+			set_prev(new,pcurr);
+			set_next(pcurr,new);
 		}
 	else{
+		pcurr=liststart;
+		i=0;
+		printf("Else\n");
 		while(i<pos-1){
 			pprev=pcurr;
 			pcurr=get_next(pcurr);
 			i++;
 		}
-		
+		printf("Loop körs %d varv, pprev: %d pcurr: %d\n",i,pprev,pcurr);
 		set_next(new,pcurr);
 		set_prev(new,pprev);
-		set_next(pprev,new);
 		set_prev(pcurr,new);
+		//pprev=get_prev(pcurr);
+		set_next(pprev,new);
 		
 		printf("Test\n");	
 		printf("*********************************\n");
@@ -295,6 +374,44 @@ static void b_addpos(int v, int pos){
 }
 
 /****************************************************************************/
+/* FIND an element in the list                                              */
+/* FOUND:     return a reference to the element                             */
+/* NOT FOUND: return NULLREF                                                */
+/* e.g. b_find(4) in (1, 3, 4, 6) return reference(4)                       */
+/* e.g. b_find(5) in (1, 3, 4, 6) return NULLREF                            */
+/****************************************************************************/
+
+static listref b_find(int v) {
+	pcurr = liststart;
+	
+ 	while(pcurr!= -1 && pcurr<numels){
+ 		//printf("LOOOOOP!!! %d \n",get_value(pcurr));
+ 		if(v == get_value(pcurr))
+ 		{
+ 			printf("*********************************\n");
+			printf("	Found on index %d\n", pcurr);
+			printf("#%d Liststart: %d listend: %d\n", v,liststart,listend);
+			printf("getvalueliststart: %d getvaluelistend: %d\n", get_value(liststart),get_value(listend));
+			printf("next: %d prev: %d\n", get_next(pcurr),get_prev(pprev));
+			printf("*********************************\n");
+			printf("Dupcliate liststart updated\n");
+ 			return pcurr;
+ 		}
+ 		else{
+ 			pcurr = get_next(pcurr);
+ 			printf("*********************************\n");
+			printf("	Found on index %d\n", pcurr);
+			printf("#%d Liststart: %d listend: %d\n", v,liststart,listend);
+			printf("getvalueliststart: %d getvaluelistend: %d\n", get_value(liststart),get_value(listend));
+			printf("next: %d prev: %d\n", get_next(pcurr),get_prev(pprev));
+			printf("*********************************\n");
+			}
+ 	}
+ 	
+ 	return NULLREF;
+}
+
+/****************************************************************************/
 /* REMove an element from the list by value: first occurrence for duplicates*/
 /* if the value is not in the list: Error: value not in list                */
 /* e.g. b_rem(4) on list (1, 2, 4, 7, 9) gives (1, 2, 7, 9)                 */
@@ -302,14 +419,42 @@ static void b_addpos(int v, int pos){
 /* e.g. b_rem(4) on list (1, 2, 5, 7, 9) gives Error: value not in list     */
 /****************************************************************************/
 
-static void b_rem(int v) {listref pos;
+static void b_rem(int v) {
+							listref pos;
 							pos=b_find(v);
-							pprev=get_prev(pos);
-							pcurr=pos;
-							set_next(pprev,pcurr);
-							set_prev(pcurr,pprev);
+							printf("Pos: %d\n",pos);
+							//pprev=0;
+							//pcurr=0;
+							if(pos!=-1){
+								pprev=get_prev(pos);
+								pcurr=get_next(pos);
+								set_next(pprev,pcurr);
+								set_prev(pcurr,pprev);
+								printf("Removed %d\n",get_value(pos));
+								if(pos==liststart){
+									liststart=pcurr;
+									printf("pcurr: %d\n",pcurr);
+									set_prev(pcurr,NULLREF);
+									}
+								else if(pos==listend){
+									printf("This is listend\n");
+									listend=get_prev(listend);
+									printf("listend: %d\n",listend);
+									set_next(pcurr,NULLREF);
+									}
+								printf("*********************************\n");
+								printf("	Removing on index %d\n", pos);
+								printf("#%d Liststart: %d listend: %d\n", v,liststart,listend);
+								printf("getvalueliststart: %d getvaluelistend: %d\n", get_value(liststart),get_value(listend));
+								printf("next: %d prev: %d\n", get_next(pcurr),get_prev(pprev));
+								printf("*********************************\n");
+								/*if(numels==LSIZE)
+									set_remstack(pos);			//Garbage collector not neccessary
+								*/}
+							else
+								printf("Error: Value not in the list");
 						}
-
+						
 /****************************************************************************/
 /* REMove an element from position p of the list                            */
 /* the legal positions are 1..size(list)  otherwise give an error message   */
@@ -319,31 +464,34 @@ static void b_rem(int v) {listref pos;
 /* e.g. b_rempos(6) on (1, 3, 5, 7, 9) gives Error: invalid position        */
 /****************************************************************************/
 
-static void b_rempos(int pos) { /* TO DO */ }
-
-/****************************************************************************/
-/* FIND an element in the list                                              */
-/* FOUND:     return a reference to the element                             */
-/* NOT FOUND: return NULLREF                                                */
-/* e.g. b_find(4) in (1, 3, 4, 6) return reference(4)                       */
-/* e.g. b_find(5) in (1, 3, 4, 6) return NULLREF                            */
-/****************************************************************************/
-
-static listref b_find(int v) {
-	listref ret=NULLREF;
-	pcurr = liststart;
-	
- 	while(pcurr!= -1 && pcurr<numels){
- 		printf("LOOOOOP!!! %d \n",get_value(pcurr));
- 		if(v == get_value(pcurr))
- 			return pcurr;
- 		else
- 			pcurr = get_next(pcurr);
- 			printf("ret %d \n",ret);
- 	}
- 	return NULLREF;
+static void b_rempos(int pos) { 
+		pcurr=liststart;
+		int i=0;
+		while(i<pos-1){
+			pprev=pcurr;
+			pcurr=get_next(pcurr);
+			i++;
+		}
+		pcurr=get_next(pcurr);
+		set_next(pprev,pcurr);
+		set_prev(pcurr,pprev);
+		printf("Removed %d\n",get_value(pos-1));
+		printf("%d\n",numels);
+		if(pos==liststart){
+			liststart=pcurr;
+			printf("pcurr: %d\n",pcurr);
+			set_prev(pcurr,NULLREF);
+		}	
+		else if(pos==listend){
+			printf("This is listend\n");
+			listend=get_prev(listend);
+			printf("listend: %d\n",listend);
+			set_next(pcurr,NULLREF);
+		}
+		/*if(numels==LSIZE)
+			set_remstack(pprev);*/		//Garbage collector not necessary
+		
 }
-
 /****************************************************************************/
 /* FIND the number of elements in the list (cardinality)                    */
 /* e.g. for list (1, 3, 5, 7) b_card returns 4                              */
