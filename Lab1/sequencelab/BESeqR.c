@@ -53,13 +53,26 @@ static listref C     = (listref) NULL;
 /* create_e:        int           --> listref                               */
 /****************************************************************************/
 
-static int      is_empty(listref L)             { return 1; /* TO DO */ }
+static int      is_empty(listref L)             { return L==(listref)NULL; }
 
-static int      get_value(listref E)            { return 0; /* TO DO */ }
-static listref  get_tail(listref E)             { return NULLREF; /* TO DO */ }
+static int      get_value(listref E)            { return E->value; }
+static listref  get_tail(listref E)             { return E->tail;  }
 
-static listref  set_value(listref E, int v)     { return NULLREF; /* TO DO */ }
-static listref  set_tail(listref E, listref t)  { return NULLREF; /* TO DO */ }
+static listref  set_value(listref E, int v)     { E->value = v; return E;}
+static listref  set_tail(listref E, listref t)  { E->tail = t; return E;}
+
+
+/****************************************************************************/
+/* FIND the number of elements in the list (cardinality)                    */
+/* e.g. for list (1, 3, 5, 7) b_card returns 4                              */
+/* e.g. empty list ()         b_card returns 0                              */
+/****************************************************************************/
+
+static int b_card(listref L) { 
+	if(is_empty(L))
+		return 0;
+	else return (1+b_card(L->tail));
+	}
 
 /****************************************************************************/
 /* create and initialise an element in the list                             */
@@ -67,7 +80,21 @@ static listref  set_tail(listref E, listref t)  { return NULLREF; /* TO DO */ }
 
 static listref create_e(int v)
 {
-   return NULLREF; /* TO DO */
+	listref ret;
+	
+	if(b_card(L)<=20){ // how do??!
+	
+		struct listelem *new=malloc(sizeof(struct listelem));
+			set_value(new, v);
+			set_tail(new, NULLREF);
+			ret=new;
+			C=new;
+	}
+	else{
+		printf("Too many elements!\n");
+		ret=NULLREF;
+	}
+	return ret;
 }
 
 /****************************************************************************/
@@ -100,14 +127,16 @@ static void print_eol()     { printf(" EOL "); }
 /* head and tail - a RECURSIVE view of the sequence                         */
 /****************************************************************************/
 
-static listref head(listref L)     { return NULLREF; /* TO DO */  }
-static listref tail(listref L)     { return NULLREF; /* TO DO */  }
+static listref head(listref L)     { return C; }
+static listref tail(listref L)     { return L; }
 
 /****************************************************************************/
 /* CONStruct a new list with the element at the head of the list            */
 /****************************************************************************/
 
-static listref cons(listref e, listref L) { return NULLREF; /* TO DO */  }
+static listref cons(listref e, listref L) { 
+		set_tail(e, L);
+	return e; /* TO DO */  }
 
 /****************************************************************************/
 /* display the list                                                         */
@@ -116,7 +145,13 @@ static listref cons(listref e, listref L) { return NULLREF; /* TO DO */  }
 
 static void b_disp(listref L) {
 
-/* TO DO */ 
+	if(!is_empty(L)){
+		print_el(get_value(L));
+		b_disp(get_tail(L));
+	}
+	else
+	print_eol();
+	//return L;
 
 }
 
@@ -127,7 +162,16 @@ static void b_disp(listref L) {
 
 static listref b_add(int v, listref L)
 {
-  return NULLREF; /* TO DO */
+  listref new = create_e(v);
+  if(!is_empty(L)){
+		if(v>get_value(L))
+			b_add(v, get_tail(L));
+		else 
+			return cons(new, L);
+  }
+  else 
+	return cons(new, L);
+  	
 }
 
 /****************************************************************************/
@@ -184,17 +228,9 @@ static listref b_rempos(listref L, int pos) {
 /****************************************************************************/
 
 static listref b_find(int v, listref L) {
-
-   return NULLREF; /* TO DO */
+ 
 }
 
-/****************************************************************************/
-/* FIND the number of elements in the list (cardinality)                    */
-/* e.g. for list (1, 3, 5, 7) b_card returns 4                              */
-/* e.g. empty list ()         b_card returns 0                              */
-/****************************************************************************/
-
-static int b_card(listref L) { return 0; /* TO DO */  }
 
 /****************************************************************************/
 /* navigation & display functions                                           */
