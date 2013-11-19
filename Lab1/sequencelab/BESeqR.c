@@ -151,7 +151,6 @@ static void b_disp(listref L) {
 	}
 	else
 	print_eol();
-	//return L;
 
 }
 
@@ -164,8 +163,9 @@ static listref b_add(int v, listref L)
 {
   listref new = create_e(v);
   if(!is_empty(L)){
-		if(v>get_value(L))
-			b_add(v, get_tail(L));
+		if(v>get_value(L)){
+			cons(L, b_add(v, get_tail(L)));
+			}
 		else 
 			return cons(new, L);
   }
