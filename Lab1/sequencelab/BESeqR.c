@@ -36,6 +36,7 @@ typedef struct listelem {
 static listref L     = (listref) NULL;
 static listref C     = (listref) NULL;
 
+static int i		 = 0;
 /****************************************************************************/
 /****************************************************************************/
 /* private operations on the list - primitive operationa                    */
@@ -136,7 +137,7 @@ static listref tail(listref L)     { return L; }
 
 static listref cons(listref e, listref L) { 
 		set_tail(e, L);
-	return e; /* TO DO */  }
+	return e; }
 
 /****************************************************************************/
 /* display the list                                                         */
@@ -164,7 +165,7 @@ static listref b_add(int v, listref L)
   listref new = create_e(v);
   if(!is_empty(L)){
 		if(v>get_value(L)){
-			cons(L, b_add(v, get_tail(L)));
+			return cons(L, b_add(v, get_tail(L)));
 			}
 		else 
 			return cons(new, L);
@@ -187,9 +188,17 @@ static listref b_add(int v, listref L)
 /* e.g. b_addpos(8, 7) on (1, 3, 5, 7, 9) gives Error: invalid position     */
 /****************************************************************************/
 
-static listref b_addpos(int v, listref L, int pos)
-{
-   return NULLREF; /* TO DO */
+static listref b_addpos(int v, listref L, int pos){
+listref new = create_e(v);
+  if(!is_empty(L)){
+		if(1<pos){
+			return cons(L, b_addpos(v, get_tail(L),pos-1));
+			}
+		else 
+			return cons(new, L);
+  }
+  else 
+	return cons(new, L);
 }
 
 /****************************************************************************/
@@ -202,7 +211,11 @@ static listref b_addpos(int v, listref L, int pos)
 
 static listref b_rem(int v, listref L) {
 
-    return NULLREF; /* TO DO */
+		if(v==get_value(L)){
+			return get_tail(L);
+			}
+		else 
+			return cons(L, b_rem(v,get_tail(L)));
 }
 
 /****************************************************************************/
@@ -215,8 +228,17 @@ static listref b_rem(int v, listref L) {
 /****************************************************************************/
 
 static listref b_rempos(listref L, int pos) {
-
-   return NULLREF; /* TO DO */
+	
+	if(!is_empty(L)){
+		if(1<pos){
+			return cons(L, b_rempos(get_tail(L),pos-1));
+			}
+		else 
+			return get_tail(L);
+  }
+  else 
+	return NULLREF;
+   
 }
 
 /****************************************************************************/
@@ -229,6 +251,17 @@ static listref b_rempos(listref L, int pos) {
 
 static listref b_find(int v, listref L) {
  
+ 	if(!is_empty(L)){
+ 		if(v==get_value(L)){
+			return L;
+			}
+		else {
+		return b_find(v,get_tail(L));
+		}
+	}
+	else
+		return NULLREF;
+ 	
 }
 
 
@@ -247,14 +280,15 @@ static listref b_find(int v, listref L) {
 /* e.g. if pcurr != NULLREF return TRUE                                     */
 /****************************************************************************/
 
-static void b_first()     { /* TO DO */  }
-static void b_next()      { /* TO DO */  }
+static void b_first()     { if(!is_empty(L)) C=L; printf("%d\n",get_value(L));  }
+static void b_next()      {	if(!is_empty(C)) C=get_tail(C); printf("%d\n",get_value(C));  }
 
-static void b_disp_C() {
-   /* TO DO */ 
+static void b_disp_C(){//if(!is_empty(C))  printf("%d\n",get_value(C));
    }
    
-static int b_exist_e()  { return 0; /* TO DO */  }
+static int b_exist_e()  { if(!is_empty(L)) return L;
+							else 
+								return NULLREF;  }
 
 /****************************************************************************/
 /****************************************************************************/
