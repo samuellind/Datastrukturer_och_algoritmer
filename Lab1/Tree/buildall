@@ -1,0 +1,36 @@
+
+echo "*** tests starting"
+
+echo "*** compiling modules: frontend"
+
+gcc -Wall -c Dmenu.c
+gcc -Wall -c menu.c
+gcc -Wall -c fetree.c
+
+echo "*** compiling modules: backend"
+
+gcc -Wall -c betree.c
+
+echo "*** Build and Test: saving previous output"
+cp script1.out script1.old
+cp script2.out script2.old
+
+echo "*** Build and Test: compiling system"
+gcc -Wall -lm Dmenu.c menu.c fetree.c betree.c -o tree
+
+echo "*** Build and Test: running script1"
+./tree < script1 > script1.out
+echo "*** Build and Test: running script2"
+./tree < script2 > script2.out
+
+echo "*** Build and Test: comparing script1 output (diff)"
+diff script1.old script1.out
+echo "*** Build and Test: comparing script2 output (diff)"
+diff script2.old script2.out
+
+echo "*** cleaning up ..."
+rm *.o 
+
+echo "...tests finished"
+
+

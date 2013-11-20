@@ -158,15 +158,15 @@ static listref create_e(int v) {
 static void b_disp() { 
 			int i=liststart,j=1;
 			while(i!=-1){
-				printf("#%d	value: %d	next: %d	prev: %d \n",j,get_value(i),get_next(i),get_prev(i));
+				printf("\n#%d	value: %d	next: %d	prev: %d",j,get_value(i),get_next(i),get_prev(i));
 				i=get_next(i);
 				j++;
 			}
-			printf("***All elements***\n");
+			/*printf("***All elements***\n");
 			for(i=0;i<20;i++){
 				printf("#%d value: %d\n",i,get_value(i));
-			}
-		printf("EOL");
+			}*/
+		printf("\nEOL");
 }
 
 /****************************************************************************/
@@ -309,6 +309,7 @@ static listref b_find(int v) {
 static void b_rem(int v) {
 							listref pos;
 							pos=b_find(v);
+							numels--;
 							if(pos!=-1){
 								pprev=get_prev(pos);
 								pcurr=get_next(pos);
@@ -324,6 +325,7 @@ static void b_rem(int v) {
 									}}
 							else
 								printf("Error: Value not in the list");
+							
 						}
 						
 /****************************************************************************/
@@ -336,23 +338,29 @@ static void b_rem(int v) {
 /****************************************************************************/
 
 static void b_rempos(int pos) { 
-		pcurr=liststart;
 		int i=0;
+		pcurr=liststart;
+		numels--;
 		while(i<pos-1){
 			pprev=pcurr;
 			pcurr=get_next(pcurr);
 			i++;
 		}
-		pcurr=get_next(pcurr);
-		set_next(pprev,pcurr);
-		set_prev(pcurr,pprev);
-		if(pos==liststart){
-			liststart=pcurr;
-			set_prev(pcurr,NULLREF);
-		}	
-		else if(pos==listend){
+		if(pcurr==listend && pcurr==liststart){
+			liststart=NULLREF;
+		}
+		else if(pcurr==liststart){
+			liststart=get_next(liststart);
+			set_prev(liststart,NULLREF);
+		}
+		else if(pcurr==listend){
 			listend=get_prev(listend);
-			set_next(pcurr,NULLREF);
+			set_next(listend,NULLREF);
+		}
+		else{
+			pcurr=get_next(pcurr);
+			set_next(pprev,pcurr);
+			set_prev(pcurr,pprev);
 		}
 		
 }

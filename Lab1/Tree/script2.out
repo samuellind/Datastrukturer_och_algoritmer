@@ -1,0 +1,171 @@
+
+ *** Start of Tree program 
+***************************************************************
+***                                                         ***
+***   m:   display this menu                                ***
+***   k:   display current mode (BST/Complete Tree)         ***
+***   p:   display the READ_ME text (program documentation) ***
+***                                                         ***
+***   w:   tree is a BST                                    ***
+***   x:   tree is a Complete Tree (CT)                     ***
+***                                                         ***
+***   y:   display the tree array                           ***
+***   d:   display the tree (in/pre/post)                   ***
+***   e:   display the tree (pre_order)                     ***
+***   i:   display the tree (in_order)                      ***
+***   o:   display the tree (post_order)                    ***
+***   t:   display the tree (2D)                            ***
+***                                                         ***
+***   a:   add a value to the tree                          ***
+***   r:   remove a value from the tree                     ***
+***   f:   find a value in the tree                         ***
+***   h:   find the height of the tree                      ***
+***   g:   heapify the tree (must be a Complete Tree)       ***
+***                                                         ***
+***   q:   quit the program                                 ***
+***                                                         ***
+***************************************************************
+
+
+ Enter choice =>  x 
+
+ Enter choice =>  k 
+ Complete Tree mode 
+ Enter choice =>  a 
+ Enter a value:   1
+ Enter choice =>  t 
+
+ Enter choice =>  d 
+
+ TREE (0 nodes, height 0) is inorder:   
+ TREE (0 nodes, height 0) is preorder:  
+ TREE (0 nodes, height 0) is postorder: 
+ Enter choice =>  a 
+ Enter a value:   2
+ Enter choice =>  t 
+
+ Enter choice =>  d 
+
+ TREE (0 nodes, height 0) is inorder:   
+ TREE (0 nodes, height 0) is preorder:  
+ TREE (0 nodes, height 0) is postorder: 
+ Enter choice =>  a 
+ Enter a value:   3
+ Enter choice =>  t 
+
+ Enter choice =>  d 
+
+ TREE (0 nodes, height 0) is inorder:   
+ TREE (0 nodes, height 0) is preorder:  
+ TREE (0 nodes, height 0) is postorder: 
+ Enter choice =>  a 
+ Enter a value:   4
+ Enter choice =>  t 
+
+ Enter choice =>  d 
+
+ TREE (0 nodes, height 0) is inorder:   
+ TREE (0 nodes, height 0) is preorder:  
+ TREE (0 nodes, height 0) is postorder: 
+ Enter choice =>  a 
+ Enter a value:   5
+ Enter choice =>  t 
+
+ Enter choice =>  d 
+
+ TREE (0 nodes, height 0) is inorder:   
+ TREE (0 nodes, height 0) is preorder:  
+ TREE (0 nodes, height 0) is postorder: 
+ Enter choice =>  a 
+ Enter a value:   6
+ Enter choice =>  t 
+
+ Enter choice =>  d 
+
+ TREE (0 nodes, height 0) is inorder:   
+ TREE (0 nodes, height 0) is preorder:  
+ TREE (0 nodes, height 0) is postorder: 
+ Enter choice =>  a 
+ Enter a value:   7
+ Enter choice =>  t 
+
+ Enter choice =>  d 
+
+ TREE (0 nodes, height 0) is inorder:   
+ TREE (0 nodes, height 0) is preorder:  
+ TREE (0 nodes, height 0) is postorder: 
+ Enter choice =>  a 
+ Enter a value:   8
+ Enter choice =>  t 
+
+ Enter choice =>  d 
+
+ TREE (0 nodes, height 0) is inorder:   
+ TREE (0 nodes, height 0) is preorder:  
+ TREE (0 nodes, height 0) is postorder: 
+ Enter choice =>  a 
+ Enter a value:   9
+ Enter choice =>  t 
+
+ Enter choice =>  d 
+
+ TREE (0 nodes, height 0) is inorder:   
+ TREE (0 nodes, height 0) is preorder:  
+ TREE (0 nodes, height 0) is postorder: 
+ Enter choice =>  a 
+ Enter a value:   10
+ Enter choice =>  t 
+
+ Enter choice =>  d 
+
+ TREE (0 nodes, height 0) is inorder:   
+ TREE (0 nodes, height 0) is preorder:  
+ TREE (0 nodes, height 0) is postorder: 
+ Enter choice =>  a 
+ Enter a value:   11
+ Enter choice =>  t 
+
+ Enter choice =>  d 
+
+ TREE (0 nodes, height 0) is inorder:   
+ TREE (0 nodes, height 0) is preorder:  
+ TREE (0 nodes, height 0) is postorder: 
+ Enter choice =>  a 
+ Enter a value:   12
+ Enter choice =>  t 
+
+ Enter choice =>  d 
+
+ TREE (0 nodes, height 0) is inorder:   
+ TREE (0 nodes, height 0) is preorder:  
+ TREE (0 nodes, height 0) is postorder: 
+ Enter choice =>  a 
+ Enter a value:   13
+ Enter choice =>  t 
+
+ Enter choice =>  d 
+
+ TREE (0 nodes, height 0) is inorder:   
+ TREE (0 nodes, height 0) is preorder:  
+ TREE (0 nodes, height 0) is postorder: 
+ Enter choice =>  a 
+ Enter a value:   14
+ Enter choice =>  t 
+
+ Enter choice =>  d 
+
+ TREE (0 nodes, height 0) is inorder:   
+ TREE (0 nodes, height 0) is preorder:  
+ TREE (0 nodes, height 0) is postorder: 
+ Enter choice =>  a 
+ Enter a value:   15
+ Enter choice =>  t 
+
+ Enter choice =>  d 
+
+ TREE (0 nodes, height 0) is inorder:   
+ TREE (0 nodes, height 0) is preorder:  
+ TREE (0 nodes, height 0) is postorder: 
+ Enter choice =>  q 
+ *** BYE BYE! ***
+ *** End of Tree program 
