@@ -35,8 +35,6 @@ typedef struct listelem {
 
 static listref L     = (listref) NULL;
 static listref C     = (listref) NULL;
-
-static int i		 = 0;
 /****************************************************************************/
 /****************************************************************************/
 /* private operations on the list - primitive operationa                    */
@@ -281,14 +279,17 @@ static listref b_find(int v, listref L) {
 /****************************************************************************/
 
 static void b_first()     { if(!is_empty(L)) C=L; printf("%d\n",get_value(L));  }
-static void b_next()      {	if(!is_empty(C)) C=get_tail(C); printf("%d\n",get_value(C));  }
+static void b_next()      {	if(!is_empty(get_tail(C))&& !is_empty(L)) C=get_tail(C); 
+							else 
+								printf("Reached last element\n previous element: ");
+							printf("%d\n",get_value(C));}
 
 static void b_disp_C(){//if(!is_empty(C))  printf("%d\n",get_value(C));
    }
    
-static int b_exist_e()  { if(!is_empty(L)) return L;
+static int b_exist_e()  { if(!is_empty(C)) return 1;
 							else 
-								return NULLREF;  }
+								return 0;  }
 
 /****************************************************************************/
 /****************************************************************************/

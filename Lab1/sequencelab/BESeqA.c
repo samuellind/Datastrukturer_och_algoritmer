@@ -157,24 +157,14 @@ static listref create_e(int v) {
 
 static void b_disp() { 
 			int i=liststart,j=1;
-			while(i!=-1){
+			while(i!=NULLREF){
 				printf("\n#%d	value: %d	next: %d	prev: %d",j,get_value(i),get_next(i),get_prev(i));
 				i=get_next(i);
 				j++;
 			}
-<<<<<<< HEAD
-			/*printf("***All elements***\n");
-			for(i=0;i<20;i++){
-				printf("#%d value: %d\n",i,get_value(i));
-			}*/
+			
 		printf("\nEOL");
-=======
-			printf("***All elements***\n");
-			/*for(i=0;i<20;i++){
-				printf("#%d value: %d\n",i,get_value(i));
-			}*/
-		printf("EOL");
->>>>>>> 78467950c94745e24b52e7bd750b4dad7e026b77
+
 }
 
 /****************************************************************************/
@@ -185,12 +175,13 @@ static void b_disp() {
 static void b_add(int v) { 
 
 	listref new = create_e(v);
-	if(new!=-1){
+	if(new!=NULLREF){
 		pcurr=liststart;
 		pprev=NULLREF;
 		if(is_empty(liststart)){
 			liststart=new;
 			listend=new;
+			pcurr=new;
 		}
 		
 		else if(v<=get_value(liststart)){
@@ -233,9 +224,10 @@ static void b_add(int v) {
 /* e.g. b_addpos(8, 7) on (1, 3, 5, 7, 9) gives Error: invalid position     */
 /****************************************************************************/
 
-static void b_addpos(int v, int pos){
+static void b_addpos(int v, int pos) { 
 	listref new = create_e(v);
-	if(new!=-1){
+	
+	if(new!=NULLREF){
 		int i=0;
 		
 		pcurr=liststart;
@@ -248,12 +240,13 @@ static void b_addpos(int v, int pos){
 			pcurr=liststart;
 			liststart=new;
 			set_next(new,pcurr);
-			set_prev(new,-1);
+			set_prev(new,NULLREF);
 			set_prev(pcurr,new);
 		}
-	else if(pos==numels-1 && numels!=1){
+	else if(pos==numels && numels!=1){
+			pcurr=listend;
 			listend=new;
-			set_next(new,-1);
+			set_next(new,NULLREF);
 			set_prev(new,pcurr);
 			set_next(pcurr,new);
 		}
@@ -269,14 +262,6 @@ static void b_addpos(int v, int pos){
 		set_prev(new,pprev);
 		set_prev(pcurr,new);
 		set_next(pprev,new);
-		
-		
-		if(v>=get_value(listend)){
-			listend=new;
-		}
-		else if(v<=get_value(liststart)){
-			liststart=new;
-			}
 		}
 	}
 }
@@ -291,8 +276,8 @@ static void b_addpos(int v, int pos){
 
 static listref b_find(int v) {
 	pcurr = liststart;
-	
- 	while(pcurr!= -1 && pcurr<numels){
+	int i =0; 
+ 	while(pcurr!= -1 && i<numels){
  		if(v == get_value(pcurr))
  		{
  			return pcurr;
@@ -300,7 +285,8 @@ static listref b_find(int v) {
  		else{
  			pcurr = get_next(pcurr);
 			}
- 	}
+		i++;
+	}
  	
  	return NULLREF;
 }
@@ -316,8 +302,8 @@ static listref b_find(int v) {
 static void b_rem(int v) {
 							listref pos;
 							pos=b_find(v);
-							numels--;
 							if(pos!=-1){
+								numels--;
 								pprev=get_prev(pos);
 								pcurr=get_next(pos);
 								set_next(pprev,pcurr);
@@ -347,7 +333,6 @@ static void b_rem(int v) {
 static void b_rempos(int pos) { 
 		int i=0;
 		pcurr=liststart;
-		numels--;
 		while(i<pos-1){
 			pprev=pcurr;
 			pcurr=get_next(pcurr);
@@ -355,19 +340,23 @@ static void b_rempos(int pos) {
 		}
 		if(pcurr==listend && pcurr==liststart){
 			liststart=NULLREF;
+			numels--;
 		}
 		else if(pcurr==liststart){
 			liststart=get_next(liststart);
 			set_prev(liststart,NULLREF);
+			numels--;
 		}
 		else if(pcurr==listend){
 			listend=get_prev(listend);
 			set_next(listend,NULLREF);
+			numels--;
 		}
 		else{
 			pcurr=get_next(pcurr);
 			set_next(pprev,pcurr);
 			set_prev(pcurr,pprev);
+			numels--;
 		}
 		
 }
@@ -396,7 +385,14 @@ static int b_card() {return numels;}
 
 static void b_disp_C()  {printf("%d\n",get_value(pcurr));}  /* display current element (pcurr) */
 static void b_first()   {pcurr=liststart;}
-static void b_next()    {pcurr=get_next(pcurr);}
+static void b_next()    {if(get_next(pcurr)!=NULLREF)
+								pcurr=get_next(pcurr);
+							else{
+								printf("Reached last element\n");
+								printf("Previous element:");
+							}
+						}/*{if(!is_empty(pcurr)){pcurr=get_next(pcurr);}
+							else printf("EOL\n");}*/
 static int  b_exist_e() { if(pcurr == NULLREF)
 								return 0;
 						  else	

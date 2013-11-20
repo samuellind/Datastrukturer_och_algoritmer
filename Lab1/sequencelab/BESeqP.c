@@ -200,7 +200,6 @@ static void b_addpos(int v, int pos) {
 			pcurr=new;
 		}
 	else if(pos==1 && numels!=1){
-			pcurr=new;
 			pcurr=liststart;
 			liststart=new;
 			set_next(new,pcurr);
@@ -208,7 +207,6 @@ static void b_addpos(int v, int pos) {
 			set_prev(pcurr,new);
 		}
 	else if(pos==numels && numels!=1){
-			pcurr=new;
 			pcurr=listend;
 			listend=new;
 			set_next(new,NULLREF);
@@ -264,17 +262,20 @@ static listref b_find(int v) { pcurr = liststart;
 
 static void b_rem(int v) { listref pos;
 							pos=b_find(v);
-							numels--;
+
 							if(pos==listend && pos==liststart){
 									liststart=NULLREF;
+									numels--;
 									}
 							else if(pos==liststart){
 									liststart=get_next(liststart);
 									set_prev(liststart,NULLREF);
+									numels--;
 								}
 							else if(pos==listend){
 									listend=get_prev(listend);
 									set_next(listend,NULLREF);
+									numels--;
 									}
 									
 							else if(pos!=NULLREF){
@@ -282,6 +283,7 @@ static void b_rem(int v) { listref pos;
 								pcurr=get_next(pos);
 								set_next(pprev,pcurr);
 								set_prev(pcurr,pprev);
+								numels--;
 							}	
 							else
 								printf("Error: Value not in the list");
@@ -302,7 +304,6 @@ static void b_rempos(int pos) {
 		
 		int i=0;
 		pcurr=liststart;
-		numels--;
 		while(i<pos-1){
 			pprev=pcurr;
 			pcurr=get_next(pcurr);
@@ -310,19 +311,23 @@ static void b_rempos(int pos) {
 		}
 		if(pcurr==listend && pcurr==liststart){
 			liststart=NULLREF;
+			numels--;
 		}
 		else if(pcurr==liststart){
 			liststart=get_next(liststart);
 			set_prev(liststart,NULLREF);
+			numels--;
 		}
 		else if(pcurr==listend){
 			listend=get_prev(listend);
 			set_next(listend,NULLREF);
+			numels--;
 		}
 		else{
 			pcurr=get_next(pcurr);
 			set_next(pprev,pcurr);
 			set_prev(pcurr,pprev);
+			numels--;
 		}
 		free(pcurr);
 }
