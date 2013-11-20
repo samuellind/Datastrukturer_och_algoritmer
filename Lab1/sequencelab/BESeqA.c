@@ -163,9 +163,9 @@ static void b_disp() {
 				j++;
 			}
 			printf("***All elements***\n");
-			for(i=0;i<20;i++){
+			/*for(i=0;i<20;i++){
 				printf("#%d value: %d\n",i,get_value(i));
-			}
+			}*/
 		printf("EOL");
 }
 
@@ -230,7 +230,7 @@ static void b_addpos(int v, int pos){
 	if(new!=-1){
 		int i=0;
 		
-		pcurr=0;
+		pcurr=liststart;
 		if(is_empty(liststart)){
 			liststart=new;
 			listend=new;
@@ -285,7 +285,6 @@ static listref b_find(int v) {
 	pcurr = liststart;
 	
  	while(pcurr!= -1 && pcurr<numels){
- 		//printf("LOOOOOP!!! %d \n",get_value(pcurr));
  		if(v == get_value(pcurr))
  		{
  			return pcurr;
