@@ -70,23 +70,33 @@ static treeref queue[ARRLEN];
 /* create_node:     int           --> treeref                               */
 /****************************************************************************/
 
-static int      is_empty(treeref T)             { /* TO DO */ return 1; }
+static int      is_empty(treeref T)             { return (T==(treeref)NULL); }
 
-static int      get_value(treeref T)            { /* TO DO */ return 0; }
-static int      get_height(treeref T)           { /* TO DO */ return 0; }
-static treeref  get_LC(treeref T)               { /* TO DO */ return NULL; }
-static treeref  get_RC(treeref T)               { /* TO DO */ return NULL; }
+static int      get_value(treeref T)            { return T->value; }
+static int      get_height(treeref T)           { return T->height; }
+static treeref  get_LC(treeref T)               { return T->LC; }
+static treeref  get_RC(treeref T)               { return T->RC; }
 
-static treeref  set_value(treeref T, int v)     { /* TO DO */ return NULL; }
-static treeref  set_height(treeref T, int h)    { /* TO DO */ return NULL; }
-static treeref  set_LC(treeref T, treeref L)    { /* TO DO */ return NULL; }
-static treeref  set_RC(treeref T, treeref R)    { /* TO DO */ return NULL; }
+static treeref  set_value(treeref T, int v)     { T->value = v; return T; }
+static treeref  set_height(treeref T, int h)    { T->height = h; return T; }
+static treeref  set_LC(treeref T, treeref L)    { T->LC = L; return T; }
+static treeref  set_RC(treeref T, treeref R)    { T->RC = R; return T; }
 
 /****************************************************************************/
 /* create and initialise an element in the tree                             */
 /****************************************************************************/
 
-static treeref create_node(int v) { /* TO DO */ return NULL; }
+static treeref create_node(int v) { 	
+
+	
+	struct treenode *new=malloc(sizeof(struct treenode));
+		
+	set_value(new, v);
+	set_height(new, NILL);
+	set_LC(new, (treeref)NULL);
+	set_RC(new, (treeref)NULL);
+
+	return new; }
 
 /****************************************************************************/
 /****************************************************************************/
@@ -115,21 +125,26 @@ static treeref RC(treeref T)               { /* TO DO */ return NULL; }
 /* CONStruct a new tree from a LC, Node and RC                              */
 /****************************************************************************/
 
-static treeref cons(treeref LC, treeref N, treeref RC) {/* TO DO */ return NULL; }
+static treeref cons(treeref LC, treeref N, treeref RC) { set_LC(N,LC); set_RC(N,RC); return N; }
 
 /****************************************************************************/
 /* FIND the height of the tree                                              */
 /****************************************************************************/
 
-static int max(int a, int b) { /* TO DO */ return 0; }
+static int max(int a, int b) { if(a<b) return b;
+								else return a; }
 
-static int b_height(treeref T) { return 0; /* TO DO */ return 0; }
+static int b_height(treeref T) { 
+	if(!is_empty(T))
+		return 1+max(b_height(get_LC(T)),b_height(get_RC(T)));
+	else
+		return 0; }
 
 /****************************************************************************/
 /* display the tree ELEMENT                                                 */
 /****************************************************************************/
 
-static void b_disp_el(treeref T) { /* TO DO */ }
+static void b_disp_el(treeref T) { printf("%d ", get_value(T)); }
 
 /****************************************************************************/
 /* display the heap array                                                   */
@@ -168,24 +183,66 @@ static void b_disp_2D() { /* TO DO */ }
 /* display the tree (pre-order)                                             */
 /****************************************************************************/
 
-static void b_disp_pre(treeref T) { /* TO DO */ }
+static void b_disp_pre(treeref T) { 
+	
+	if(!is_empty(T)){
+		b_disp_el(T);
+		b_disp_pre(get_LC(T));
+		b_disp_pre(get_RC(T));
+		
+	}
+	else ;
+ }
 
 /****************************************************************************/
 /* display the tree (in-order)                                              */
 /****************************************************************************/
 
-static void b_disp_in(treeref T) { /* TO DO */ }
+static void b_disp_in(treeref T) { 
+	if(!is_empty(T)){
+		printf("Left child\n");
+		b_disp_in(get_LC(T));
+		printf("Node\n");
+		b_disp_el(T);
+		printf("Right child\n");
+		b_disp_in(get_RC(T));
+		
+	}
+	else ;
+}
 /****************************************************************************/
 /* display the tree (post-order)                                            */
 /****************************************************************************/
 
-static void b_disp_post(treeref T) { /* TO DO */ }
+static void b_disp_post(treeref T) { 
+	if(!is_empty(T)){
+		b_disp_post(get_LC(T));
+		b_disp_post(get_RC(T));
+		b_disp_el(T);	
+		
+	} 
+	else ;
+}
 
 /****************************************************************************/
 /* ADD to the tree in BST order                                             */
 /****************************************************************************/
 
-static treeref b_add(treeref T, treeref N) { /* TO DO */ return NULL; }
+static treeref b_add(treeref T, treeref N) { 
+	
+	if(is_empty(T))
+		return N;
+	else if(get_value(N)>get_value(T)){
+		printf("\nRight child.\n");
+		return cons(get_LC(T),T,b_add(get_RC(T),N));//cons(b_add(get_LC(T),N),T,get_RC(T));
+	}
+	else if(get_value(N)<get_value(T)){
+		printf("\nLeft child.\n");
+		return cons(b_add(get_LC(T),N),T,get_RC(T));//cons(get_LC(T),T,b_add(get_RC(T),N));
+	}
+	else
+		return T;
+}
 
 /****************************************************************************/
 /* REMove an element from the tree / BST order                              */
@@ -215,7 +272,20 @@ static treeref b_remh(int v) { /* TO DO */ return NULL; }
 /* FIND an element in the BST (Binary Search Tree)                          */
 /****************************************************************************/
 
-static int b_findb(treeref T, int v) { /* TO DO */ return 0; }
+static int b_findb(treeref T, int v) { if(is_empty(T))
+	
+	if(is_empty(T))
+		return 0;
+	else if(v>get_value(T)){
+		printf("\nRight child.\n");
+		return b_findb(get_RC(T),v);
+	}
+	else if(v<get_value(T)){
+		printf("\nLeft child.\n");
+		return b_findb(get_LC(T),v);
+	}
+	else
+		return 1; }
 
 /****************************************************************************/
 /* FIND an element in the complete tree                                     */
@@ -227,7 +297,9 @@ static int b_findc(treeref T, int v) { /* TO DO */ return 0; }
 /* FIND the number of element in the tree (cardinality)                     */
 /****************************************************************************/
 
-static int b_card(treeref T) { return 0; /* TO DO */ return 0; }
+static int b_card(treeref T) { if(is_empty(T)) return 0 ;
+								else 
+									return 1+b_card(get_LC(T))+b_card(get_RC(T)); }
 
 
 /****************************************************************************/

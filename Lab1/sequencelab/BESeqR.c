@@ -81,7 +81,7 @@ static listref create_e(int v)
 {
 	listref ret;
 	
-	if(b_card(L)<=20){ // how do??!
+	if(b_card(L)<20){ // how do??!
 	
 		struct listelem *new=malloc(sizeof(struct listelem));
 			set_value(new, v);
@@ -91,7 +91,7 @@ static listref create_e(int v)
 	}
 	else{
 		printf("Too many elements!\n");
-		ret=NULLREF;
+		ret=(listref)NULL;
 	}
 	return ret;
 }
@@ -161,15 +161,17 @@ static void b_disp(listref L) {
 static listref b_add(int v, listref L)
 {
   listref new = create_e(v);
-  if(!is_empty(L)){
-		if(v>get_value(L)){
-			return cons(L, b_add(v, get_tail(L)));
-			}
-		else 
+  if(!is_empty(new)){
+	  if(!is_empty(L)){
+			if(v>get_value(L)){
+				return cons(L, b_add(v, get_tail(L)));
+				}
+			else 
+				return cons(new, L);
+  	}
+  		else 
 			return cons(new, L);
-  }
-  else 
-	return cons(new, L);
+	}
   	
 }
 
@@ -188,15 +190,17 @@ static listref b_add(int v, listref L)
 
 static listref b_addpos(int v, listref L, int pos){
 listref new = create_e(v);
-  if(!is_empty(L)){
-		if(1<pos){
-			return cons(L, b_addpos(v, get_tail(L),pos-1));
-			}
-		else 
-			return cons(new, L);
-  }
-  else 
-	return cons(new, L);
+	if(!is_empty(new)){
+	  if(!is_empty(L)){
+			if(1<pos){
+				return cons(L, b_addpos(v, get_tail(L),pos-1));
+				}
+			else 
+				return cons(new, L);
+	  }
+	  else
+		return cons(new, L);
+	}
 }
 
 /****************************************************************************/
@@ -208,12 +212,17 @@ listref new = create_e(v);
 /****************************************************************************/
 
 static listref b_rem(int v, listref L) {
-
-		if(v==get_value(L)){
-			return get_tail(L);
+	
+		if(!is_empty(L)){
+			if(v==get_value(L)){
+				return get_tail(L);
+				}
+			else {
+				return cons(L, b_rem(v,get_tail(L)));
 			}
-		else 
-			return cons(L, b_rem(v,get_tail(L)));
+		}
+		else
+			return NULLREF;
 }
 
 /****************************************************************************/
@@ -287,7 +296,7 @@ static void b_next()      {	if(!is_empty(get_tail(C))&& !is_empty(L)) C=get_tail
 static void b_disp_C(){//if(!is_empty(C))  printf("%d\n",get_value(C));
    }
    
-static int b_exist_e()  { if(!is_empty(C)) return 1;
+static int b_exist_e()  { if(!is_empty(get_tail(C))) return 1;
 							else 
 								return 0;  }
 

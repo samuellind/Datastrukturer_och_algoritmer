@@ -315,10 +315,10 @@ static void b_rem(int v) {
 								else if(pos==listend){
 									listend=get_prev(listend);
 									set_next(pcurr,NULLREF);
-									}}
+									}
+							}
 							else
 								printf("Error: Value not in the list");
-							
 						}
 						
 /****************************************************************************/
@@ -385,7 +385,7 @@ static int b_card() {return numels;}
 
 static void b_disp_C()  {printf("%d\n",get_value(pcurr));}  /* display current element (pcurr) */
 static void b_first()   {pcurr=liststart;}
-static void b_next()    {if(get_next(pcurr)!=NULLREF)
+static void b_next()    {if(!is_empty(pcurr)&&get_value(get_next(pcurr))!=0)
 								pcurr=get_next(pcurr);
 							else{
 								printf("Reached last element\n");
