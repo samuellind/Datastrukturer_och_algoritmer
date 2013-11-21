@@ -125,7 +125,10 @@ static treeref RC(treeref T)               { /* TO DO */ return NULL; }
 /* CONStruct a new tree from a LC, Node and RC                              */
 /****************************************************************************/
 
-static treeref cons(treeref LC, treeref N, treeref RC) { set_LC(N,LC); set_RC(N,RC); return N; }
+static treeref cons(treeref LC, treeref N, treeref RC) { 
+	set_LC(N,LC); 
+	set_RC(N,RC); 
+	return N; }
 
 /****************************************************************************/
 /* FIND the height of the tree                                              */
@@ -144,7 +147,7 @@ static int b_height(treeref T) {
 /* display the tree ELEMENT                                                 */
 /****************************************************************************/
 
-static void b_disp_el(treeref T) { printf("%d ", get_value(T)); }
+static void b_disp_el(treeref T) { printf("%d %d\n", get_value(T), get_height(T)); }
 
 /****************************************************************************/
 /* display the heap array                                                   */
@@ -200,11 +203,8 @@ static void b_disp_pre(treeref T) {
 
 static void b_disp_in(treeref T) { 
 	if(!is_empty(T)){
-		printf("Left child\n");
 		b_disp_in(get_LC(T));
-		printf("Node\n");
 		b_disp_el(T);
-		printf("Right child\n");
 		b_disp_in(get_RC(T));
 		
 	}
@@ -234,11 +234,11 @@ static treeref b_add(treeref T, treeref N) {
 		return N;
 	else if(get_value(N)>get_value(T)){
 		printf("\nRight child.\n");
-		return cons(get_LC(T),T,b_add(get_RC(T),N));//cons(b_add(get_LC(T),N),T,get_RC(T));
+		return cons(get_LC(T),T,b_add(get_RC(T),N));
 	}
 	else if(get_value(N)<get_value(T)){
 		printf("\nLeft child.\n");
-		return cons(b_add(get_LC(T),N),T,get_RC(T));//cons(get_LC(T),T,b_add(get_RC(T),N));
+		return cons(b_add(get_LC(T),N),T,get_RC(T));
 	}
 	else
 		return T;
@@ -248,7 +248,18 @@ static treeref b_add(treeref T, treeref N) {
 /* REMove an element from the tree / BST order                              */
 /****************************************************************************/
 
-static treeref b_rem(treeref T, int v) { /* TO DO */ return NULL; }
+static treeref b_rem(treeref T, int v) { 
+	if(is_empty(T))
+		return (treeref)NULL;
+	else if(v>get_value(T)){
+		printf("\nRight child.\n");
+		return b_rem(get_RC(T),v);
+	}
+	else if(v<get_value(T)){
+		printf("\nLeft child.\n");
+		return b_rem(get_LC(T),v);
+	}
+}
 
 /****************************************************************************/
 /* Build heap tree                                                          */
