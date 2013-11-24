@@ -92,7 +92,7 @@ static treeref create_node(int v) {
 	struct treenode *new=malloc(sizeof(struct treenode));
 		
 	set_value(new, v);
-	set_height(new, NILL);
+	set_height(new, 0);
 	set_LC(new, (treeref)NULL);
 	set_RC(new, (treeref)NULL);
 
@@ -147,13 +147,21 @@ static int b_height(treeref T) {
 /* display the tree ELEMENT                                                 */
 /****************************************************************************/
 
-static void b_disp_el(treeref T) { printf("%d %d\n", get_value(T), get_height(T)); }
+static void b_disp_el(treeref T) { printf("\n%d %d\n", get_value(T), get_height(T)); }
 
 /****************************************************************************/
 /* display the heap array                                                   */
 /****************************************************************************/
 
 static void b_disp_array() { /* TO DO */ }
+/****************************************************************************/
+/* FIND the number of element in the tree (cardinality)                     */
+/****************************************************************************/
+
+static int b_card(treeref T) { if(is_empty(T)) return 0 ;
+								else 
+									return 1+b_card(get_LC(T))+b_card(get_RC(T)); }
+
 
 /****************************************************************************/
 /* Tree to array via a queue (breadth-first search)                         */
@@ -166,7 +174,40 @@ static void b_disp_array() { /* TO DO */ }
 /* becomes: [5] [2] [7] [nil] [3] [6] [nil]                                 */
 /****************************************************************************/
 
-static void T2Q() { /* TO DO */ }
+static void T2Q() {
+	
+	treeref p;
+	queue[qfirst]=T;
+	
+	qlast++;
+	
+	printf("Test");
+	while(!is_empty(queue[qfirst])){
+		
+		p=queue[qfirst];
+		qfirst++;
+		printf("[%d] ", get_value(p));
+		
+		
+		/*if(is_empty(get_LC(p))){ 
+			printf("[Nil] ");
+		}
+		else{*/
+			queue[qlast] = get_LC(p);
+			qlast++;
+		//}
+		/*if(is_empty(get_RC(p))) {
+			printf("[Nil] ");
+		}
+		else{*/
+			queue[qlast] = get_RC(p);
+			qlast++;
+		//}
+			
+	}
+	qfirst=0;
+	qlast=0;
+}
 
 /****************************************************************************/
 /* display the tree in 2D                                                   */
@@ -180,8 +221,16 @@ static void T2Q() { /* TO DO */ }
 /* level 3 (4 nodes)             [nil]     [3]    [6]     [nil]             */
 /****************************************************************************/
 
-static void b_disp_2D() { /* TO DO */ }
+static void b_disp_2D() { T2Q();
 
+	int curr=0, elements=b_card(T);
+	printf("Elements: %d \n", elements);
+	
+	while(!is_empty(get_value(queue[curr]))){
+		printf("%d ", get_value(queue[curr]));
+		curr++;
+	}
+}
 /****************************************************************************/
 /* display the tree (pre-order)                                             */
 /****************************************************************************/
@@ -229,19 +278,25 @@ static void b_disp_post(treeref T) {
 /****************************************************************************/
 
 static treeref b_add(treeref T, treeref N) { 
-	
-	if(is_empty(T))
+
+	if(is_empty(T)){
 		return N;
+	}
 	else if(get_value(N)>get_value(T)){
 		printf("\nRight child.\n");
+		set_height(N,get_height(N)+1);
+		printf("height: %d\n", get_height(N));
 		return cons(get_LC(T),T,b_add(get_RC(T),N));
 	}
 	else if(get_value(N)<get_value(T)){
 		printf("\nLeft child.\n");
+		set_height(N,get_height(N)+1);
+		printf("height: %d\n", get_height(N));
 		return cons(b_add(get_LC(T),N),T,get_RC(T));
 	}
 	else
 		return T;
+	set_height(N,b_height(N));
 }
 
 /****************************************************************************/
@@ -249,16 +304,15 @@ static treeref b_add(treeref T, treeref N) {
 /****************************************************************************/
 
 static treeref b_rem(treeref T, int v) { 
+	
 	if(is_empty(T))
-		return (treeref)NULL;
-	else if(v>get_value(T)){
-		printf("\nRight child.\n");
-		return b_rem(get_RC(T),v);
-	}
-	else if(v<get_value(T)){
-		printf("\nLeft child.\n");
-		return b_rem(get_LC(T),v);
-	}
+		return T;
+	else if(v<get_value(T))
+		return cons(b_rem(get_LC(T),v),T,get_RC(T));
+	else if(v>get_value(T))
+		return cons(get_LC(T),T,b_rem(get_RC(T),v));
+	else
+		return b_add(get_LC(T),get_RC(T));
 }
 
 /****************************************************************************/
@@ -304,13 +358,6 @@ static int b_findb(treeref T, int v) { if(is_empty(T))
 
 static int b_findc(treeref T, int v) { /* TO DO */ return 0; }
 
-/****************************************************************************/
-/* FIND the number of element in the tree (cardinality)                     */
-/****************************************************************************/
-
-static int b_card(treeref T) { if(is_empty(T)) return 0 ;
-								else 
-									return 1+b_card(get_LC(T))+b_card(get_RC(T)); }
 
 
 /****************************************************************************/
