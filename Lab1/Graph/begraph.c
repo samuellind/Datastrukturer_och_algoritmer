@@ -87,7 +87,7 @@ static noderef create_n(char c, int w) {
 	set_ninfo(new, w);
 	set_edges(new, NULLREF);
 	set_nodes(new, NULLREF);
-	nnodes++;
+	//nhead(new);
 	return new; }
 
 /****************************************************************************/
@@ -117,66 +117,104 @@ static noderef create_n(char c, int w) {
 /* head and tail - a RECURSIVE view of the sequence                         */
 /****************************************************************************/
 
-static noderef nhead(noderef N)     { /* TO DO */ return NULLREF; }
-static noderef ntail(noderef N)     { /* TO DO */ return NULLREF; }
+static noderef nhead(noderef N)     { return N; }
+static noderef ntail(noderef N)     { return get_nodes(N); }
 
-static noderef ehead(noderef E)     { /* TO DO */ return NULLREF; }
-static noderef etail(noderef E)     { /* TO DO */ return NULLREF; }
+static noderef ehead(noderef E)     {  return E; }
+static noderef etail(noderef E)     {  return get_edges(E); }
 
 /****************************************************************************/
 /* CONStruct a new node with the element at the head of the node            */
 /****************************************************************************/
 
-static noderef ncons(noderef e, noderef N) { set_nodes(N,e); return N; }
-static noderef econs(noderef e, noderef E) { set_edges(E,e); return E; }
+static noderef ncons(noderef e, noderef N) { set_nodes(e,N); return e; }
+static noderef econs(noderef e, noderef E) { set_edges(e,E); return e; }
 
 /****************************************************************************/
 /* display the edges                                                        */
 /****************************************************************************/
 
-static void b_edisp(noderef E) { /* TO DO */ }
+static void b_edisp(noderef E) {
+	if(is_empty(E))
+		printf("EOF");
+	else { 
+		printf("-%c - %c-\n", get_nname(E), get_nname(get_edges(E)));
+		b_edisp(get_nodes(E));
+	} }
 
 /****************************************************************************/
 /* display the nodes                                                        */
 /****************************************************************************/
 
-static void b_ndisp(noderef G) { /* TO DO */ }
+static void b_ndisp(noderef G) { 
+	
+	if(is_empty(G))
+		printf("EOF");
+	else { 
+		printf("-%c-\n", get_nname(G));
+		b_ndisp(get_nodes(G));
+	}
+}
 
 /****************************************************************************/
 /* ADD to the node in ascending order                                       */
 /****************************************************************************/
 
-static noderef b_addn(char c, noderef G) {  /* TO DO */ return NULLREF; }
+static noderef b_addn(char c, noderef G) {  
+	noderef N=create_n(c,0);
+	
+	if(is_empty(G))
+		return N;
+	else if(c<get_nname(G))
+		return ncons(N, G);
+	else 
+		return ncons(G, b_addn(c, ntail(G)));	
+	 }
 
 /****************************************************************************/
 /* ADD to the edge in ascending order                                       */
 /****************************************************************************/
 
-static noderef b_adde(char c, int w, noderef E) { /* TO DO */ return NULLREF; }
+static noderef b_adde(char c, int w, noderef E) { 
+	
+	//b_findn(c,)
+	
+return NULLREF;}
 
 /****************************************************************************/
 /* REMove a  node from the graph                                            */
 /****************************************************************************/
 
-static noderef b_remn(char c, noderef G) { /* TO DO */ return NULLREF; }
-
+static noderef b_remn(char c, noderef G) { 
+	if(is_empty(G)) return G;
+	if(c==get_nname(G))
+		return ntail(G);
+	else 
+		return ncons(G, b_remn(c, ntail(G)));
+		}
 /****************************************************************************/
 /* REMove an edge from the graph                                            */
 /****************************************************************************/
 
 static noderef b_reme(char c, noderef E) { /* TO DO */ return NULLREF; }
+/****************************************************************************/
+/* FIND a  node in the graph                                                */
+/****************************************************************************/
+
+static noderef b_findn(char c, noderef G) { 
+		
+	if(is_empty(G) || c==get_nname(G))
+		return G;
+	else 
+		return b_findn(c, ntail(G));
+}
 
 /****************************************************************************/
 /* REMove all edges for a given node from the graph                         */
 /****************************************************************************/
 
-static void b_remalle(char c, noderef G) { /* TO DO */ }
+static void b_remalle(char c, noderef G) { set_edges(NULLREF, b_findn(c,G)); }
 
-/****************************************************************************/
-/* FIND a  node in the graph                                                */
-/****************************************************************************/
-
-static noderef b_findn(char c, noderef G) { /* TO DO */ return NULLREF; }
 
 /****************************************************************************/
 /* FIND an edge in the graph                                                */
@@ -188,7 +226,11 @@ static noderef b_finde(char c, noderef E) { /* TO DO */ return NULLREF; }
 /* FIND the number of nodes in the graph (cardinality nodes)                */
 /****************************************************************************/
 
-static int b_card(noderef G) { return nnodes; }
+static int b_card(noderef G) { 
+	if(is_empty(G)) return 0 ;
+	else 
+		return 1+b_card(get_nodes(G));
+}
 
 /****************************************************************************/
 /* CREATE the adjacency matrix (AM)                                         */

@@ -44,7 +44,7 @@ static treeref T     = (treeref) NULL;
 /**************************************************************/
 
 static int first=NILL,  last=NILL;
-static int qfirst=NILL, qlast=NILL;
+static int qfirst=0, qlast=0;// qfirst=NILL, qlast=NILL;
 
 static treeref heaparr[ARRLEN];
 static treeref queue[ARRLEN];
@@ -181,7 +181,6 @@ static void T2Q() {
 	
 	qlast++;
 	
-	printf("Test");
 	while(!is_empty(queue[qfirst])){
 		
 		p=queue[qfirst];
@@ -221,14 +220,37 @@ static void T2Q() {
 /* level 3 (4 nodes)             [nil]     [3]    [6]     [nil]             */
 /****************************************************************************/
 
-static void b_disp_2D() { T2Q();
-
-	int curr=0, elements=b_card(T);
-	printf("Elements: %d \n", elements);
+static void b_disp_2D() { 
+	T2Q();
+	int curr=0,currhgt=0, max_hgt=(b_height(T));
+	treeref p;
 	
-	while(!is_empty(get_value(queue[curr]))){
-		printf("%d ", get_value(queue[curr]));
-		curr++;
+	int i;
+	printf("\n**********Array*******\n");
+	for(i=0;i<3;i++){
+		p=queue[i];
+		printf("%d ", get_value(p));
+	}
+	
+	printf("max height: %d \n", max_hgt);
+	
+	curr=0;
+
+	while(currhgt<max_hgt){
+		
+		printf("Curr: [%d] ",curr);
+		printf("CurrHgt: [%d] \n",get_height(queue[curr]));
+		
+		while(currhgt==get_height(queue[curr])){
+			printf("[%d] ",get_value(queue[curr]));
+			curr++;
+			printf("Curr: [%d] \n",curr);
+			printf("Currhgt: [%d] \n",currhgt);
+		}
+		
+		printf("\n");
+		
+		currhgt++;
 	}
 }
 /****************************************************************************/
