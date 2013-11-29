@@ -258,7 +258,6 @@ static void b_disp_2D() {
 /****************************************************************************/
 
 static void b_disp_pre(treeref T) { 
-	
 	if(!is_empty(T)){
 		b_disp_el(T);
 		b_disp_pre(get_LC(T));

@@ -176,10 +176,15 @@ static noderef b_addn(char c, noderef G) {
 /****************************************************************************/
 
 static noderef b_adde(char c, int w, noderef E) { 
-	
-	//b_findn(c,)
-	
-return NULLREF;}
+	noderef N=create_n(c,w);
+	if(is_empty(E))
+		return N;
+		
+	else if(c<get_nname(E))
+		return econs(E,N);
+	else  
+		return econs(E, b_adde(c, w, etail(E)));
+	}
 
 /****************************************************************************/
 /* REMove a  node from the graph                                            */
@@ -187,16 +192,23 @@ return NULLREF;}
 
 static noderef b_remn(char c, noderef G) { 
 	if(is_empty(G)) return G;
-	if(c==get_nname(G))
+	if(get_nname(G)==c)
 		return ntail(G);
-	else 
+	else
 		return ncons(G, b_remn(c, ntail(G)));
 		}
 /****************************************************************************/
 /* REMove an edge from the graph                                            */
 /****************************************************************************/
 
-static noderef b_reme(char c, noderef E) { /* TO DO */ return NULLREF; }
+static noderef b_reme(char c, noderef E) { 
+	if(is_empty(E)) 
+		return  E;
+	if(get_nname(E)==c)
+		return etail(E);
+	else
+		return econs(E, b_reme(c, etail(E)));
+ }
 /****************************************************************************/
 /* FIND a  node in the graph                                                */
 /****************************************************************************/
@@ -213,14 +225,21 @@ static noderef b_findn(char c, noderef G) {
 /* REMove all edges for a given node from the graph                         */
 /****************************************************************************/
 
-static void b_remalle(char c, noderef G) { set_edges(NULLREF, b_findn(c,G)); }
+static void b_remalle(char c, noderef G) { 
+	//if(!is_empty(G))
+	//set_edges(b_findn(c,G), NULLREF);
+	 }
 
 
 /****************************************************************************/
 /* FIND an edge in the graph                                                */
 /****************************************************************************/
 
-static noderef b_finde(char c, noderef E) { /* TO DO */ return NULLREF; }
+static noderef b_finde(char c, noderef E) { 
+	if(is_empty(E) || c==get_nname(E))
+		return E;
+	else 
+		return b_finde(c, ntail(E));}
 
 /****************************************************************************/
 /* FIND the number of nodes in the graph (cardinality nodes)                */
