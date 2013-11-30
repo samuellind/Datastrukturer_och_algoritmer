@@ -226,10 +226,11 @@ static noderef b_findn(char c, noderef G) {
 /****************************************************************************/
 
 static void b_remalle(char c, noderef G) { 
-	printf("remalle");
-	if(!is_empty(G)){}/*{
+	set_edges(G,b_reme(c,get_edges(G)));
+	b_remalle(c,get_nodes(G));
+	/*printf("remalle");
+	if(!is_empty(G)){
 		econs(b_findn(c,G), NULLREF);
-		printf("%c", c);
 		noderef N=G;
 		while(!is_empty(N)){
 			printf("%c", get_nname(N));
