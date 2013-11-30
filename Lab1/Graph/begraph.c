@@ -226,8 +226,17 @@ static noderef b_findn(char c, noderef G) {
 /****************************************************************************/
 
 static void b_remalle(char c, noderef G) { 
-	//if(!is_empty(G))
-	//set_edges(b_findn(c,G), NULLREF);
+	printf("remalle");
+	if(!is_empty(G)){}/*{
+		econs(b_findn(c,G), NULLREF);
+		printf("%c", c);
+		noderef N=G;
+		while(!is_empty(N)){
+			printf("%c", get_nname(N));
+			b_reme(c,N);
+			N=ntail(N);
+			}
+		}*/
 	 }
 
 
@@ -239,7 +248,7 @@ static noderef b_finde(char c, noderef E) {
 	if(is_empty(E) || c==get_nname(E))
 		return E;
 	else 
-		return b_finde(c, ntail(E));}
+		return b_finde(c, etail(E));}
 
 /****************************************************************************/
 /* FIND the number of nodes in the graph (cardinality nodes)                */
