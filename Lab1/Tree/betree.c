@@ -177,31 +177,34 @@ static int b_card(treeref T) { if(is_empty(T)) return 0 ;
 static void T2Q() {
 	
 	treeref p;
+	int q=0;
 	queue[qfirst]=T;
 	
 	qlast++;
 	
-	while(!is_empty(queue[qfirst])){
+	while(b_card(T)){
 		
 		p=queue[qfirst];
 		qfirst++;
 		printf("[%d] ", get_value(p));
 		
 		
-		/*if(is_empty(get_LC(p))){ 
-			printf("[Nil] ");
+		if(is_empty(get_LC(p))){ 
+			queue[qlast] = (treeref)&q;
+			qlast++;
 		}
-		else{*/
+		else{
 			queue[qlast] = get_LC(p);
 			qlast++;
-		//}
-		/*if(is_empty(get_RC(p))) {
-			printf("[Nil] ");
 		}
-		else{*/
+		if(is_empty(get_RC(p))) {
+			queue[qlast] = (treeref)&q;
+			qlast++;
+		}
+		else{
 			queue[qlast] = get_RC(p);
 			qlast++;
-		//}
+		}
 			
 	}
 	qfirst=0;
@@ -227,16 +230,16 @@ static void b_disp_2D() {
 	
 	int i;
 	printf("\n**********Array*******\n");
-	for(i=0;i<3;i++){
+	/*for(i=0;i<3;i++){
 		p=queue[i];
 		printf("%d ", get_value(p));
-	}
+	}*/
 	
 	printf("max height: %d \n", max_hgt);
 	
 	curr=0;
 
-	while(currhgt<max_hgt){
+	/*while(currhgt<max_hgt){
 		
 		printf("Curr: [%d] ",curr);
 		printf("CurrHgt: [%d] \n",get_height(queue[curr]));
@@ -251,7 +254,7 @@ static void b_disp_2D() {
 		printf("\n");
 		
 		currhgt++;
-	}
+	}*/
 }
 /****************************************************************************/
 /* display the tree (pre-order)                                             */
@@ -326,8 +329,10 @@ static treeref b_add(treeref T, treeref N) {
 
 static treeref b_rem(treeref T, int v) { 
 	
-	if(is_empty(T))
+	if(is_empty(T)){
+		free(T);
 		return T;
+	}
 	else if(v<get_value(T))
 		return cons(b_rem(get_LC(T),v),T,get_RC(T));
 	else if(v>get_value(T))

@@ -191,7 +191,8 @@ static noderef b_adde(char c, int w, noderef E) {
 /****************************************************************************/
 
 static noderef b_remn(char c, noderef G) { 
-	if(is_empty(G)) return G;
+	if(is_empty(G)) 
+		return G;
 	if(get_nname(G)==c)
 		return ntail(G);
 	else
@@ -226,8 +227,8 @@ static noderef b_findn(char c, noderef G) {
 /****************************************************************************/
 
 static void b_remalle(char c, noderef G) { 
-	set_edges(G,b_reme(c,get_edges(G)));
-	b_remalle(c,get_nodes(G));
+	//set_edges(G,b_reme(c,etail(G)));
+	//b_remalle(c,ntail(G));
 	/*printf("remalle");
 	if(!is_empty(G)){
 		econs(b_findn(c,G), NULLREF);
@@ -277,7 +278,20 @@ static int b_card(noderef G) {
 /* get_pos("b") will give 1 (and hence AM[0][1] is set to 3 i.e. a-3-b)     */
 /****************************************************************************/
 
-static int get_pos(char fname)  { /* TO DO */ return 0; }
+static int get_pos(char fname)  { 
+	
+	int i=0;
+	noderef f=G;
+	
+	while(get_nname(f)!=fname){
+		i++;
+		f=ntail(f);
+	}
+		
+	printf("Index of %c is: %d\n", fname, i);
+	
+	return i;
+ }
 
 /****************************************************************************/
 /* Fill in the values in the adjancy matrix from the adjacency list         */
@@ -294,13 +308,75 @@ static int get_pos(char fname)  { /* TO DO */ return 0; }
 /*                      (index 2)     c |  2       7       0                */
 /****************************************************************************/
 
-static void cre_adjmat(noderef G) {/* TO DO */ }
+static void cre_adjmat(noderef G) {
+	
+	noderef g=G;//, e=get_edges(G);
+
+	int i,j;
+	
+	for(i=0;g!=(noderef)NULL;i++){
+		adjmat[i][j]=get_pos(get_nname(g));			//Populates adjmat[pos][0] with letter
+			/*for(j=0;e!=(noderef)NULL;j++){
+				adjmat[i][j]=get_pos(get_nname(e));	
+				e=etail(e);
+			}*/
+		g=ntail(g);
+	}
+	
+	/*for(i=0;g!=(noderef)NULL;i++){
+		adjmat[i][j]=get_pos(get_nname(g));			//Populates adjmat[pos][0] with letter
+		g=ntail(g);
+	}*/
+	
+	
+
+ }
+/****************************************************************************/
+/* DISPLAY top level of adjacency matrix                                    */
+/****************************************************************************/
+
+static void b_mtopdisp(){
+	
+	int i=0;
+	noderef g=G;
+	
+	while(g!=(noderef)NULL){
+		printf("	 %d",i);
+		i++;
+		g=ntail(g);
+	}
+	
+	printf("\n");
+	g=G;
+	
+	while(g!=(noderef)NULL){
+		printf("	 %c",get_nname(g));
+		g=ntail(g);
+	}
+	printf("\n----");
+	
+	for(i=0;i<=b_card(G);i++)
+		printf("-------");
+	printf("\n");
+	
+}
 
 /****************************************************************************/
 /* DISPLAY the adjacency matrix                                             */
 /****************************************************************************/
 
-static void b_mdisp(noderef G) {/* TO DO */ }
+static void b_mdisp(noderef G) { 
+	
+	int i=0,j=0;
+	
+	cre_adjmat(G);
+	b_mtopdisp();
+
+	while(!is_empty(G)){
+		printf("%c | \n",get_nname(G));
+		G=ntail(G);
+	}
+}
 
 /****************************************************************************/
 /* GRAPH ALGORITHMS                                                         */
