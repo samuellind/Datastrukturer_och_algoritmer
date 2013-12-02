@@ -343,13 +343,7 @@ static void cre_adjmat(noderef G) {
 		for(j=0;e!=(noderef)NULL;j++){
 			printf("for2\n");
 			fflush(stdout);
-			if(i==j){
-				printf("if 1\n");
-				printf("Adjmat[%d][%d] set to: 0\n",i,j);
-				fflush(stdout);
-				adjmat[i][j]=0;
-			}
-			else if(j==get_pos(get_nname(e))){
+			if(j==get_pos(get_nname(e))){
 				printf("else if 1\n");
 				printf("Get_pos return: %d\n",get_pos(get_nname(G)));
 				printf("Adjmat[%d][%d] set to: %d\n",i,j,get_ninfo(e));
@@ -357,6 +351,12 @@ static void cre_adjmat(noderef G) {
 				adjmat[i][j]=get_ninfo(e);
 				e=etail(e);
 				j=0;
+			}
+			else if(i==j){
+				printf("if 1\n");
+				printf("Adjmat[%d][%d] set to: 0\n",i,j);
+				fflush(stdout);
+				adjmat[i][j]=0;
 			}
 		}
 			
@@ -407,25 +407,22 @@ static void b_mdisp(noderef G) {
 	int i=0,j=0,max=b_card(G);
 	noderef g=G,e;
 	
-	clr_adjmat();
 	cre_adjmat(G);
 	b_mtopdisp();
 
 	
 		e= get_edges(G);
 		
-		for(i=0;G!=(noderef)NULL;i++){
+		for(i=0;!is_empty(G);i++){
 		printf("%c |",get_nname(G));
 		
 			for(j=0;j!=max;j++){
 				printf("	 %d",adjmat[i][j]);
-				if(!adjmat[i][j]==0)	
-					e=etail(e);
 			}
 		printf("\n");
 		G=ntail(G); 
-		if(!is_empty(G))
-			e= get_edges(G);
+		//if(!is_empty(G))
+		//0	e= get_edges(G);
 		}
 		
 }
@@ -455,14 +452,14 @@ void gdisp()       { b_ndisp(G); }
 void mdisp()       { b_mdisp(G); }
 
 void addn(char c)  { G = b_addn(c, G); }
-void remn(char c)  { b_remalle(c, G); G = b_remn(c, G);}
+void remn(char c)  { b_remalle(c, G); G = b_remn(c, G);clr_adjmat();}
 
 void adde(char cs, char cd, int v) {
    set_edges(b_findn(cs, G), b_adde(cd, v, get_edges(b_findn(cs, G))));
    }
 
 void reme(char cs, char cd) {
-   set_edges(b_findn(cs, G), b_reme(cd, get_edges(b_findn(cs, G))));
+   set_edges(b_findn(cs, G), b_reme(cd, get_edges(b_findn(cs, G))));clr_adjmat();;
    }
 
 int is_nmember(char c) { return !is_empty(b_findn(c, G)); }
