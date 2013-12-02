@@ -294,9 +294,6 @@ static int get_pos(char fname)  {
 		i++;
 		f=ntail(f);
 	}
-		
-	printf("Index of %c is: %d\n", fname, i);
-	
 	return i;
  }
 /****************************************************************************/
@@ -332,29 +329,21 @@ static void cre_adjmat(noderef G) {
 	
 	noderef e;
 
-	int i,j,max=b_card(G);
-	
+	int i,j;
 	
 	e= get_edges(G);
 	
 	for(i=0;G!=(noderef)NULL;i++){
-		printf("for1\n");
 		fflush(stdout);
 		for(j=0;e!=(noderef)NULL;j++){
-			printf("for2\n");
 			fflush(stdout);
 			if(j==get_pos(get_nname(e))){
-				printf("else if 1\n");
-				printf("Get_pos return: %d\n",get_pos(get_nname(G)));
-				printf("Adjmat[%d][%d] set to: %d\n",i,j,get_ninfo(e));
 				fflush(stdout);
 				adjmat[i][j]=get_ninfo(e);
 				e=etail(e);
 				j=0;
 			}
 			else if(i==j){
-				printf("if 1\n");
-				printf("Adjmat[%d][%d] set to: 0\n",i,j);
 				fflush(stdout);
 				adjmat[i][j]=0;
 			}
@@ -382,10 +371,8 @@ static void b_mtopdisp(){
 		i++;
 		g=ntail(g);
 	}
-	
 	printf("\n");
 	g=G;
-	
 	while(g!=(noderef)NULL){
 		printf("	 %c",get_nname(g));
 		g=ntail(g);
@@ -405,13 +392,8 @@ static void b_mtopdisp(){
 static void b_mdisp(noderef G) { 
 	
 	int i=0,j=0,max=b_card(G);
-	noderef g=G,e;
-	
 	cre_adjmat(G);
 	b_mtopdisp();
-
-	
-		e= get_edges(G);
 		
 		for(i=0;!is_empty(G);i++){
 		printf("%c |",get_nname(G));
@@ -421,10 +403,7 @@ static void b_mdisp(noderef G) {
 			}
 		printf("\n");
 		G=ntail(G); 
-		//if(!is_empty(G))
-		//0	e= get_edges(G);
 		}
-		
 }
 
 /****************************************************************************/
