@@ -299,6 +299,19 @@ static int get_pos(char fname)  {
 	
 	return i;
  }
+/****************************************************************************/
+/* Clear the adj.list												        */
+/* 							                                                */
+/****************************************************************************/
+
+static void clr_adjmat(){
+
+int i,j;
+
+for(i=0;i<b_card(G);i++)
+	for(j=0;j<b_card(G);j++)
+		adjmat[i][j]=0;
+}
 
 /****************************************************************************/
 /* Fill in the values in the adjancy matrix from the adjacency list         */
@@ -330,17 +343,21 @@ static void cre_adjmat(noderef G) {
 		for(j=0;e!=(noderef)NULL;j++){
 			printf("for2\n");
 			fflush(stdout);
-			if(i==j||get_ninfo(e)==0){
+			if(i==j){
+				printf("if 1\n");
 				printf("Adjmat[%d][%d] set to: 0\n",i,j);
 				fflush(stdout);
 				adjmat[i][j]=0;
 			}
-			else /*if(j==get_pos(get_nname(G)))*/{
+			else if(j==get_pos(get_nname(e))){
+				printf("else if 1\n");
+				printf("Get_pos return: %d\n",get_pos(get_nname(G)));
 				printf("Adjmat[%d][%d] set to: %d\n",i,j,get_ninfo(e));
 				fflush(stdout);
 				adjmat[i][j]=get_ninfo(e);
 				e=etail(e);
-			}	
+				j=0;
+			}
 		}
 			
 		G=ntail(G);
@@ -390,6 +407,7 @@ static void b_mdisp(noderef G) {
 	int i=0,j=0,max=b_card(G);
 	noderef g=G,e;
 	
+	clr_adjmat();
 	cre_adjmat(G);
 	b_mtopdisp();
 

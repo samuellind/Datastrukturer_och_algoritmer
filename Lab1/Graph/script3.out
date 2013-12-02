@@ -43,20 +43,54 @@
  enter name:  c
  Enter choice =>  b 
  enter node 1:    a enter node 2:    b enter a weight:  1
- *** ERROR a not in Graph
  Enter choice =>  b 
  enter node 1:    a enter node 2:    c enter a weight:  2
- *** ERROR a not in Graph
  Enter choice =>  b 
  enter node 1:    c enter node 2:    b enter a weight:  4
- *** ERROR c not in Graph
  Enter choice =>  d 
 
- GRAPH  (0 nodes) is: 
-
+ GRAPH  (3 nodes) is: 
+-a--b--c-EOF
+-b-EOF
+-c--b-EOF
+EOF
  Enter choice =>  m 
 
- MATRIX (0 nodes) is: 
+ MATRIX (3 nodes) is: 
+for1
+for2
+if 1
+Adjmat[0][0] set to: 0
+for2
+Index of b is: 1
+else if 1
+Index of a is: 0
+Get_pos return: 0
+Adjmat[0][1] set to: 1
+for2
+Index of c is: 2
+for2
+Index of c is: 2
+else if 1
+Index of a is: 0
+Get_pos return: 0
+Adjmat[0][2] set to: 2
+for1
+for1
+for2
+Index of b is: 1
+for2
+Index of b is: 1
+else if 1
+Index of c is: 2
+Get_pos return: 2
+Adjmat[2][1] set to: 4
+	 0	 1	 2
+	 a	 b	 c
+--------------------------------
+a |	 0	 1	 2
+b |	 0	 0	 0
+c |	 0	 4	 0
 
  Enter choice =>  q 
  *** BYE BYE! ***

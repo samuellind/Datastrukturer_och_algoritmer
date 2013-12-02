@@ -41,45 +41,138 @@
  enter name:  c
  Enter choice =>  b 
  enter node 1:    a enter node 2:    b enter a weight:  1
- *** ERROR a not in Graph
- *** ERROR b not in Graph
  Enter choice =>  b 
  enter node 1:    a enter node 2:    c enter a weight:  2
- *** ERROR a not in Graph
- *** ERROR c not in Graph
  Enter choice =>  b 
  enter node 1:    b enter node 2:    a enter a weight:  3
- *** ERROR b not in Graph
- *** ERROR a not in Graph
+ *** Edge already exists! 
  Enter choice =>  b 
  enter node 1:    b enter node 2:    c enter a weight:  4
- *** ERROR b not in Graph
- *** ERROR c not in Graph
  Enter choice =>  b 
  enter node 1:    c enter node 2:    a enter a weight:  5
- *** ERROR c not in Graph
- *** ERROR a not in Graph
+ *** Edge already exists! 
  Enter choice =>  b 
  enter node 1:    c enter node 2:    b enter a weight:  6
- *** ERROR c not in Graph
- *** ERROR b not in Graph
+ *** Edge already exists! 
  Enter choice =>  d 
 
- GRAPH  (0 nodes) is: 
-
+ GRAPH  (3 nodes) is: 
+-a--b--c-EOF
+-b--a--c-EOF
+-c--a--b-EOF
+EOF
  Enter choice =>  m 
 
- MATRIX (0 nodes) is: 
+ MATRIX (3 nodes) is: 
+for1
+for2
+if 1
+Adjmat[0][0] set to: 0
+for2
+Index of b is: 1
+else if 1
+Index of a is: 0
+Get_pos return: 0
+Adjmat[0][1] set to: 1
+for2
+Index of c is: 2
+for2
+Index of c is: 2
+else if 1
+Index of a is: 0
+Get_pos return: 0
+Adjmat[0][2] set to: 2
+for1
+for2
+Index of a is: 0
+else if 1
+Index of b is: 1
+Get_pos return: 1
+Adjmat[1][0] set to: 1
+for2
+if 1
+Adjmat[1][1] set to: 0
+for2
+Index of c is: 2
+else if 1
+Index of b is: 1
+Get_pos return: 1
+Adjmat[1][2] set to: 4
+for1
+for2
+Index of a is: 0
+else if 1
+Index of c is: 2
+Get_pos return: 2
+Adjmat[2][0] set to: 2
+for2
+Index of b is: 1
+else if 1
+Index of c is: 2
+Get_pos return: 2
+Adjmat[2][1] set to: 4
+	 0	 1	 2
+	 a	 b	 c
+--------------------------------
+a |	 0	 1	 2
+b |	 1	 0	 4
+c |	 2	 4	 0
 
  Enter choice =>  s 
- enter node 1:  a enter node 2:  b *** Edge does not exist! 
+ enter node 1:  a enter node 2:  b
  Enter choice =>  d 
 
- GRAPH  (0 nodes) is: 
-
+ GRAPH  (3 nodes) is: 
+-a--c-EOF
+-b--c-EOF
+-c--a--b-EOF
+EOF
  Enter choice =>  m 
 
- MATRIX (0 nodes) is: 
+ MATRIX (3 nodes) is: 
+for1
+for2
+if 1
+Adjmat[0][0] set to: 0
+for2
+Index of c is: 2
+for2
+Index of c is: 2
+else if 1
+Index of a is: 0
+Get_pos return: 0
+Adjmat[0][2] set to: 2
+for1
+for2
+Index of c is: 2
+for2
+if 1
+Adjmat[1][1] set to: 0
+for2
+Index of c is: 2
+else if 1
+Index of b is: 1
+Get_pos return: 1
+Adjmat[1][2] set to: 4
+for1
+for2
+Index of a is: 0
+else if 1
+Index of c is: 2
+Get_pos return: 2
+Adjmat[2][0] set to: 2
+for2
+Index of b is: 1
+else if 1
+Index of c is: 2
+Get_pos return: 2
+Adjmat[2][1] set to: 4
+	 0	 1	 2
+	 a	 b	 c
+--------------------------------
+a |	 0	 0	 2
+b |	 0	 0	 4
+c |	 2	 4	 0
 
  Enter choice =>  q 
  *** BYE BYE! ***
