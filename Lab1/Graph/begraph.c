@@ -138,8 +138,8 @@ static void b_edisp(noderef E) {
 	if(is_empty(E))
 		printf("EOF");
 	else { 
-		printf("-%c - %c-\n", get_nname(E), get_nname(get_edges(E)));
-		b_edisp(get_nodes(E));
+		printf("-%c-",  get_nname(E));
+		b_edisp(get_edges(E));
 	} }
 
 /****************************************************************************/
@@ -151,7 +151,9 @@ static void b_ndisp(noderef G) {
 	if(is_empty(G))
 		printf("EOF");
 	else { 
-		printf("-%c-\n", get_nname(G));
+		printf("-%c-", get_nname(G));
+		b_edisp(get_edges(G));
+		printf("\n");
 		b_ndisp(get_nodes(G));
 	}
 }
@@ -191,10 +193,12 @@ static noderef b_adde(char c, int w, noderef E) {
 /****************************************************************************/
 
 static noderef b_remn(char c, noderef G) { 
-	if(is_empty(G)) 
+	if(is_empty(G)){ 
 		return G;
-	if(get_nname(G)==c)
+	}
+	if(get_nname(G)==c){
 		return ntail(G);
+	}
 	else
 		return ncons(G, b_remn(c, ntail(G)));
 		}
@@ -203,10 +207,12 @@ static noderef b_remn(char c, noderef G) {
 /****************************************************************************/
 
 static noderef b_reme(char c, noderef E) { 
-	if(is_empty(E)) 
+	if(is_empty(E)){
 		return  E;
-	if(get_nname(E)==c)
+	}
+	if(get_nname(E)==c){
 		return etail(E);
+	}
 	else
 		return econs(E, b_reme(c, etail(E)));
  }
@@ -227,18 +233,19 @@ static noderef b_findn(char c, noderef G) {
 /****************************************************************************/
 
 static void b_remalle(char c, noderef G) { 
-	//set_edges(G,b_reme(c,etail(G)));
-	//b_remalle(c,ntail(G));
-	/*printf("remalle");
+	
+	printf("remalle");
 	if(!is_empty(G)){
+		
 		econs(b_findn(c,G), NULLREF);
+		
 		noderef N=G;
 		while(!is_empty(N)){
 			printf("%c", get_nname(N));
 			b_reme(c,N);
 			N=ntail(N);
 			}
-		}*/
+		}
 	 }
 
 
@@ -310,24 +317,37 @@ static int get_pos(char fname)  {
 
 static void cre_adjmat(noderef G) {
 	
-	noderef g=G;//, e=get_edges(G);
+	noderef e;
 
-	int i,j;
+	int i,j,max=b_card(G);
 	
-	for(i=0;g!=(noderef)NULL;i++){
-		adjmat[i][j]=get_pos(get_nname(g));			//Populates adjmat[pos][0] with letter
-			/*for(j=0;e!=(noderef)NULL;j++){
-				adjmat[i][j]=get_pos(get_nname(e));	
+	
+	e= get_edges(G);
+	
+	for(i=0;G!=(noderef)NULL;i++){
+		printf("for1\n");
+		fflush(stdout);
+		for(j=0;e!=(noderef)NULL;j++){
+			printf("for2\n");
+			fflush(stdout);
+			if(i==j||get_ninfo(e)==0){
+				printf("Adjmat[%d][%d] set to: 0\n",i,j);
+				fflush(stdout);
+				adjmat[i][j]=0;
+			}
+			else /*if(j==get_pos(get_nname(G)))*/{
+				printf("Adjmat[%d][%d] set to: %d\n",i,j,get_ninfo(e));
+				fflush(stdout);
+				adjmat[i][j]=get_ninfo(e);
 				e=etail(e);
-			}*/
-		g=ntail(g);
+			}	
+		}
+			
+		G=ntail(G);
+		if(!is_empty(G))
+			e= get_edges(G);
+		
 	}
-	
-	/*for(i=0;g!=(noderef)NULL;i++){
-		adjmat[i][j]=get_pos(get_nname(g));			//Populates adjmat[pos][0] with letter
-		g=ntail(g);
-	}*/
-	
 	
 
  }
@@ -367,15 +387,29 @@ static void b_mtopdisp(){
 
 static void b_mdisp(noderef G) { 
 	
-	int i=0,j=0;
+	int i=0,j=0,max=b_card(G);
+	noderef g=G,e;
 	
 	cre_adjmat(G);
 	b_mtopdisp();
 
-	while(!is_empty(G)){
-		printf("%c | \n",get_nname(G));
-		G=ntail(G);
-	}
+	
+		e= get_edges(G);
+		
+		for(i=0;G!=(noderef)NULL;i++){
+		printf("%c |",get_nname(G));
+		
+			for(j=0;j!=max;j++){
+				printf("	 %d",adjmat[i][j]);
+				if(!adjmat[i][j]==0)	
+					e=etail(e);
+			}
+		printf("\n");
+		G=ntail(G); 
+		if(!is_empty(G))
+			e= get_edges(G);
+		}
+		
 }
 
 /****************************************************************************/
@@ -403,7 +437,7 @@ void gdisp()       { b_ndisp(G); }
 void mdisp()       { b_mdisp(G); }
 
 void addn(char c)  { G = b_addn(c, G); }
-void remn(char c)  { G = b_remn(c, G); b_remalle(c, G); }
+void remn(char c)  { b_remalle(c, G); G = b_remn(c, G);}
 
 void adde(char cs, char cd, int v) {
    set_edges(b_findn(cs, G), b_adde(cd, v, get_edges(b_findn(cs, G))));

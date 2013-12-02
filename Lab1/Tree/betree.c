@@ -189,22 +189,22 @@ static void T2Q() {
 		printf("[%d] ", get_value(p));
 		
 		
-		if(is_empty(get_LC(p))){ 
-			queue[qlast] = (treeref)&q;
+		/*if(is_empty(get_LC(p))){ 
+			queue[qlast] = (treeref)NULL;
 			qlast++;
 		}
-		else{
+		else{*/
 			queue[qlast] = get_LC(p);
 			qlast++;
-		}
-		if(is_empty(get_RC(p))) {
-			queue[qlast] = (treeref)&q;
+		//}
+		/*if(is_empty(get_RC(p))) {
+			queue[qlast] = (treeref)NULL;
 			qlast++;
 		}
-		else{
+		else{*/
 			queue[qlast] = get_RC(p);
 			qlast++;
-		}
+		//}
 			
 	}
 	qfirst=0;
@@ -225,7 +225,7 @@ static void T2Q() {
 
 static void b_disp_2D() { 
 	T2Q();
-	int curr=0,currhgt=0, max_hgt=(b_height(T));
+	/*int curr=0,currhgt=0, max_hgt=(b_height(T));
 	treeref p;
 	
 	int i;
@@ -235,7 +235,7 @@ static void b_disp_2D() {
 		printf("%d ", get_value(p));
 	}*/
 	
-	printf("max height: %d \n", max_hgt);
+	/*printf("max height: %d \n", max_hgt);
 	
 	curr=0;
 
