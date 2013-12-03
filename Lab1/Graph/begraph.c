@@ -426,7 +426,7 @@ void b_dispMST()  { /* TO DO */ }
 /****************************************************************************/
 
 void gdisp()       { b_ndisp(G); }
-void mdisp()       { b_mdisp(G); }
+void mdisp()       { if(!is_empty(G)) b_mdisp(G); }
 
 void addn(char c)  { G = b_addn(c, G); }
 void remn(char c)  { b_remalle(c, G); G = b_remn(c, G);clr_adjmat();}

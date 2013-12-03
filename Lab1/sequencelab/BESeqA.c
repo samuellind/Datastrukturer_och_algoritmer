@@ -158,7 +158,7 @@ static listref create_e(int v) {
 static void b_disp() { 
 			int i=liststart,j=1;
 			while(i!=NULLREF){
-				printf("\n#%d	value: %d	next: %d	prev: %d",j,get_value(i),get_next(i),get_prev(i));
+				printf("\n#%d	value: %d next: %d",j,get_value(i), get_value(get_next(i)));
 				i=get_next(i);
 				j++;
 			}
@@ -176,7 +176,7 @@ static void b_add(int v) {
 
 	listref new = create_e(v);
 	if(new!=NULLREF){
-		pcurr=liststart;
+		pcurr=NULLREF;
 		pprev=NULLREF;
 		if(is_empty(liststart)){
 			liststart=new;
@@ -187,8 +187,8 @@ static void b_add(int v) {
 		else if(v<=get_value(liststart)){
 			pprev=liststart;
 			liststart=new;
-			set_next(liststart,pprev);
-			set_prev(pprev,liststart);
+			set_next(new,pprev);
+			set_prev(pprev,new);
 		}
 		else if(v>=get_value(listend)){
 			pprev=listend;
@@ -203,7 +203,7 @@ static void b_add(int v) {
 				pprev=pcurr;
 				pcurr=get_next(pcurr);
 			}
-			set_next(new, pcurr);
+			set_next(new,pcurr);
 			set_prev(new,pprev);
 			set_prev(pcurr,new);
 			set_next(pprev,new);
@@ -314,7 +314,7 @@ static void b_rem(int v) {
 									}
 								else if(pos==listend){
 									listend=get_prev(listend);
-									set_next(pcurr,NULLREF);
+									set_next(listend,NULLREF);
 									}
 							}
 							else

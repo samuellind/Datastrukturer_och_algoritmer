@@ -18,7 +18,7 @@
 /**************************************************************/
 
 #define ARRLEN 100
-#define NILL   -1
+#define NILL   NULL
 
 /**************************************************************/
 /* tree element definition (this is hidden!)                  */
@@ -44,7 +44,7 @@ static treeref T     = (treeref) NULL;
 /**************************************************************/
 
 static int first=NILL,  last=NILL;
-static int qfirst=0, qlast=0;// qfirst=NILL, qlast=NILL;
+static int qfirst=0, qlast=0;
 
 static treeref heaparr[ARRLEN];
 static treeref queue[ARRLEN];
@@ -147,7 +147,7 @@ static int b_height(treeref T) {
 /* display the tree ELEMENT                                                 */
 /****************************************************************************/
 
-static void b_disp_el(treeref T) { printf("\n%d %d\n", get_value(T), get_height(T)); }
+static void b_disp_el(treeref T) { printf("\n%d", get_value(T)); }
 
 /****************************************************************************/
 /* display the heap array                                                   */
@@ -162,6 +162,18 @@ static int b_card(treeref T) { if(is_empty(T)) return 0 ;
 								else 
 									return 1+b_card(get_LC(T))+b_card(get_RC(T)); }
 
+/****************************************************************************/
+/* Queue array initialized with NULLREF			                            */
+/****************************************************************************/
+
+static void fillqueue(){
+	
+	int i=0,j=(int)(pow(2,b_height(T))-1);
+	while(i<j){
+		queue[i]=NILL;
+		i++;
+	}
+}
 
 /****************************************************************************/
 /* Tree to array via a queue (breadth-first search)                         */
@@ -173,42 +185,22 @@ static int b_card(treeref T) { if(is_empty(T)) return 0 ;
 /*                                                                          */
 /* becomes: [5] [2] [7] [nil] [3] [6] [nil]                                 */
 /****************************************************************************/
+static void T2Q(treeref T, int qpos) { 
+if(!is_empty(T)){queue[qpos]=T;T2Q(get_LC(T),qpos*2);T2Q(get_RC(T),(qpos*2)+1);} 
+}
+/****************************************************************************/
+/* display the T2Q array                                                    */
+/****************************************************************************/
 
-static void T2Q() {
-	
-	treeref p;
-	int q=0;
-	queue[qfirst]=T;
-	
-	qlast++;
-	
-	while(b_card(T)){
-		
-		p=queue[qfirst];
-		qfirst++;
-		printf("[%d] ", get_value(p));
-		
-		
-		/*if(is_empty(get_LC(p))){ 
-			queue[qlast] = (treeref)NULL;
-			qlast++;
-		}
-		else{*/
-			queue[qlast] = get_LC(p);
-			qlast++;
-		//}
-		/*if(is_empty(get_RC(p))) {
-			queue[qlast] = (treeref)NULL;
-			qlast++;
-		}
-		else{*/
-			queue[qlast] = get_RC(p);
-			qlast++;
-		//}
-			
+static void prntT2Q(){
+
+int i,j=(pow(2,b_height(T))-1);
+
+for(i=1;i<=j;i++){
+	if(!is_empty(queue[i]))
+	printf("[%d] ",get_value(queue[i]));
+	else printf("[nil]");
 	}
-	qfirst=0;
-	qlast=0;
 }
 
 /****************************************************************************/
@@ -224,37 +216,31 @@ static void T2Q() {
 /****************************************************************************/
 
 static void b_disp_2D() { 
-	T2Q();
-	/*int curr=0,currhgt=0, max_hgt=(b_height(T));
-	treeref p;
+	fillqueue();
+	T2Q(T,1);
+	//prntT2Q();
+	int x=1, y=0;
 	
-	int i;
-	printf("\n**********Array*******\n");
-	/*for(i=0;i<3;i++){
-		p=queue[i];
-		printf("%d ", get_value(p));
-	}*/
+	int i=(pow(2,b_height(T))-1),curr=1;
 	
-	/*printf("max height: %d \n", max_hgt);
-	
-	curr=0;
-
-	/*while(currhgt<max_hgt){
-		
-		printf("Curr: [%d] ",curr);
-		printf("CurrHgt: [%d] \n",get_height(queue[curr]));
-		
-		while(currhgt==get_height(queue[curr])){
-			printf("[%d] ",get_value(queue[curr]));
+	while(curr<=i){
+		int j=0;
+		while(j<x){
+			if(!is_empty(queue[curr])){
+				y=x;
+				while((i/4)>y){
+					printf("\t");
+					y++;
+				}
+				printf("[%d] ",get_value(queue[curr]));
+			}
+			else printf("[nil] ");
 			curr++;
-			printf("Curr: [%d] \n",curr);
-			printf("Currhgt: [%d] \n",currhgt);
+			j++;
 		}
-		
 		printf("\n");
-		
-		currhgt++;
-	}*/
+		x=x*2;
+	}
 }
 /****************************************************************************/
 /* display the tree (pre-order)                                             */
@@ -307,15 +293,11 @@ static treeref b_add(treeref T, treeref N) {
 		return N;
 	}
 	else if(get_value(N)>get_value(T)){
-		printf("\nRight child.\n");
 		set_height(N,get_height(N)+1);
-		printf("height: %d\n", get_height(N));
 		return cons(get_LC(T),T,b_add(get_RC(T),N));
 	}
 	else if(get_value(N)<get_value(T)){
-		printf("\nLeft child.\n");
 		set_height(N,get_height(N)+1);
-		printf("height: %d\n", get_height(N));
 		return cons(b_add(get_LC(T),N),T,get_RC(T));
 	}
 	else
@@ -363,20 +345,18 @@ static treeref b_remh(int v) { /* TO DO */ return NULL; }
 /* FIND an element in the BST (Binary Search Tree)                          */
 /****************************************************************************/
 
-static int b_findb(treeref T, int v) { if(is_empty(T))
+static int b_findb(treeref T, int v) { 
 	
 	if(is_empty(T))
 		return 0;
-	else if(v>get_value(T)){
-		printf("\nRight child.\n");
+	else if(v>get_value(T))
 		return b_findb(get_RC(T),v);
-	}
-	else if(v<get_value(T)){
-		printf("\nLeft child.\n");
+	else if(v<get_value(T))
 		return b_findb(get_LC(T),v);
-	}
 	else
-		return 1; }
+		return 1; 
+}
+
 
 /****************************************************************************/
 /* FIND an element in the complete tree                                     */
