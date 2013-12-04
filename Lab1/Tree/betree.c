@@ -153,7 +153,15 @@ static void b_disp_el(treeref T) { printf("\n%d", get_value(T)); }
 /* display the heap array                                                   */
 /****************************************************************************/
 
-static void b_disp_array() { /* TO DO */ }
+static void b_disp_array() {
+
+int i,j=(pow(2,b_height(T))-1);
+
+for(i=1;i<=j;i++){
+	if(!is_empty(heaparr[i]))
+	printf("[%d] ",get_value(heaparr[i]));
+	}
+}
 /****************************************************************************/
 /* FIND the number of element in the tree (cardinality)                     */
 /****************************************************************************/
@@ -331,13 +339,14 @@ static treeref b_rem(treeref T, int v) {
 /* Build heap tree                                                          */
 /****************************************************************************/
 
-static void build_HT() { /* TO DO */ }
+static void build_HT() {  }
 
 /****************************************************************************/
 /* ADD to the tree in heap order                                            */
 /****************************************************************************/
 
 static treeref b_addh(treeref T, int qpos) { 
+	printf("Heap array add");
 	if(!is_empty(T)){heaparr[qpos]=T;b_addh(get_LC(T),qpos*2);b_addh(get_RC(T),(qpos*2)+1);}  
 	return (treeref)NULL;}
 
