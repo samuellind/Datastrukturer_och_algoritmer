@@ -219,28 +219,46 @@ static void b_disp_2D() {
 	fillqueue();
 	T2Q(T,1);
 	//prntT2Q();
-	int x=1, y=0;
 	
-	int i=(pow(2,b_height(T))-1),curr=1;
-	
-	while(curr<=i){
-		int j=0;
-		while(j<x){
-			if(!is_empty(queue[curr])){
-				y=x;
-				while((i/4)>y){
-					printf("\t");
+    int a=b_height(T),b,c,x,y,d=a;
+    qfirst=1;
+
+    for(b=1; b<=a; b++)
+    {	
+		c=pow(2,b-1);
+		for(x=a-1; x>=b; x--)
+        {
+			y=0;
+            while(y<=d){
+					printf(" ");
 					y++;
 				}
-				printf("[%d] ",get_value(queue[curr]));
-			}
-			else printf("[nil] ");
-			curr++;
-			j++;
-		}
+        }
+		
+		for(x=1; x<=c; x++)
+        {
+            //printf("* ");
+            y=0;
+            if(!is_empty(queue[qfirst])){
+				printf("[%d]",get_value(queue[qfirst]));
+				while(y<=d){
+					printf("   ");
+					y++;
+				}
+			}	
+			else printf("[nil]");
+				while(y<=d){
+					printf("  ");
+					y++;
+				}
+			
+            qfirst++;
+        }
+        d--;
 		printf("\n");
-		x=x*2;
-	}
+    }
+	
+	
 }
 /****************************************************************************/
 /* display the tree (pre-order)                                             */
