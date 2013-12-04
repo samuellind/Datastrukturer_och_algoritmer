@@ -52,10 +52,34 @@
  Enter a value:   8
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (7 nodes, height 3) is inorder:   
+1
+3
+4
+5
+6
+7
+8
+ TREE (7 nodes, height 3) is preorder:  
+5
+3
+1
+4
+7
+6
+8
+ TREE (7 nodes, height 3) is postorder: 
+1
+4
+3
+6
+8
+7
+5
  Enter choice =>  t 
+        [5]	
+   [3]	[7]	
+[1]	[4]	[6]	[8]	
 
  Enter choice =>  q 
  *** BYE BYE! ***

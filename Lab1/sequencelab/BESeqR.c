@@ -172,6 +172,7 @@ static listref b_add(int v, listref L)
   		else 
 			return cons(new, L);
 	}
+	return L;
   	
 }
 
@@ -201,6 +202,8 @@ listref new = create_e(v);
 	  else
 		return cons(new, L);
 	}
+	else
+		return L;
 }
 
 /****************************************************************************/

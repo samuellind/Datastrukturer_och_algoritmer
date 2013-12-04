@@ -1,74 +1,54 @@
-BESeqA.c:36: warning: ‘liststart’ defined but not used
-BESeqA.c:37: warning: ‘listend’ defined but not used
-BESeqA.c:39: warning: ‘pcurr’ defined but not used
-BESeqA.c:40: warning: ‘pprev’ defined but not used
-BESeqA.c:41: warning: ‘pnew’ defined but not used
-BESeqA.c:43: warning: ‘numels’ defined but not used
-BESeqA.c:66: warning: ‘get_value’ defined but not used
-BESeqA.c:67: warning: ‘get_next’ defined but not used
-BESeqA.c:68: warning: ‘get_prev’ defined but not used
-BESeqA.c:70: warning: ‘set_value’ defined but not used
-BESeqA.c:71: warning: ‘set_next’ defined but not used
-BESeqA.c:72: warning: ‘set_prev’ defined but not used
-BESeqA.c:78: warning: ‘create_e’ defined but not used
-BESeqP.c:37: warning: ‘liststart’ defined but not used
-BESeqP.c:38: warning: ‘listend’ defined but not used
-BESeqP.c:40: warning: ‘pcurr’ defined but not used
-BESeqP.c:41: warning: ‘pprev’ defined but not used
+./buildall: line 1: : command not found
+./buildall: line 3: : command not found
+./buildall: line 5: : command not found
+gcc: Dmenu.c: No such file or directory
+gcc: no input files
+gcc: menu.c: No such file or directory
+gcc: no input files
+gcc: FESeq.c: No such file or directory
+gcc: no input files
+./buildall: line 9: : command not found
+./buildall: line 11: : command not found
+gcc: BESeqA.c: No such file or directory
+gcc: no input files
+gcc: BESeqP.c: No such file or directory
+gcc: no input files
+gcc: BESeqR.c: No such file or directory
+gcc: no input files
+./buildall: line 15: : command not found
+cp: cannot create regular file `seqA.old\r': No such file or directory
+cp: cannot create regular file `seqP.old\r': No such file or directory
+cp: cannot create regular file `seqR.old\r': No such file or directory
+./buildall: line 20: : command not found
+BESeqA.c: In function ‘create_e’:
+BESeqA.c:120: warning: unused variable ‘next’
+BESeqA.c: At top level:
+BESeqA.c:43: warning: ‘pnew’ defined but not used
+BESeqA.c:84: warning: ‘set_remstack’ defined but not used
+BESeqA.c:100: warning: ‘get_remstack’ defined but not used
+/usr/bin/ld: cannot open output file seqA: No such file or directory
+collect2: ld returned 1 exit status
 BESeqP.c:42: warning: ‘pnew’ defined but not used
-BESeqP.c:44: warning: ‘numels’ defined but not used
-BESeqP.c:67: warning: ‘get_value’ defined but not used
-BESeqP.c:68: warning: ‘get_next’ defined but not used
-BESeqP.c:69: warning: ‘get_prev’ defined but not used
-BESeqP.c:71: warning: ‘set_value’ defined but not used
-BESeqP.c:72: warning: ‘set_next’ defined but not used
-BESeqP.c:73: warning: ‘set_prev’ defined but not used
-BESeqP.c:79: warning: ‘create_e’ defined but not used
-BESeqR.c:37: warning: ‘C’ defined but not used
-BESeqR.c:58: warning: ‘get_value’ defined but not used
-BESeqR.c:59: warning: ‘get_tail’ defined but not used
-BESeqR.c:61: warning: ‘set_value’ defined but not used
-BESeqR.c:62: warning: ‘set_tail’ defined but not used
-BESeqR.c:68: warning: ‘create_e’ defined but not used
-BESeqR.c:83: warning: ‘print_el’ defined but not used
-BESeqR.c:84: warning: ‘print_eol’ defined but not used
-BESeqR.c:103: warning: ‘head’ defined but not used
-BESeqR.c:104: warning: ‘tail’ defined but not used
-BESeqR.c:110: warning: ‘cons’ defined but not used
-BESeqA.c:36: warning: ‘liststart’ defined but not used
-BESeqA.c:37: warning: ‘listend’ defined but not used
-BESeqA.c:39: warning: ‘pcurr’ defined but not used
-BESeqA.c:40: warning: ‘pprev’ defined but not used
-BESeqA.c:41: warning: ‘pnew’ defined but not used
-BESeqA.c:43: warning: ‘numels’ defined but not used
-BESeqA.c:66: warning: ‘get_value’ defined but not used
-BESeqA.c:67: warning: ‘get_next’ defined but not used
-BESeqA.c:68: warning: ‘get_prev’ defined but not used
-BESeqA.c:70: warning: ‘set_value’ defined but not used
-BESeqA.c:71: warning: ‘set_next’ defined but not used
-BESeqA.c:72: warning: ‘set_prev’ defined but not used
-BESeqA.c:78: warning: ‘create_e’ defined but not used
-BESeqP.c:37: warning: ‘liststart’ defined but not used
-BESeqP.c:38: warning: ‘listend’ defined but not used
-BESeqP.c:40: warning: ‘pcurr’ defined but not used
-BESeqP.c:41: warning: ‘pprev’ defined but not used
-BESeqP.c:42: warning: ‘pnew’ defined but not used
-BESeqP.c:44: warning: ‘numels’ defined but not used
-BESeqP.c:67: warning: ‘get_value’ defined but not used
-BESeqP.c:68: warning: ‘get_next’ defined but not used
-BESeqP.c:69: warning: ‘get_prev’ defined but not used
-BESeqP.c:71: warning: ‘set_value’ defined but not used
-BESeqP.c:72: warning: ‘set_next’ defined but not used
-BESeqP.c:73: warning: ‘set_prev’ defined but not used
-BESeqP.c:79: warning: ‘create_e’ defined but not used
-BESeqR.c:37: warning: ‘C’ defined but not used
-BESeqR.c:58: warning: ‘get_value’ defined but not used
-BESeqR.c:59: warning: ‘get_tail’ defined but not used
-BESeqR.c:61: warning: ‘set_value’ defined but not used
-BESeqR.c:62: warning: ‘set_tail’ defined but not used
-BESeqR.c:68: warning: ‘create_e’ defined but not used
-BESeqR.c:83: warning: ‘print_el’ defined but not used
-BESeqR.c:84: warning: ‘print_eol’ defined but not used
-BESeqR.c:103: warning: ‘head’ defined but not used
-BESeqR.c:104: warning: ‘tail’ defined but not used
-BESeqR.c:110: warning: ‘cons’ defined but not used
+/usr/bin/ld: cannot open output file seqP: No such file or directory
+collect2: ld returned 1 exit status
+BESeqR.c:129: warning: ‘head’ defined but not used
+BESeqR.c:130: warning: ‘tail’ defined but not used
+/usr/bin/ld: cannot open output file seqR: No such file or directory
+collect2: ld returned 1 exit status
+./buildall: line 27: : command not found
+./buildall: line 29: seqA.out: No such file or directory
+./buildall: line 31: seqP.out: No such file or directory
+./buildall: line 33: seqR.out: No such file or directory
+./buildall: line 34: : command not found
+diff: seqA.out: No such file or directory
+diff: seqP.out: No such file or directory
+diff: seqR.out: No such file or directory
+./buildall: line 41: : command not found
+diff: seqP.out: No such file or directory
+diff: seqR.out: No such file or directory
+diff: seqA.out: No such file or directory
+./buildall: line 48: : command not found
+./buildall: line 49: : command not found
+rm: cannot remove `*.o\r': No such file or directory
+./buildall: line 52: : command not found
+./buildall: line 54: : command not found

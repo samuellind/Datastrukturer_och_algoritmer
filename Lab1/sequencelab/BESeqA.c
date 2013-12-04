@@ -122,10 +122,10 @@ static listref create_e(int v) {
 		set_value(numels, v);
 		set_next(numels, NULLREF);
 		set_prev(numels, NULLREF);
-		pprev=pnew;
+		//pprev=pnew;
 		ret=numels;
 		numels++;
-		pnew=numels;
+		//pnew=numels;
 	}
 	else{
 		printf("Too many elements, max is %d", LSIZE);
@@ -157,7 +157,7 @@ static listref create_e(int v) {
 
 static void b_disp() { 
 			int i=liststart,j=1;
-			while(i!=NULLREF){
+			while(!is_empty(i)){
 				printf("\n#%d	value: %d next: %d",j,get_value(i), get_value(get_next(i)));
 				i=get_next(i);
 				j++;
@@ -175,40 +175,23 @@ static void b_disp() {
 static void b_add(int v) { 
 
 	listref new = create_e(v);
-	if(new!=NULLREF){
-		pcurr=NULLREF;
-		pprev=NULLREF;
-		if(is_empty(liststart)){
-			liststart=new;
-			listend=new;
-			pcurr=new;
-		}
-		
-		else if(v<=get_value(liststart)){
-			pprev=liststart;
-			liststart=new;
-			set_next(new,pprev);
-			set_prev(pprev,new);
-		}
-		else if(v>=get_value(listend)){
-			pprev=listend;
-			listend=new;
-			set_prev(new,pprev);
-			set_next(pprev,listend);
-		}
-		else{
-			pcurr=liststart;
-			while(v>get_value(pcurr))
-			{
-				pprev=pcurr;
-				pcurr=get_next(pcurr);
-			}
-			set_next(new,pcurr);
-			set_prev(new,pprev);
-			set_prev(pcurr,new);
-			set_next(pprev,new);
-		}
+	
+	pprev = NULLREF; pcurr = liststart;
+	while (!is_empty(pcurr) && (v > get_value(pcurr))) {
+		pprev = pcurr;
+		pcurr = get_next(pcurr);
 	}
+			
+	set_prev(new, pprev);
+	set_next(new, pcurr);
+	if(is_empty(pprev))
+		liststart=new;
+	else 
+		set_next(pprev, new);
+	if(is_empty(pcurr))
+		listend=new;
+	else 
+		set_prev(pcurr, new);
 }
 
 /****************************************************************************/
@@ -277,7 +260,7 @@ static void b_addpos(int v, int pos) {
 static listref b_find(int v) {
 	pcurr = liststart;
 	int i =0; 
- 	while(pcurr!= -1 && i<numels){
+ 	while(!is_empty(pcurr) && i<numels){
  		if(v == get_value(pcurr))
  		{
  			return pcurr;
@@ -300,26 +283,40 @@ static listref b_find(int v) {
 /****************************************************************************/
 
 static void b_rem(int v) {
-							listref pos;
-							pos=b_find(v);
-							if(pos!=-1){
-								numels--;
-								pprev=get_prev(pos);
-								pcurr=get_next(pos);
-								set_next(pprev,pcurr);
-								set_prev(pcurr,pprev);
-								if(pos==liststart){
-									liststart=pcurr;
-									set_prev(pcurr,NULLREF);
-									}
-								else if(pos==listend){
-									listend=get_prev(listend);
-									set_next(listend,NULLREF);
-									}
-							}
-							else
-								printf("Error: Value not in the list");
-						}
+	
+	listref pos;
+	pos=b_find(v);
+
+	if(pos==listend && pos==liststart){
+		liststart=NULLREF;
+		//numels--;
+		}
+	else if(pos==liststart){
+		printf("Liststart");
+		pprev= liststart;
+		liststart=get_next(liststart);
+		set_next(pprev,NULLREF);
+		set_prev(liststart,NULLREF);
+		//numels--;
+		}
+	else if(pos==listend){
+		listend=get_prev(listend);
+		set_next(listend,NULLREF);
+		//numels--;
+		}
+			
+	else if(pos!=NULLREF){
+		printf("Rem else if");
+		pprev=get_prev(pos);
+		pcurr=get_next(pos);
+		set_next(pprev,pcurr);
+		set_prev(pcurr,pprev);
+		//numels--;
+	}	
+	else
+		printf("Error: Value not in the list");
+	
+}
 						
 /****************************************************************************/
 /* REMove an element from position p of the list                            */
@@ -340,23 +337,24 @@ static void b_rempos(int pos) {
 		}
 		if(pcurr==listend && pcurr==liststart){
 			liststart=NULLREF;
-			numels--;
+			listend=NULLREF;
+			//numels--;
 		}
 		else if(pcurr==liststart){
 			liststart=get_next(liststart);
 			set_prev(liststart,NULLREF);
-			numels--;
+			//numels--;
 		}
 		else if(pcurr==listend){
 			listend=get_prev(listend);
 			set_next(listend,NULLREF);
-			numels--;
+			//numels--;
 		}
 		else{
 			pcurr=get_next(pcurr);
 			set_next(pprev,pcurr);
 			set_prev(pcurr,pprev);
-			numels--;
+			//numels--;
 		}
 		
 }
@@ -366,7 +364,8 @@ static void b_rempos(int pos) {
 /* e.g. empty list ()         b_card returns 0                              */
 /****************************************************************************/
 
-static int b_card() {return numels;}
+static int b_card(listref E) {if(!is_empty(E)) return 1+b_card(get_next(E));
+								else return 0;}
 
 /****************************************************************************/
 /* navigation & display functions                                           */
@@ -414,7 +413,7 @@ void rem(int v)               { b_rem(v); }
 void rempos(int pos)          { b_rempos(pos); }
 
 int is_member(int v)          { return !is_empty(b_find(v)); }
-int cardinality()             { return b_card(); }
+int cardinality()             { return b_card(liststart); }
 
 void bfirst()                 { b_first();   }
 void bnext()                  { b_next();    }

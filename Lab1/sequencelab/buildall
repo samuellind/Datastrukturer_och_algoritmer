@@ -49,6 +49,6 @@ diff seqR.out seqA.out
 
 echo "*** Cleaning up ..."
 rm *.o
-echo "...Tests finished"
 
+echo "...Tests finished"
 

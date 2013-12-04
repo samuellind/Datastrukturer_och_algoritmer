@@ -219,43 +219,29 @@ static void b_disp_2D() {
 	fillqueue();
 	T2Q(T,1);
 	//prntT2Q();
-	
-    int a=b_height(T),b,c,x,y,d=a;
+
+    int a=b_height(T),b,c,x,d=a;
     qfirst=1;
 
     for(b=1; b<=a; b++)
-    {	
+    {
 		c=pow(2,b-1);
-		for(x=a-1; x>=b; x--)
+		for(x=pow(2,d); x>=b; x--)
         {
-			y=0;
-            while(y<=d){
-					printf(" ");
-					y++;
-				}
+            printf(" ");
         }
+		
 		
 		for(x=1; x<=c; x++)
         {
             //printf("* ");
-            y=0;
-            if(!is_empty(queue[qfirst])){
-				printf("[%d]",get_value(queue[qfirst]));
-				while(y<=d){
-					printf("   ");
-					y++;
-				}
-			}	
-			else printf("[nil]");
-				while(y<=d){
-					printf("  ");
-					y++;
-				}
-			
+            if(!is_empty(queue[qfirst]))
+				printf("[%d]\t",get_value(queue[qfirst]));
+			else printf("[nil]\t");
             qfirst++;
         }
-        d--;
 		printf("\n");
+		d--;
     }
 	
 	
@@ -351,7 +337,9 @@ static void build_HT() { /* TO DO */ }
 /* ADD to the tree in heap order                                            */
 /****************************************************************************/
 
-static treeref b_addh(treeref N) { /* TO DO */ return NULL; }
+static treeref b_addh(treeref T, int qpos) { 
+	if(!is_empty(T)){heaparr[qpos]=T;b_addh(get_LC(T),qpos*2);b_addh(get_RC(T),(qpos*2)+1);}  
+	return (treeref)NULL;}
 
 /****************************************************************************/
 /* REMove an element from the tree in heap order                            */
@@ -406,7 +394,7 @@ void disp_post()              { b_disp_post(T); }
 void add(int v)               { T = b_add(T, create_node(v)); }
 void rem(int v)               { T = b_rem(T, v); }
 
-void addh(int v)              { T = b_addh(create_node(v)); }
+void addh(int v)              { T = b_addh(create_node(v),0); }
 void remh(int v)              { T = b_remh(v); }
 
 int is_memberb(int v)         { return b_findb(T, v); }
