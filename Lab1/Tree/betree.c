@@ -346,9 +346,21 @@ static void build_HT() {  }
 /****************************************************************************/
 
 static treeref b_addh(treeref T, int qpos) { 
-	printf("Heap array add");
-	if(!is_empty(T)){heaparr[qpos]=T;b_addh(get_LC(T),qpos*2);b_addh(get_RC(T),(qpos*2)+1);}  
-	return (treeref)NULL;}
+	
+	if(is_empty(T)){
+		return N;
+	}
+	else if(is_empty(get_LC(T))){
+		set_height(N,get_height(N)+1);
+		return cons(get_LC(T),T,b_add(get_RC(T),N));
+	}
+	else if(is_empty(get_RC(T))){
+		set_height(N,get_height(N)+1);
+		return cons(b_add(get_LC(T),N),T,get_RC(T));
+	}
+	else
+		return T;
+	set_height(N,b_height(N));}
 
 /****************************************************************************/
 /* REMove an element from the tree in heap order                            */
