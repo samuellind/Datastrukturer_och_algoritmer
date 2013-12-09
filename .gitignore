@@ -214,3 +214,19 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
+
+*.tags
+
+*.session
+
+*.amar_krupalija
+
+*.db
+
+*.conf
+
+*.project
+
+*.workspace
+
+DSA/main.c
