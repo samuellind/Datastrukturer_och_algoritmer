@@ -334,27 +334,92 @@ static treeref b_rem(treeref T, int v) {
 	else
 		return b_add(get_LC(T),get_RC(T));
 }
-
 /****************************************************************************/
-/* Build heap tree                                                          */
+/* Rebuilds Heaparray after it has been modified                            */
 /****************************************************************************/
 
-static void build_HT() {  }
+static void b_hrebuild() { 
+	
+	int qpos=1,curr;
+	printf("Heaprebuild, qlast: %d ",qlast);
+	
+	for(qpos=1;qpos<=qlast;qpos++){
+		printf("For loop %d",qpos);
+		if(heaparr[qpos]==(treeref)NULL){
+			for (curr = qpos; curr <= qlast; ++curr)
+            {
+                heaparr[curr] = heaparr[curr + 1];
+            }
+            heaparr[qlast]=(treeref)NULL;
+            qlast--;
+		}
+	}
+}
+/****************************************************************************/
+/* display the heap array                                                    */
+/****************************************************************************/
+
+static void prntHeaparr(){
+
+int i,j=9;//(pow(2,b_height(T))-1);
+
+b_hrebuild();
+
+for(i=1;i<=j;i++){
+	if(!is_empty(heaparr[i]))
+		printf("[%d] ",get_value(heaparr[i]));
+	else printf("[nil]");
+	}
+}
 
 /****************************************************************************/
 /* ADD to the tree in heap order                                            */
 /****************************************************************************/
 
 static treeref b_addh(treeref T, int qpos) { 
-	printf("Heap array add");
-	if(!is_empty(T)){heaparr[qpos]=T;b_addh(get_LC(T),qpos*2);b_addh(get_RC(T),(qpos*2)+1);}  
+	printf("Heap array add %d\n", qpos);
+	if(is_empty(heaparr[qpos])){
+		heaparr[qpos]= T;
+		qlast++;
+		printf("Lägger till på pos %d, qlast är: %d \n",qpos,qlast);
+	}
+	else
+		b_addh(T, qpos+1);
+	//{heaparr[qpos]=T;b_addh(get_LC(T),qpos*2);b_addh(get_RC(T),(qpos*2)+1);}  
 	return (treeref)NULL;}
 
 /****************************************************************************/
 /* REMove an element from the tree in heap order                            */
 /****************************************************************************/
 
-static treeref b_remh(int v) { /* TO DO */ return NULL; }
+static treeref b_remh(int v,int qpos) { 
+	
+	if(get_value(heaparr[qpos])==v)
+		heaparr[qpos]=(treeref)NULL;
+	else if(v!=get_value(heaparr[qpos])){
+		printf("Q++: %d\n",qpos++);
+		b_remh(v,qpos++);
+	}
+	else{
+		printf("Element not found\n");
+	}
+	
+	return (treeref)NULL; }
+
+/****************************************************************************/
+/* Build heap tree                                                          */
+/****************************************************************************/
+
+static void build_HT() { printf("Build heaparray ");{
+	int qpos;
+	
+	qfirst=T;
+	
+	for(qpos=0;qpos<=qlast;qpos++)
+		set_LC(
+	
+	if(!is_empty(T)){heaparr[qpos]=T;build_HT(set_LC(T),heaparr[qpos*2]);build_HT(set_RC(T),heaparr[(qpos*2)+1])}
+}
 
 /****************************************************************************/
 /* FIND an element in the BST (Binary Search Tree)                          */
@@ -385,7 +450,7 @@ static int b_findc(treeref T, int v) { /* TO DO */ return 0; }
 /* Heapify the tree (heap)                                                  */
 /****************************************************************************/
 
-static treeref b_heapify(treeref T) { return T; /* TO DO */ return NULL; }
+static treeref b_heapify(treeref T) { prntHeaparr(); return (treeref)NULL; }
 
 /****************************************************************************/
 /****************************************************************************/
@@ -403,8 +468,8 @@ void disp_post()              { b_disp_post(T); }
 void add(int v)               { T = b_add(T, create_node(v)); }
 void rem(int v)               { T = b_rem(T, v); }
 
-void addh(int v)              { T = b_addh(create_node(v),0); }
-void remh(int v)              { T = b_remh(v); }
+void addh(int v)              { T = b_addh(create_node(v),1); }
+void remh(int v)              { T = b_remh(v,1); }
 
 int is_memberb(int v)         { return b_findb(T, v); }
 int is_memberc(int v)         { return b_findc(T, v); }
