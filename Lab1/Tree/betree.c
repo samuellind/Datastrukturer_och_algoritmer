@@ -341,10 +341,10 @@ static treeref b_rem(treeref T, int v) {
 static void b_hrebuild() { 
 	
 	int qpos=1,curr;
-	printf("Heaprebuild, qlast: %d ",qlast);
+	//printf("Heaprebuild, qlast: %d ",qlast);
 	
 	for(qpos=1;qpos<=qlast;qpos++){
-		printf("For loop %d",qpos);
+		//printf("For loop %d",qpos);
 		if(heaparr[qpos]==(treeref)NULL){
 			for (curr = qpos; curr <= qlast; ++curr)
             {
@@ -361,13 +361,13 @@ static void b_hrebuild() {
 
 static void prntHeaparr(){
 
-int i,j=9;//(pow(2,b_height(T))-1);
-
+int i,j=9;
 b_hrebuild();
 
 for(i=1;i<=j;i++){
-	if(!is_empty(heaparr[i]))
+	if(!is_empty(heaparr[i])){
 		printf("[%d] ",get_value(heaparr[i]));
+	}
 	else printf("[nil]");
 	}
 }
@@ -377,11 +377,11 @@ for(i=1;i<=j;i++){
 /****************************************************************************/
 
 static treeref b_addh(treeref T, int qpos) { 
-	printf("Heap array add %d\n", qpos);
+	//printf("Heap array add %d\n", qpos);
 	if(is_empty(heaparr[qpos])){
 		heaparr[qpos]= T;
 		qlast++;
-		printf("Lägger till på pos %d, qlast är: %d \n",qpos,qlast);
+		//printf("Lägger till på pos %d, qlast är: %d \n",qpos,qlast);
 	}
 	else
 		b_addh(T, qpos+1);
@@ -393,12 +393,16 @@ static treeref b_addh(treeref T, int qpos) {
 /****************************************************************************/
 
 static treeref b_remh(int v,int qpos) { 
-	
-	if(get_value(heaparr[qpos])==v)
-		heaparr[qpos]=(treeref)NULL;
-	else if(v!=get_value(heaparr[qpos])){
-		printf("Q++: %d\n",qpos++);
-		b_remh(v,qpos++);
+	if(!is_empty(heaparr[qpos])){
+		
+		if(get_value(heaparr[qpos])==v){
+			printf("1");
+			heaparr[qpos]=(treeref)NULL;}
+		else if(v!=get_value(heaparr[qpos])){
+			printf("2");
+			printf("Q++: %d\n",qpos++);
+			b_remh(v,qpos++);
+		}
 	}
 	else{
 		printf("Element not found\n");
@@ -410,15 +414,22 @@ static treeref b_remh(int v,int qpos) {
 /* Build heap tree                                                          */
 /****************************************************************************/
 
-static void build_HT() { printf("Build heaparray ");{
-	int qpos;
+static void build_HT() { fflush(stdout);
 	
-	qfirst=T;
-	
-	for(qpos=0;qpos<=qlast;qpos++)
-		set_LC(
-	
-	if(!is_empty(T)){heaparr[qpos]=T;build_HT(set_LC(T),heaparr[qpos*2]);build_HT(set_RC(T),heaparr[(qpos*2)+1])}
+	printf("Build heaparray ");
+	fflush(stdout);
+	int qpos=1;
+	set_LC(heaparr[qpos],heaparr[(qpos*2)-1]);
+	set_RC(heaparr[qpos],heaparr[qpos*2]);
+	printf("init");
+	fflush(stdout);
+
+
+	for(qpos=2;qpos<=qlast;qpos++){
+		printf("forloop");
+		set_LC(heaparr[qpos],heaparr[(qpos*2)]);
+		set_RC(heaparr[qpos],heaparr[(qpos*2)+1]);
+		}
 }
 
 /****************************************************************************/
@@ -450,7 +461,9 @@ static int b_findc(treeref T, int v) { /* TO DO */ return 0; }
 /* Heapify the tree (heap)                                                  */
 /****************************************************************************/
 
-static treeref b_heapify(treeref T) { prntHeaparr(); return (treeref)NULL; }
+static treeref b_heapify(treeref T) { prntHeaparr();
+	build_HT(); 
+	return (treeref)NULL; }
 
 /****************************************************************************/
 /****************************************************************************/
