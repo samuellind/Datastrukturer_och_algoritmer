@@ -230,3 +230,13 @@ pip-log.txt
 *.workspace
 
 DSA/main.c
+
+DSA/DSA.mk
+
+DSA/DSA.txt
+
+DSA/Makefile
+
+*.mk
+
+Lab2/Lab2.txt
