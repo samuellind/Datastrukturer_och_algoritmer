@@ -31,6 +31,7 @@ char    lnbuff[MAXLN];          /* input line buffer       */
 int		LSIZE=0;
 int     array[16400];             	   /* array for storing int              */
 int 	mid;
+int 	sorted=0;
 
 /*****************************************************************************/
 /*  get_choice: get user input from keyboard (1 character)                   */
@@ -44,6 +45,10 @@ static char get_choice() { scanf("%s", lnbuff); return(lnbuff[0]); }
 /****************************************************************************/
 
 static int      is_empty()             { return LSIZE==0; }		//Tom lista ger return=1
+static int 		is_sorted(){return sorted;}
+
+static int set_sorted()	{sorted=1;}
+
 static void set_LSIZE(int v)	{LSIZE = v;}
 void setLSize(){
 	 
@@ -80,7 +85,7 @@ void fillRand(){
 
 void fillAsc(){
 	int i,x=1;
-	
+	set_sorted();
 	for(i=0;i<=LSIZE;i++){
 		array[i]=x++;
 	}
@@ -136,11 +141,13 @@ int linSrch(int v){
 	
 void LSrch(){
 	int v,pos;
-	printf("vad söks?");
+	printf("Enter value to find: ");
 	scanf("%d", &v);
 	pos= linSrch(v);
 	if(pos==LSIZE) // även om v är på sista positionen
 		printf("value not found");
+	else
+		printf("Value found");
 }      
 
 int binSrch(int array[], int v, int low, int high){
@@ -156,18 +163,38 @@ int binSrch(int array[], int v, int low, int high){
 	
 	}  
 void BSrch(){
+	
 	int v, pos;
-	//SORTED??
-	printf("vad söks?");
-	scanf("%d", &v);
-	pos=binSrch(&array[LSIZE], v, 0, LSIZE-1);
-	if(pos==-1)
-		printf("Value not found");
-	}                       
+	
+	if(is_sorted()==1)
+		
+		//SORTED??
+		printf("vad söks?");
+		scanf("%d", &v);
+		pos=binSrch(&array[LSIZE], v, 0, LSIZE-1);
+		if(pos==-1)
+			printf("Value not found");
+	   
 
+	else
+		printf("Sequence is not sorted");
+
+}
                           
-void BST(){}                         
-void bSort(){}                        	  
+void BST(){	} 
+                        
+void bSort(){
+	
+	int i,j;
+	
+	for(i=0;i<LSIZE;i++)
+		for(j=0;j<LSIZE;j++)
+			if(array[j]>array[j+1])
+				int temp=array[j];
+				array[j+1]=array[j];
+				array[i]=temp;
+	
+	}                        	  
 void insSort(){}                         
 void qSort(){}                        	  
 

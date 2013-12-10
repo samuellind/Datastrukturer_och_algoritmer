@@ -133,7 +133,7 @@ void runmenu()
          case 'h': case 'H': dispmenu();                        break;
          case 'p': case 'P': READ_ME();                         break;
 
-         case 'v': case 'V': linSrch();                         break;
+         case 'v': case 'V': LSrch();                         break;
 		 case 'w': case 'W': BSrch();                         break;
 
          case 'a': case 'A': creArr();                          break;
