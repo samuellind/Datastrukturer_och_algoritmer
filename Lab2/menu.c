@@ -9,6 +9,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include "BEPerf.h"
 
 #define   NAMELEN  30
 #define   MAXLNC   80        /* max number of input line chars*/
@@ -24,9 +25,9 @@
 /* global data objects                                        */
 /**************************************************************/
 
-int       lnbuff[MAXLN];          /* input line buffer       */
+char       lnbuff[MAXLN];          /* input line buffer       */
 int        echomode=0;             /* echo mode on/off        */
-int        seqmode=0;              /* sorted/pos&stack/queue  */
+int        dispmode=0;              /* sorted/pos&stack/queue  */
 
 /*****************************************************************************/
 /*  get_choice: get user input from keyboard (1 character)                   */
@@ -41,46 +42,8 @@ static char get_choice() { scanf("%s", lnbuff); return(lnbuff[0]); }
 static void here(char * msg) { if (DEBUG) printf("\n *** In %s ", msg); }
 
 /****************************************************************************/
-/* User dialog functions                                                    */
-/****************************************************************************/
-
-static int dialogv() {
-  
-  int i;
-
-  printf(" Enter a value: ");
-  scanf("%d", &i);
-  if (echomode) printf(" %d", i);
-  return i;
-  
-  }
-
-/****************************************************************************/
 /* UI functions                                                             */
 /****************************************************************************/
-
-/*****************************************************************************/
-/*  READ_ME: explain what this program does...                               */
-/*****************************************************************************/
-
-static void READ_ME()
-
-{
-   
-   here( " IN  READ_ME() ");
-
-   printf("\n");
-   printf("***************************************************************\n");
-   printf("***                                                         ***\n");
-   printf("***   This program...                                       ***\n");
-   printf("***   ... measures different sorting and searching          ***\n");
-   printf("***   algorithms.                                           ***\n");
-   printf("***************************************************************\n");
-   printf("\n");
-   
-   here( " OUT READ_ME() ");
-
-   }
 
 /*****************************************************************************/
 /*  dispmenu: display the user menu                                          */
@@ -94,17 +57,21 @@ static void dispmenu()
    printf("\n");
    printf("***************************************************************\n");
    printf("***   a:   create and fill array                            ***\n");
+   if(init==1){
    printf("***   b:	 bubble sort   		                            ***\n");
    printf("***   c:   insertion sort                                   ***\n");
    printf("***   d:   quick sort	                                    ***\n");
    printf("***                                                         ***\n");
    printf("***   h:   display this menu                                ***\n");
-   printf("***   p:   display the READ_ME text (program documentation) ***\n");
+   printf("***   p:   display the array						 ***\n");
    printf("***                                                         ***\n");
    printf("***   v:   sequence search mode is Linear                   ***\n");
    printf("***   w:   sequence search mode is Binear Search            ***\n");
-   printf("***   x:   Search in Binary Search Tree                     ***\n");
    printf("***                                                         ***\n");
+   printf("***                                                         ***\n");
+}
+   printf("***   o:    fill BST                                                  ***\n");
+   printf("***   x:   Search in Binary Search Tree                     ***\n");
    printf("***                                                         ***\n");
    printf("***   0:   quit the program                                 ***\n");
    printf("***                                                         ***\n");
@@ -131,7 +98,9 @@ void runmenu()
       switch(choice) {
 
          case 'h': case 'H': dispmenu();                        break;
-         case 'p': case 'P': READ_ME();                         break;
+         case 'p': case 'P': 
+								if(dispmode==0) disp();  else prntBST();                       break;
+		 case 'o' : case 'O': dispmode=1; printf("dispmode: %d ",dispmode); addBST();								break;
 
          case 'v': case 'V': LSrch();                         break;
 		 case 'w': case 'W': BSrch();                         break;

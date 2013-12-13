@@ -13,6 +13,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#include "betree.h"
+
 
 /****************************************************************************/
 /* define types & constants                                                 */
@@ -32,6 +34,8 @@ int		LSIZE=0;
 int     array[16400];             	   /* array for storing int              */
 int 	mid;
 int 	sorted=0;
+int init=0;
+clock_t t1,t2;							//Stores time for the different algorithms
 
 /*****************************************************************************/
 /*  get_choice: get user input from keyboard (1 character)                   */
@@ -44,18 +48,16 @@ static char get_choice() { scanf("%s", lnbuff); return(lnbuff[0]); }
 /****************************************************************************/
 /****************************************************************************/
 
-static int      is_empty()             { return LSIZE==0; }		//Tom lista ger return=1
-static int 		is_sorted(){return sorted;}
+static int set_sorted(int v)	{return sorted=v;}
 
-static int set_sorted()	{sorted=1;}
+static void set_LSIZE(int v)	{LSIZE = v; init=1;}
 
-static void set_LSIZE(int v)	{LSIZE = v;}
 void setLSize(){
 	 
 	 int choice;
 
 	  printf("Set array size.\n");
-	  printf("1. 1024\t2. 2048.\t3. 4096\t3. 8192\t4. 16384\n");
+	  printf("1. 1024\t2. 2048.\t3. 4096\t4. 8192\t5. 16384\n");
 	  printf("\n Enter choice => "); choice = get_choice();
       switch(choice) {
 
@@ -63,7 +65,8 @@ void setLSize(){
 		 case '2': set_LSIZE(2048);                        break;
 		 case '3': set_LSIZE(4096);                        break;
 		 case '4': set_LSIZE(8192);                        break;
-		 case '5': set_LSIZE(16384);                       break;
+		 case '5': set_LSIZE(16384);                      break;
+		 case '0': set_LSIZE(1);								break;
 
          default:  printf("\n INVALID MENU CHOICE ***\n");
 					setLSize();
@@ -75,6 +78,7 @@ void setLSize(){
 
 void fillRand(){
 
+	set_sorted(0);
 	int i;
 	srand(time(NULL)); // randomize seedsrand()
 	for(i=0;i<LSIZE;i++){
@@ -85,7 +89,8 @@ void fillRand(){
 
 void fillAsc(){
 	int i,x=1;
-	set_sorted();
+	set_sorted(1);
+	printf("sorted: %d\n",sorted);
 	for(i=0;i<=LSIZE;i++){
 		array[i]=x++;
 	}
@@ -143,11 +148,16 @@ void LSrch(){
 	int v,pos;
 	printf("Enter value to find: ");
 	scanf("%d", &v);
+	
+	t1=clock();
 	pos= linSrch(v);
 	if(pos==LSIZE) // även om v är på sista positionen
 		printf("value not found");
 	else
 		printf("Value found");
+	t2=clock();
+	float seconds = (float)(t2 - t1);
+	printf("Time taken: %.21f", seconds);
 }      
 
 int binSrch(int array[], int v, int low, int high){
@@ -166,42 +176,187 @@ void BSrch(){
 	
 	int v, pos;
 	
-	if(is_sorted()==1)
+	if(sorted==1){
 		
 		//SORTED??
 		printf("vad söks?");
 		scanf("%d", &v);
-		pos=binSrch(&array[LSIZE], v, 0, LSIZE-1);
+		t1=clock();
+		pos=binSrch(array, v, 0, LSIZE-1);
 		if(pos==-1)
 			printf("Value not found");
-	   
+		else
+			printf("Value %d found!\n",v);
+		t2=clock();
+		float seconds = (float)(t2 - t1);
+		printf("Time taken: %.21f", seconds);
+	} 
 
 	else
 		printf("Sequence is not sorted");
 
 }
+
+void bstBest(){
+	int i;
+	for(i=0;i<LSIZE;i++)
+		add(i);
+}
+
+void bstWorst(){
+		add(0);
+}
+
+void bstRand(){
+	int i;
+	srand(time(NULL)); // randomize seedsrand()
+	for(i=0;i<LSIZE;i++)
+		add(rand()%LSIZE+1);
+}
+
                           
-void BST(){	} 
+void addBST(){
+	
+	int choice;
+	setLSize();
+	
+	 printf("Set BST type.\n");
+	 printf("1. Random\t2. add 1,2,3...n\t3. add all zeroes\n");
+     printf("\n Enter choice => "); 
+	 scanf("%d",&choice);
+     switch(choice) {
+
+         case 1: bstRand();	                      break;
+		 case 2: bstBest();                         break;
+		 case 3: bstWorst();                        break;
+
+         default:  printf("\n INVALID MENU CHOICE ***\n");
+                   addBST();                                  break;
+         }
+}
+void BST(){
+	
+	int v, pos;
+	
+		//SORTED??
+		printf("vad söks?");
+		scanf("%d", &v);
+		t1=clock();
+		pos = find(v);
+		if(pos==1)
+			printf("value %d found", v);
+		else 
+			printf("value not found");
+	t2=clock();
+	float seconds = (float)(t2 - t1);
+	printf("Time taken: %.21f", seconds);	
+}
+           
                         
 void bSort(){
 	
-	int i,j;
+	int j,swapped,temp;
+	t1=clock();
 	
-	for(i=0;i<LSIZE;i++)
-		for(j=0;j<LSIZE;j++)
-			if(array[j]>array[j+1])
-				int temp=array[j];
-				array[j+1]=array[j];
-				array[i]=temp;
+	do{
+		swapped=0;
+		for(j=0;j<LSIZE-1;j++){
+			if(array[j]>array[j+1]){
+				temp=array[j];
+				array[j]=array[j+1];
+				array[j+1]=temp;
+				swapped=1;
+			}
+		}
+	}while(swapped);
 	
-	}                        	  
-void insSort(){}                         
-void qSort(){}                        	  
+	printf("Bubble sort finished!\n");
+	t2=clock();
+	float seconds = (float)(t2 - t1);
+	printf("Time taken: %.21f", seconds);
+}                        	  
+void insSort(){
+	
+	int c,d,t;
+	t1=clock();
+	for (c = 1 ; c <= LSIZE - 1; c++) {
+		d = c;
+		while ( d >= 0 && array[d] < array[d-1]) {
+		  t          = array[d];
+		  array[d]   = array[d-1];
+		  array[d-1] = t	;
+	 
+		  d--;
+		}
+	}
+	
+	printf("Insertion sort finished!\n");
+	t2=clock();
+	float seconds = (float)(t2 - t1);
+	printf("Time taken: %.21f", seconds);
+}
 
-void disp()                   { /*b_disp();*/ }
+int Partition(int array[], int a, int b) { 
+	int pivot, lower, upper, temp; 
+	pivot = array[a]; 
+	lower = a + 1; 
+	upper = b; 
+
+	do{ 
+		while (array[lower] <= pivot && lower <= upper) 
+		lower = lower + 1; 
+		while (array[upper] > pivot && lower <= upper) 
+		upper = upper - 1; 
+	if (lower <= upper) { 
+		temp = array[lower]; 
+		array[lower] = array[upper]; 
+		array[upper] = temp; 
+		lower = lower + 1; 
+		upper = upper - 1; 
+	} 
+
+	}while (lower <= upper); 
+
+	temp = array[upper]; 
+	array[upper] = array[a]; 
+	array[a] = temp; 
+
+	return upper; 
+}
+
+void quickSort(int v[], int a, int b){ 
+	int k; 
+
+	if (a < b) { 
+		k = Partition(v, a, b); 
+		quickSort(v, a, k-1); 
+		quickSort(v, k+1, b);  
+	}
+}
+							
+void qSort(){
+	t1=clock();
+	quickSort(array,0,LSIZE-1);
+	printf("QuickSort finished!\n");
+	t2=clock();
+	float seconds = (float)(t2 - t1);
+	printf("Time taken: %.21f", seconds);
+}
+
+void prntBST(){
+	printBST();
+}
+
+void disp()                   {  
+	
+	int i;
+	
+	for(i=0;i<=10;i++){
+		printf("%d ", array[i]);
+	} 
+}
 
 /****************************************************************************/
 /* end of basic functions                                                   */
 /****************************************************************************/
-
 
