@@ -56,25 +56,25 @@ static void dispmenu()
    
    printf("\n");
    printf("***************************************************************\n");
-   printf("***   a:   create and fill array                            ***\n");
+   printf("***   a:   create and fill array\n");
    if(init==1){
-   printf("***   b:	 bubble sort   		                            ***\n");
-   printf("***   c:   insertion sort                                   ***\n");
-   printf("***   d:   quick sort	                                    ***\n");
-   printf("***                                                         ***\n");
-   printf("***   h:   display this menu                                ***\n");
-   printf("***   p:   display the array						 ***\n");
-   printf("***                                                         ***\n");
-   printf("***   v:   sequence search mode is Linear                   ***\n");
-   printf("***   w:   sequence search mode is Binear Search            ***\n");
-   printf("***                                                         ***\n");
-   printf("***                                                         ***\n");
+   printf("***   b:   bubble sort\n");
+   printf("***   c:   insertion sort\n");
+   printf("***   d:   quick sort\n");
+   printf("***\n");
+   printf("***   h:   display this menu\n");
+   printf("***   p:   display the first ten elements of array\n");
+   printf("***\n");
+   printf("***   v:   sequence search mode is Linear \n");
+   printf("***   w:   sequence search mode is Binear Search\n");
+   printf("***\n");
+   printf("***\n");
 }
-   printf("***   o:    fill BST                                                  ***\n");
-   printf("***   x:   Search in Binary Search Tree                     ***\n");
-   printf("***                                                         ***\n");
-   printf("***   0:   quit the program                                 ***\n");
-   printf("***                                                         ***\n");
+   printf("***   o:   fill BST\n");
+   printf("***   x:   Search in Binary Search Tree\n");
+   printf("***\n");
+   printf("***   0:   quit the program\n");
+   printf("***\n");
    printf("***************************************************************\n");
    printf("\n");
 

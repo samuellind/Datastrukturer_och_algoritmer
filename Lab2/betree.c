@@ -468,7 +468,8 @@ void disp_pre()               { b_disp_pre(T);  }
 void disp_in()                { b_disp_in(T);   }
 void disp_post()              { b_disp_post(T); }
 
-void add(int v)               { T=(treeref)NULL; T = b_add(T, create_node(v)); }
+void add(int v)               {  T = b_add(T, create_node(v)); }
+void unlink()				   {T=(treeref)NULL;}
 void rem(int v)               { T = b_rem(T, v); }
 
 void addh(int v)              { T = b_addh(create_node(v),1); }

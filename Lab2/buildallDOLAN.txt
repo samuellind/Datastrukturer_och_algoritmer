@@ -1,0 +1,55 @@
+
+echo "*** Tests starting"
+
+echo "*** Compiling frontend modules"
+
+gcc -Wall -c Dmenu.c
+gcc -Wall -c menu.c
+gcc -Wall -c FESeq.c
+
+echo "*** Compiling backend  modules"
+
+gcc -Wall -c BESeqA.c
+gcc -Wall -c BESeqP.c
+gcc -Wall -c BESeqR.c
+
+echo "*** Saving previous outputs"
+cp seqA.out seqA.old
+cp seqP.out seqP.old
+cp seqR.out seqR.old
+
+echo "*** Compiling seqA - array version"
+gcc -Wall Dmenu.c menu.c FESeq.c BESeqA.c -o seqA
+echo "*** Compiling seqP - pointer version"
+gcc -Wall Dmenu.c menu.c FESeq.c BESeqP.c -o seqP
+echo "*** Compiling seqR - recursive version"
+gcc -Wall Dmenu.c menu.c FESeq.c BESeqR.c -o seqR
+
+echo "*** Test running: SeqA - array version "
+./seqA < script > seqA.out
+echo "*** Test running: SeqP - pointer version "
+./seqP < script > seqP.out
+echo "*** Test running: SeqR - recursive version "
+./seqR < script > seqR.out
+
+echo "*** Comparing previous output SeqA (diff)"
+diff seqA.old seqA.out
+echo "*** Comparing previous output SeqP (diff)"
+diff seqP.old seqP.out
+echo "*** Comparing previous output SeqR (diff)"
+diff seqR.old seqR.out
+
+echo "*** Comparing current  output SeqA vs SeqP (diff)"
+diff seqA.out seqP.out
+echo "*** Comparing current  output SeqP vs SeqR (diff)"
+diff seqP.out seqR.out
+echo "*** Comparing current  output SeqR vs SeqA (diff)"
+diff seqR.out seqA.out
+
+
+echo "*** Cleaning up ..."
+rm *.o
+
+echo "...Tests finished"
+
+

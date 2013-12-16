@@ -21,7 +21,7 @@
 /****************************************************************************/
 
 #define   NULLREF      -1               /* null reference for list          */
-#define	  EMPTY		   -2
+#define   EMPTY		   -2
 #define   MAXLNC   80        /* max number of input line chars*/
 #define   MAXLN    MAXLNC+1  /* max size of input line buffer */
 
@@ -152,12 +152,12 @@ void LSrch(){
 	t1=clock();
 	pos= linSrch(v);
 	if(pos==LSIZE) // även om v är på sista positionen
-		printf("value not found");
+		printf("value %d not found ",v);
 	else
-		printf("Value found");
+		printf("Value %d found ",v);
 	t2=clock();
 	float seconds = (float)(t2 - t1);
-	printf("Time taken: %.21f", seconds);
+	printf("Time taken: %f", seconds);
 }      
 
 int binSrch(int array[], int v, int low, int high){
@@ -184,12 +184,12 @@ void BSrch(){
 		t1=clock();
 		pos=binSrch(array, v, 0, LSIZE-1);
 		if(pos==-1)
-			printf("Value not found");
+			printf("Value %d not found ",v);
 		else
-			printf("Value %d found!\n",v);
+			printf("Value %d found! ",v);
 		t2=clock();
 		float seconds = (float)(t2 - t1);
-		printf("Time taken: %.21f", seconds);
+		printf("Time taken: %f", seconds);
 	} 
 
 	else
@@ -244,12 +244,13 @@ void BST(){
 		t1=clock();
 		pos = find(v);
 		if(pos==1)
-			printf("value %d found", v);
+			printf("value %d found ", v);
 		else 
-			printf("value not found");
+			printf("value %d not found ",v);
 	t2=clock();
 	float seconds = (float)(t2 - t1);
-	printf("Time taken: %.21f", seconds);	
+	printf("Time taken: %f", seconds);
+	unlink();
 }
            
                         
@@ -273,7 +274,7 @@ void bSort(){
 	printf("Bubble sort finished!\n");
 	t2=clock();
 	float seconds = (float)(t2 - t1);
-	printf("Time taken: %.21f", seconds);
+	printf("Time taken: %f", seconds);
 }                        	  
 void insSort(){
 	
@@ -293,7 +294,7 @@ void insSort(){
 	printf("Insertion sort finished!\n");
 	t2=clock();
 	float seconds = (float)(t2 - t1);
-	printf("Time taken: %.21f", seconds);
+	printf("Time taken: %f", seconds);
 }
 
 int Partition(int array[], int a, int b) { 
@@ -340,7 +341,7 @@ void qSort(){
 	printf("QuickSort finished!\n");
 	t2=clock();
 	float seconds = (float)(t2 - t1);
-	printf("Time taken: %.21f", seconds);
+	printf("Time taken: %f", seconds);
 }
 
 void prntBST(){

@@ -1,0 +1,3 @@
+gcc -Wall -o perf Dmenu.c menu.c BEPerf.c betree.c
+./perf < script1 > perf.out
+diff perf.old perf.out

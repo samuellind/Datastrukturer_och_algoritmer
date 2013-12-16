@@ -1,1 +1,0 @@
-gcc -Wall -o perf Dmenu.c menu.c BEPerf.c betree.c
