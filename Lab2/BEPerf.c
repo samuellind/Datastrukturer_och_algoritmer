@@ -48,9 +48,23 @@ static char get_choice() { scanf("%s", lnbuff); return(lnbuff[0]); }
 /****************************************************************************/
 /****************************************************************************/
 
+/****************************************************************************/
+/* set sorted to value 1 in order to be able to run binary search */
+/****************************************************************************/
 static int set_sorted(int v)	{return sorted=v;}
 
+
+/****************************************************************************/
+/* Updates the LSIZE value prior to creating an array 			  */
+/* using this variable 																  */
+/****************************************************************************/
+
 static void set_LSIZE(int v)	{LSIZE = v; init=1;}
+
+
+/****************************************************************************/
+/* switch function to modify the LSIZE value                          */
+/****************************************************************************/
 
 void setLSize(){
 	 
@@ -76,6 +90,9 @@ void setLSize(){
          }
 }
 
+/****************************************************************************/
+/* fills array[LSIZE] with random integers                                */
+/****************************************************************************/
 void fillRand(){
 
 	set_sorted(0);
@@ -87,6 +104,10 @@ void fillRand(){
 	printf("Random sequence generated\n");
 }
 
+/****************************************************************************/
+/* fills array[LSIZE] with integer values starting from 0...LSIZE*/
+/* Ascending fill																		   */
+/****************************************************************************/
 void fillAsc(){
 	int i,x=1;
 	set_sorted(1);
@@ -96,7 +117,10 @@ void fillAsc(){
 	}
 	printf("Ascending sequence generated\n");
 }
-
+/****************************************************************************/
+/* fills array[LSIZE] with integer values starting from LSIZE...0*/
+/*	Descending fill																	   */
+/****************************************************************************/
 void fillDsc(){
 	int i,x=LSIZE+1;
 	
@@ -106,6 +130,10 @@ void fillDsc(){
 	printf("Descending sequence generated\n");
 }
 
+/****************************************************************************/
+/* Switch function in order to choose with what values the    */
+/* Array should be populated													  */
+/****************************************************************************/
 
 void fillArray(){
 		
@@ -126,6 +154,11 @@ void fillArray(){
          }
 }
 
+/****************************************************************************/
+/* creates an Array with LSIZE positions and goes on to        */
+/* fillArray() function in order to fill the array with values		  */
+/****************************************************************************/
+
 void creArr(){
 	setLSize();
 	array[LSIZE];
@@ -135,14 +168,22 @@ void creArr(){
 	
 }
 
+/****************************************************************************/
+/* Linear search function for array											  */
+/****************************************************************************/
+
 int linSrch(int v){
 	
 	int i;
 	
 	for(i=0;i<LSIZE&&array[i]!=v;i++){
 	}
-	return i;
+		return i;
 	}      
+
+/****************************************************************************/
+/* fills array[LSIZE] with integer values starting from 0...LSIZE*/
+/****************************************************************************/
 	
 void LSrch(){
 	int v,pos;
@@ -253,7 +294,9 @@ void BST(){
 	unlink();
 }
            
-                        
+  /****************************************************************************/
+/* BubbleSort																			   */
+/****************************************************************************/                      
 void bSort(){
 	
 	int j,swapped,temp;
@@ -275,7 +318,11 @@ void bSort(){
 	t2=clock();
 	float seconds = (float)(t2 - t1);
 	printf("Time taken: %f", seconds);
-}                        	  
+}     
+
+/****************************************************************************/
+/* Insertion Sort																		  */
+/****************************************************************************/                   	  
 void insSort(){
 	
 	int c,d,t;
@@ -296,7 +343,10 @@ void insSort(){
 	float seconds = (float)(t2 - t1);
 	printf("Time taken: %f", seconds);
 }
-
+/****************************************************************************/
+/* Partition function that sets the pivot for the QuickSort		  */
+/* function etc.																		  */
+/****************************************************************************/
 int Partition(int array[], int a, int b) { 
 	int pivot, lower, upper, temp; 
 	pivot = array[a]; 
@@ -325,6 +375,10 @@ int Partition(int array[], int a, int b) {
 	return upper; 
 }
 
+/****************************************************************************/
+/* QuickSort algorithm for array												  */
+/****************************************************************************/
+
 void quickSort(int v[], int a, int b){ 
 	int k; 
 
@@ -334,6 +388,10 @@ void quickSort(int v[], int a, int b){
 		quickSort(v, k+1, b);  
 	}
 }
+
+/****************************************************************************/
+/* Clocks ans runs the Quicksort algorithm above				  */
+/****************************************************************************/
 							
 void qSort(){
 	t1=clock();
@@ -344,9 +402,17 @@ void qSort(){
 	printf("Time taken: %f", seconds);
 }
 
+/****************************************************************************/
+/* Prints the binary search tree												  */
+/****************************************************************************/
+
 void prntBST(){
 	printBST();
 }
+
+/****************************************************************************/
+/* Prints the 10 first elements of the array								  */
+/****************************************************************************/
 
 void disp()                   {  
 	

@@ -41,7 +41,7 @@ Fill array.
 
 
  Enter choice => Bubble sort finished!
-Time taken: 6364.000000
+Time taken: 6031.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -94,7 +94,7 @@ Fill array.
 
 
  Enter choice => Bubble sort finished!
-Time taken: 24385.000000
+Time taken: 24090.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -147,7 +147,7 @@ Fill array.
 
 
  Enter choice => Bubble sort finished!
-Time taken: 97509.000000
+Time taken: 97799.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -200,7 +200,7 @@ Fill array.
 
 
  Enter choice => Bubble sort finished!
-Time taken: 391114.000000
+Time taken: 391263.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -253,7 +253,7 @@ Fill array.
 
 
  Enter choice => Bubble sort finished!
-Time taken: 1565457.000000
+Time taken: 1579367.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -359,7 +359,7 @@ Fill array.
 
 
  Enter choice => Insertion sort finished!
-Time taken: 8057.000000
+Time taken: 8170.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -412,7 +412,7 @@ Fill array.
 
 
  Enter choice => Insertion sort finished!
-Time taken: 31553.000000
+Time taken: 32337.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -465,7 +465,7 @@ Fill array.
 
 
  Enter choice => Insertion sort finished!
-Time taken: 129590.000000
+Time taken: 127863.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -518,7 +518,7 @@ Fill array.
 
 
  Enter choice => Insertion sort finished!
-Time taken: 514819.000000
+Time taken: 515327.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -571,7 +571,7 @@ Fill array.
 
 
  Enter choice => QuickSort finished!
-Time taken: 144.000000
+Time taken: 145.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -624,7 +624,7 @@ Fill array.
 
 
  Enter choice => QuickSort finished!
-Time taken: 299.000000
+Time taken: 310.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -677,7 +677,7 @@ Fill array.
 
 
  Enter choice => QuickSort finished!
-Time taken: 632.000000
+Time taken: 673.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -730,7 +730,7 @@ Fill array.
 
 
  Enter choice => QuickSort finished!
-Time taken: 1333.000000
+Time taken: 1409.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -783,7 +783,7 @@ Fill array.
 
 
  Enter choice => QuickSort finished!
-Time taken: 2911.000000
+Time taken: 3094.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -836,7 +836,7 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => Enter value to find: Value 1024 found Time taken: 6.000000
+ Enter choice => Enter value to find: Value 1024 found Time taken: 8.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -858,7 +858,7 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => Enter value to find: Value 2048 found Time taken: 10.000000
+ Enter choice => Enter value to find: Value 2048 found Time taken: 9.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -880,7 +880,7 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => Enter value to find: Value 4096 found Time taken: 18.000000
+ Enter choice => Enter value to find: Value 4096 found Time taken: 17.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -902,7 +902,7 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => Enter value to find: Value 8192 found Time taken: 34.000000
+ Enter choice => Enter value to find: Value 8192 found Time taken: 33.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -924,7 +924,7 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => Enter value to find: Value 16382 found Time taken: 66.000000
+ Enter choice => Enter value to find: Value 16382 found Time taken: 64.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -953,8 +953,7 @@ Ascending sequence generated
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
- Enter choice => sorted: 1
-Ascending sequence generated
+ Enter choice => Random sequence generated
 
 ***************************************************************
 ***   a:   create and fill array
@@ -977,7 +976,52 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => vad söks?Value 498 found! Time taken: 2.000000
+ Enter choice => Sequence is not sorted
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1006,8 +1050,7 @@ Ascending sequence generated
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
- Enter choice => sorted: 1
-Ascending sequence generated
+ Enter choice => Random sequence generated
 
 ***************************************************************
 ***   a:   create and fill array
@@ -1030,7 +1073,52 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => vad söks?Value 32 found! Time taken: 1.000000
+ Enter choice => Sequence is not sorted
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1059,8 +1147,7 @@ Ascending sequence generated
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
- Enter choice => sorted: 1
-Ascending sequence generated
+ Enter choice => Random sequence generated
 
 ***************************************************************
 ***   a:   create and fill array
@@ -1083,7 +1170,52 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => vad söks?Value 789 found! Time taken: 1.000000
+ Enter choice => Sequence is not sorted
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1112,8 +1244,7 @@ Ascending sequence generated
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
- Enter choice => sorted: 1
-Ascending sequence generated
+ Enter choice => Random sequence generated
 
 ***************************************************************
 ***   a:   create and fill array
@@ -1136,7 +1267,52 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => vad söks?Value 789 found! Time taken: 14.000000
+ Enter choice => Sequence is not sorted
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1165,8 +1341,7 @@ Ascending sequence generated
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
- Enter choice => sorted: 1
-Ascending sequence generated
+ Enter choice => Random sequence generated
 
 ***************************************************************
 ***   a:   create and fill array
@@ -1189,7 +1364,52 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => vad söks?Value 6700 found! Time taken: 2.000000
+ Enter choice => Sequence is not sorted
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1215,6 +1435,59 @@ Ascending sequence generated
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
 
  Enter choice => Array created with 1024 positions 
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => vad söks?Value 1 found! Time taken: 0.000000
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+ Enter choice => Array created with 2048 positions 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
@@ -1267,7 +1540,113 @@ Ascending sequence generated
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
 
- Enter choice => Array created with 2048 positions 
+ Enter choice => Array created with 4096 positions 
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => vad söks?Value 1 found! Time taken: 1.000000
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+ Enter choice => Array created with 8192 positions 
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => vad söks?Value 1 found! Time taken: 1.000000
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+ Enter choice => Array created with 16384 positions 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
@@ -1317,16 +1696,13 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => Set array size.
+ Enter choice => dispmode: 1 Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
 
- Enter choice => Array created with 4096 positions 
-Fill array.
-1. Random	2. Ascending.	3. Descending
+ Enter choice => Set BST type.
+1. Random	2. add 1,2,3...n	3. add all zeroes
 
- Enter choice => sorted: 1
-Ascending sequence generated
-
+ Enter choice => 
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1348,113 +1724,7 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => vad söks?Value 1 found! Time taken: 0.000000
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => Set array size.
-1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 8192 positions 
-Fill array.
-1. Random	2. Ascending.	3. Descending
-
- Enter choice => sorted: 1
-Ascending sequence generated
-
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => vad söks?Value 1 found! Time taken: 0.000000
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => Set array size.
-1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 16384 positions 
-Fill array.
-1. Random	2. Ascending.	3. Descending
-
- Enter choice => sorted: 1
-Ascending sequence generated
-
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => vad söks?Value 1 found! Time taken: 1.000000
+ Enter choice => vad söks?value 1023 found Time taken: 18.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1504,107 +1774,7 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => vad söks?value 30 not found Time taken: 2.000000
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => dispmode: 1 Set array size.
-1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Set BST type.
-1. Random	2. add 1,2,3...n	3. add all zeroes
-
- Enter choice => 
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => vad söks?value 1023 found Time taken: 17.000000
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => dispmode: 1 Set array size.
-1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Set BST type.
-1. Random	2. add 1,2,3...n	3. add all zeroes
-
- Enter choice => 
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => vad söks?value 2047 found Time taken: 36.000000
+ Enter choice => vad söks?value 2047 found Time taken: 35.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1704,7 +1874,7 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => vad söks?value 8191 found Time taken: 126.000000
+ Enter choice => vad söks?value 8191 found Time taken: 127.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1754,7 +1924,7 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => vad söks?value 16381 found Time taken: 282.000000
+ Enter choice => vad söks?value 16381 found Time taken: 243.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1804,7 +1974,7 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => vad söks?value 40 not found Time taken: 3.000000
+ Enter choice => vad söks?value 40 found Time taken: 2.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1854,7 +2024,7 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => vad söks?value 392 found Time taken: 3.000000
+ Enter choice => vad söks?value 392 not found Time taken: 2.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1954,7 +2124,7 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => vad söks?value 3400 found Time taken: 2.000000
+ Enter choice => vad söks?value 3400 not found Time taken: 3.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -2004,7 +2174,7 @@ Ascending sequence generated
 ***************************************************************
 
 
- Enter choice => vad söks?value 5500 not found Time taken: 3.000000
+ Enter choice => vad söks?value 5500 not found Time taken: 4.000000
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
