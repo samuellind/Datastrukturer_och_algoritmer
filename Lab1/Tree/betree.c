@@ -453,7 +453,7 @@ static treeref b_heapify(treeref T, int i) {
 	//printf("L: %d, i: %d",get_value(heaparr[l]),get_value(heaparr[i]));
 	//printf("L: %d, qlast: %d i: %d",get_value(heaparr[l]),get_value(heaparr[qlast]),get_value(heaparr[i]));
 
-	if( get_value(heaparr[l]) <= get_value(heaparr[qlast-1]) && get_value(heaparr[l]) >  get_value(heaparr[i])){
+	if( l <= qlast-1 && get_value(heaparr[l]) >  get_value(heaparr[i])){
 		largest = l;
 		printf("Setting largest");
 		fflush(stdout);
@@ -473,7 +473,7 @@ static treeref b_heapify(treeref T, int i) {
 	printf("qlast: %d",get_value(heaparr[largest]) );
 	fflush(stdout);
 	
-	if (get_value(heaparr[r]) <= get_value(heaparr[qlast-1]) && get_value(heaparr[r]) > get_value(heaparr[largest])){
+	if (r <= qlast-1 && get_value(heaparr[r]) > get_value(heaparr[largest])){
 		largest = r;
 		printf("Largest r");
 		fflush(stdout);
@@ -529,12 +529,6 @@ static int b_findc(treeref T, int v) {
 	
 	printf("Treeref T value: %d ",T);
 	
-		if(is_empty(heaparr[qfirst]))
-			printf("No elements in array or element not found");
-		else if(get_value(heaparr[qfirst])==v)
-			return qfirst;
-		else
-				return b_findc(heaparr[++qfirst],v);
 }
 
 /****************************************************************************/
@@ -554,7 +548,7 @@ void add(int v)               { T = b_add(T, create_node(v)); }
 void rem(int v)               { T = b_rem(T, v); }
 
 void addh(int v)              { T = b_addh(create_node(v),1); }
-void remh(int v)              { T = b_remh(v,1); }
+void remh(int v)              { T = b_remh(b_findc(T,v),1); }
 
 int is_memberb(int v)         { return b_findb(T, v); }
 int is_memberc(int v)         { return b_findc(T, v); }
