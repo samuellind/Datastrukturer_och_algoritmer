@@ -28,6 +28,7 @@ void memberc(int v);
 
 void height();
 void heapify();
+void prntHp();
 
 #endif
 /****************************************************************************/

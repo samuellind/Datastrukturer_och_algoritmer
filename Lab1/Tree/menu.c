@@ -189,6 +189,7 @@ void runmenu()
          case 'f': case 'F': ufind();                           break;
          case 'h': case 'H': height();                          break;
          case 'g': case 'G': heapify();                         break;
+		 case 'c': case 'C': prntHp();						break;	
 
 
          case 'q': case 'Q': printf(" *** BYE BYE! ***");       break;

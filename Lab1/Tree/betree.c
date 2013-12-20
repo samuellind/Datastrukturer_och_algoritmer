@@ -239,10 +239,8 @@ static void b_disp_2D() {
             printf(" ");
         }
 		
-		
 		for(x=1; x<=c; x++)
         {
-            //printf("* ");
             if(!is_empty(queue[qfirst]))
 				printf("[%d]\t",get_value(queue[qfirst]));
 			else printf("[nil]\t");
@@ -335,102 +333,176 @@ static treeref b_rem(treeref T, int v) {
 		return b_add(get_LC(T),get_RC(T));
 }
 /****************************************************************************/
+/* display the heap array                                                    */
+/****************************************************************************/
+
+static void prntHeaparr(treeref T){
+
+int i,j=9;
+//b_hrebuild();
+//printf("T: %d",T);
+for(i=1;i<=j;i++){
+	if(!is_empty(heaparr[i])){
+		printf("[%d] LC: %d RC: %d",get_value(heaparr[i]), get_LC(heaparr[i]),get_RC(heaparr[i]));
+		//printf("[%d] ",get_value(heaparr[i]));
+	}
+	else printf("[nil]");
+	}
+}
+/****************************************************************************/
+/* Build heap tree                                                          */
+/****************************************************************************/
+
+static treeref build_HT() { 
+	fflush(stdout);
+	printf("Build heaparray ");
+	
+	int qfirst=1;
+	if(!is_empty(heaparr[++qfirst])){
+		printf("IF****");
+		//cons(heaparr[(qfirst*2)],heaparr[qfirst],heaparr[qfirst*2+1]);
+	
+		for(qfirst=1;qfirst<qlast;qfirst++){
+			printf("FOR***");
+				cons(heaparr[(qfirst*2)],heaparr[qfirst],heaparr[qfirst*2+1]);
+			}
+	}
+	cons((treeref)NULL, heaparr[qfirst-1], (treeref)NULL);
+	
+	return heaparr[1];
+}
+/****************************************************************************/
 /* Rebuilds Heaparray after it has been modified                            */
 /****************************************************************************/
 
 static void b_hrebuild() { 
 	
 	int qpos=1,curr;
-	//printf("Heaprebuild, qlast: %d ",qlast);
+	fflush(stdout);
 	
-	for(qpos=1;qpos<=qlast;qpos++){
-		//printf("For loop %d",qpos);
-		if(heaparr[qpos]==(treeref)NULL){
-			for (curr = qpos; curr <= qlast; ++curr)
-            {
-                heaparr[curr] = heaparr[curr + 1];
-            }
-            heaparr[qlast]=(treeref)NULL;
-            qlast--;
+	if(qlast==2){
+		heaparr[qpos]=(treeref)NULL;
+		T=heaparr[qpos];
+		qlast--;
+	}
+	else{
+		for(qpos=1;qpos<=qlast;qpos++){
+			if(heaparr[qpos]==(treeref)NULL){
+				for (curr = qpos; curr <= qlast; ++curr)
+				{
+					heaparr[curr] = heaparr[curr + 1];
+				}
+				heaparr[qlast]=(treeref)NULL;
+				qlast--;
+			}
 		}
 	}
+	build_HT();										//Sets up new relationships after an element has been removed
 }
-/****************************************************************************/
-/* display the heap array                                                    */
-/****************************************************************************/
-
-static void prntHeaparr(){
-
-int i,j=9;
-b_hrebuild();
-
-for(i=1;i<=j;i++){
-	if(!is_empty(heaparr[i])){
-		printf("[%d] ",get_value(heaparr[i]));
-	}
-	else printf("[nil]");
-	}
-}
-
 /****************************************************************************/
 /* ADD to the tree in heap order                                            */
 /****************************************************************************/
 
-static treeref b_addh(treeref T, int qpos) { 
-	//printf("Heap array add %d\n", qpos);
-	if(is_empty(heaparr[qpos])){
-		heaparr[qpos]= T;
-		qlast++;
-		//printf("Lägger till på pos %d, qlast är: %d \n",qpos,qlast);
+static treeref b_addh(treeref N, int qpos) {
+	int i;
+	qlast++;
+	i = qlast;
+	
+	while(i > 1 && get_value(heaparr[i/2]) < get_value(N)){
+		printf("i: %d", i);
+		heaparr[i] = heaparr[(i/2)];
+		i = i/2;
+		}
+	heaparr[i] = N;
+	
+	return build_HT();
+	
 	}
-	else
-		b_addh(T, qpos+1);
-	//{heaparr[qpos]=T;b_addh(get_LC(T),qpos*2);b_addh(get_RC(T),(qpos*2)+1);}  
-	return (treeref)NULL;}
+	
+/****************************************************************************/
+/* Swap two elements in the heapify function                        */
+/****************************************************************************/
 
+static void swap(treeref i,treeref largest){
+	
+	printf("swap121 ");
+	fflush(stdout);
+	
+	treeref temp=largest;
+	cons(get_LC(i), temp,get_RC(i));
+	printf("Temp switch");
+	cons(get_LC(largest), i, get_RC(largest));
+	printf("i switch");
+	cons(get_LC(temp), largest , get_RC(temp));
+	printf("largest switch");
+	
+}	
+	
+/****************************************************************************/
+/* Heapify the tree (heap)                                                  */
+/****************************************************************************/
+
+static treeref b_heapify(treeref T, int i) { 
+	printf("heapify ");
+	fflush(stdout);
+	int largest,l,r;
+	
+	l = (i*2);
+	r = (i*2+1);
+
+	//printf("L: %d, i: %d",get_value(heaparr[l]),get_value(heaparr[i]));
+	//printf("L: %d, qlast: %d i: %d",get_value(heaparr[l]),get_value(heaparr[qlast]),get_value(heaparr[i]));
+
+	if( get_value(heaparr[l]) <= get_value(heaparr[qlast-1]) && get_value(heaparr[l]) >  get_value(heaparr[i])){
+		largest = l;
+		printf("Setting largest");
+		fflush(stdout);
+	}
+	else{ 
+		largest = i;
+		printf("Else largest");
+		fflush(stdout);
+	}
+	printf("kommer hit");
+	fflush(stdout);
+	
+	printf("r: %d",get_value(heaparr[r]) );
+	fflush(stdout);
+	printf("qlast: %d",get_value(heaparr[qlast-1]) );
+	fflush(stdout);
+	printf("qlast: %d",get_value(heaparr[largest]) );
+	fflush(stdout);
+	
+	if (get_value(heaparr[r]) <= get_value(heaparr[qlast-1]) && get_value(heaparr[r]) > get_value(heaparr[largest])){
+		largest = r;
+		printf("Largest r");
+		fflush(stdout);
+	}
+	if (largest != i){ 
+		printf("Swap");
+		fflush(stdout);
+		swap(heaparr[i], heaparr[largest]);
+		if(largest!=qlast)
+			b_heapify(T, largest);
+	}
+	return T; 
+}
 /****************************************************************************/
 /* REMove an element from the tree in heap order                            */
 /****************************************************************************/
 
 static treeref b_remh(int v,int qpos) { 
+	
 	if(!is_empty(heaparr[qpos])){
-		
-		if(get_value(heaparr[qpos])==v){
-			printf("1");
-			heaparr[qpos]=(treeref)NULL;}
-		else if(v!=get_value(heaparr[qpos])){
-			printf("2");
-			printf("Q++: %d\n",qpos++);
-			b_remh(v,qpos++);
-		}
+		heaparr[qpos] = heaparr[qlast];
+		qlast--;
+		heapify(heaparr, 1);
 	}
 	else{
 		printf("Element not found\n");
 	}
 	
-	return (treeref)NULL; }
-
-/****************************************************************************/
-/* Build heap tree                                                          */
-/****************************************************************************/
-
-static void build_HT() { fflush(stdout);
-	
-	printf("Build heaparray ");
-	fflush(stdout);
-	int qpos=1;
-	set_LC(heaparr[qpos],heaparr[(qpos*2)-1]);
-	set_RC(heaparr[qpos],heaparr[qpos*2]);
-	printf("init");
-	fflush(stdout);
-
-
-	for(qpos=2;qpos<=qlast;qpos++){
-		printf("forloop");
-		set_LC(heaparr[qpos],heaparr[(qpos*2)]);
-		set_RC(heaparr[qpos],heaparr[(qpos*2)+1]);
-		}
-}
+	return T; }
 
 /****************************************************************************/
 /* FIND an element in the BST (Binary Search Tree)                          */
@@ -453,17 +525,17 @@ static int b_findb(treeref T, int v) {
 /* FIND an element in the complete tree                                     */
 /****************************************************************************/
 
-static int b_findc(treeref T, int v) { /* TO DO */ return 0; }
-
-
-
-/****************************************************************************/
-/* Heapify the tree (heap)                                                  */
-/****************************************************************************/
-
-static treeref b_heapify(treeref T) { prntHeaparr();
-	build_HT(); 
-	return (treeref)NULL; }
+static int b_findc(treeref T, int v) { 
+	
+	printf("Treeref T value: %d ",T);
+	
+		if(is_empty(heaparr[qfirst]))
+			printf("No elements in array or element not found");
+		else if(get_value(heaparr[qfirst])==v)
+			return qfirst;
+		else
+				return b_findc(heaparr[++qfirst],v);
+}
 
 /****************************************************************************/
 /****************************************************************************/
@@ -490,7 +562,8 @@ int is_memberc(int v)         { return b_findc(T, v); }
 int cardinality()             { return b_card(T); }
 int bheight()                 { return b_height(T); }
 
-void bheapify()               { T = b_heapify(T); }
+void bheapify()               { T = b_heapify(T,1); }
+void prntHeap()				{prntHeaparr(T);}
 
 /****************************************************************************/
 /* end of basic functions                                                   */

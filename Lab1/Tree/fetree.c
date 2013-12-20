@@ -41,6 +41,7 @@ void addval (int v) { add(v);  }
 void remval (int v) { rem(v);  }
 void addhval(int v) { addh(v); }
 void remhval(int v) { remh(v); }
+void prntHp(){prntHeap();}
 
 void memberb(int v) {
    if (is_memberb(v)) printf(" *** %d found ***", v);

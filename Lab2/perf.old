@@ -10,14 +10,35 @@
 ***************************************************************
 
 
+
+***************************************************************
+***   a:   create and fill array
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Sequence is not sorted
+***************************************************************
+***   a:   create and fill array
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 1024 positions 
+ 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
- Enter choice => Random sequence generated
+ Enter choice => Descending sequence generated
 
 ***************************************************************
 ***   a:   create and fill array
@@ -40,8 +61,6 @@ Fill array.
 ***************************************************************
 
 
- Enter choice => Bubble sort finished!
-bubble random 1024
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -66,11 +85,10 @@ bubble random 1024
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
 
- Enter choice => Array created with 2048 positions 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
- Enter choice => Random sequence generated
+ Enter choice => Descending sequence generated
 
 ***************************************************************
 ***   a:   create and fill array
@@ -93,8 +111,6 @@ Fill array.
 ***************************************************************
 
 
- Enter choice => Bubble sort finished!
-bubble random 2048
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -119,11 +135,10 @@ bubble random 2048
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
 
- Enter choice => Array created with 4096 positions 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
- Enter choice => Random sequence generated
+ Enter choice => Descending sequence generated
 
 ***************************************************************
 ***   a:   create and fill array
@@ -146,8 +161,6 @@ Fill array.
 ***************************************************************
 
 
- Enter choice => Bubble sort finished!
-bubble random 4096
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -172,11 +185,10 @@ bubble random 4096
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
 
- Enter choice => Array created with 8192 positions 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
- Enter choice => Random sequence generated
+ Enter choice => Descending sequence generated
 
 ***************************************************************
 ***   a:   create and fill array
@@ -199,8 +211,6 @@ Fill array.
 ***************************************************************
 
 
- Enter choice => Bubble sort finished!
-bubble random 8192
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -224,12 +234,11 @@ bubble random 8192
 
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 16384 positions 
+ 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
- Enter choice => Random sequence generated
+ Enter choice => Descending sequence generated
 
 ***************************************************************
 ***   a:   create and fill array
@@ -252,8 +261,6 @@ Fill array.
 ***************************************************************
 
 
- Enter choice => Bubble sort finished!
-bubble random 16384
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -274,68 +281,6 @@ bubble random 16384
 ***
 ***************************************************************
 
-
- Enter choice => Set array size.
-1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 1024 positions 
-Fill array.
-1. Random	2. Ascending.	3. Descending
-
- Enter choice => Random sequence generated
-
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => Insertion sort finished!
-insertion random 1024
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => Set array size.
-1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 2048 positions 
-Fill array.
-1. Random	2. Ascending.	3. Descending
-
- Enter choice => Random sequence generated
 
 ***************************************************************
 ***   a:   create and fill array
@@ -358,8 +303,6 @@ Fill array.
 ***************************************************************
 
 
- Enter choice => Insertion sort finished!
-insertion random 2048
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -383,432 +326,7 @@ insertion random 2048
 
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 4096 positions 
-Fill array.
-1. Random	2. Ascending.	3. Descending
-
- Enter choice => Random sequence generated
-
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => Insertion sort finished!
-insertion random 4096
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => Set array size.
-1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 8192 positions 
-Fill array.
-1. Random	2. Ascending.	3. Descending
-
- Enter choice => Random sequence generated
-
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => Insertion sort finished!
-insertion random 8192
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => Set array size.
-1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 16384 positions 
-Fill array.
-1. Random	2. Ascending.	3. Descending
-
- Enter choice => Random sequence generated
-
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => Insertion sort finished!
-insertion random 16384
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => Set array size.
-1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 1024 positions 
-Fill array.
-1. Random	2. Ascending.	3. Descending
-
- Enter choice => Random sequence generated
-
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => QuickSort finished!
-quick random 1024
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => Set array size.
-1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 2048 positions 
-Fill array.
-1. Random	2. Ascending.	3. Descending
-
- Enter choice => Random sequence generated
-
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => QuickSort finished!
-quick random 2048
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => Set array size.
-1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 4096 positions 
-Fill array.
-1. Random	2. Ascending.	3. Descending
-
- Enter choice => Random sequence generated
-
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => QuickSort finished!
-quick random 4096
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => Set array size.
-1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 8192 positions 
-Fill array.
-1. Random	2. Ascending.	3. Descending
-
- Enter choice => Random sequence generated
-
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => QuickSort finished!
-quick random 8192
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => Set array size.
-1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 16384 positions 
-Fill array.
-1. Random	2. Ascending.	3. Descending
-
- Enter choice => Random sequence generated
-
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => QuickSort finished!
-quick random 16384
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => Set array size.
-1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 16384 positions 
+ 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
@@ -836,95 +354,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- linear worst 1024
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
-linear worst 2048
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- linear worst 4096
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
-linear worst 8192
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- linear worst 16384
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -949,7 +378,6 @@ linear worst 8192
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
 
- Enter choice => Array created with 1024 positions 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
@@ -977,7 +405,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- binary rand 1024
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1002,7 +429,6 @@ Ascending sequence generated
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
 
- Enter choice => Array created with 2048 positions 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
@@ -1030,7 +456,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- binary random 2048
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1055,7 +480,6 @@ Ascending sequence generated
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
 
- Enter choice => Array created with 4096 positions 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
@@ -1083,7 +507,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- binary random 4096
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1108,7 +531,6 @@ Ascending sequence generated
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
 
- Enter choice => Array created with 8192 positions 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
@@ -1136,7 +558,72 @@ Ascending sequence generated
 ***************************************************************
 
 
- binary random 8192
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1161,7 +648,1070 @@ Ascending sequence generated
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
 
- Enter choice => Array created with 16384 positions 
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+ 
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Sequence is not sorted
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+ 
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Descending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Descending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Descending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Descending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Descending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+ 
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Sequence is not sorted
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
@@ -1189,7 +1739,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- binary random 16384
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1214,7 +1763,6 @@ Ascending sequence generated
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
 
- Enter choice => Array created with 1024 positions 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
@@ -1242,7 +1790,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- binary worst 1024
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1266,8 +1813,7 @@ Ascending sequence generated
 
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Array created with 2048 positions 
+ 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
@@ -1295,7 +1841,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- binary worst 2048
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1320,7 +1865,6 @@ Ascending sequence generated
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
 
- Enter choice => Array created with 4096 positions 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
@@ -1348,7 +1892,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- binary worst 4096
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1373,7 +1916,6 @@ Ascending sequence generated
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
 
- Enter choice => Array created with 8192 positions 
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
@@ -1401,7 +1943,96 @@ Ascending sequence generated
 ***************************************************************
 
 
- binary worst 8192
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1426,7 +2057,368 @@ Ascending sequence generated
  Enter choice => Set array size.
 1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
 
- Enter choice => Array created with 16384 positions 
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+ 
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Sequence is not sorted
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
 Fill array.
 1. Random	2. Ascending.	3. Descending
 
@@ -1454,7 +2446,1346 @@ Ascending sequence generated
 ***************************************************************
 
 
- binary worst 16384
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+ 
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => Random sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Sequence is not sorted
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => Set array size.
+1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
+
+Fill array.
+1. Random	2. Ascending.	3. Descending
+
+ Enter choice => sorted: 1
+Ascending sequence generated
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1504,7 +3835,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- BST rand 1024
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1554,7 +3884,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- BST worst 1024
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1604,7 +3933,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- BST worst 2048
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1654,7 +3982,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- BST worst 4096
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1704,7 +4031,72 @@ Ascending sequence generated
 ***************************************************************
 
 
- BST worst 8192
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
+ Enter choice => 
+ INVALID MENU CHOICE ***
+
+***************************************************************
+***   a:   create and fill array
+***   b:   bubble sort
+***   c:   insertion sort
+***   d:   quick sort
+***
+***   h:   display this menu
+***   p:   display the first ten elements of array
+***
+***   v:   sequence search mode is Linear 
+***   w:   sequence search mode is Binear Search
+***
+***
+***   o:   fill BST
+***   x:   Search in Binary Search Tree
+***
+***   0:   quit the program
+***
+***************************************************************
+
+
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1754,7 +4146,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- BST worst 16384
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1804,7 +4195,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- BST rand 1024
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1854,7 +4244,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- BST rand 2048
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1904,7 +4293,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- BST rand 4096
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort
@@ -1954,57 +4342,6 @@ Ascending sequence generated
 ***************************************************************
 
 
- BST rand 8192
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- Enter choice => dispmode: 1 Set array size.
-1. 1024	2. 2048.	3. 4096	4. 8192	5. 16384
-
- Enter choice => Set BST type.
-1. Random	2. add 1,2,3...n	3. add all zeroes
-
- Enter choice => 
-***************************************************************
-***   a:   create and fill array
-***   b:   bubble sort
-***   c:   insertion sort
-***   d:   quick sort
-***
-***   h:   display this menu
-***   p:   display the first ten elements of array
-***
-***   v:   sequence search mode is Linear 
-***   w:   sequence search mode is Binear Search
-***
-***
-***   o:   fill BST
-***   x:   Search in Binary Search Tree
-***
-***   0:   quit the program
-***
-***************************************************************
-
-
- BST rand 16834
 ***************************************************************
 ***   a:   create and fill array
 ***   b:   bubble sort

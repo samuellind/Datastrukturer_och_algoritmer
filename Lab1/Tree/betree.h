@@ -30,6 +30,7 @@ int cardinality();
 int bheight();
 
 void bheapify();
+void prntHeap();
 
 #endif
 /**************************************************************/
