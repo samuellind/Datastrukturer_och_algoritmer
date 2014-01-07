@@ -465,14 +465,14 @@ static treeref b_heapify(treeref T, int i) {
 	}
 	printf("kommer hit");
 	fflush(stdout);
-	
+	/*
 	printf("r: %d",get_value(heaparr[r]) );
 	fflush(stdout);
 	printf("qlast: %d",get_value(heaparr[qlast-1]) );
 	fflush(stdout);
 	printf("qlast: %d",get_value(heaparr[largest]) );
 	fflush(stdout);
-	
+	*/
 	if (r <= qlast-1 && get_value(heaparr[r]) > get_value(heaparr[largest])){
 		largest = r;
 		printf("Largest r");
@@ -483,7 +483,7 @@ static treeref b_heapify(treeref T, int i) {
 		fflush(stdout);
 		swap(heaparr[i], heaparr[largest]);
 		if(largest!=qlast)
-			b_heapify(T, largest);
+			b_heapify(heaparr, largest);
 	}
 	return T; 
 }
@@ -527,7 +527,12 @@ static int b_findb(treeref T, int v) {
 
 static int b_findc(treeref T, int v) { 
 	
-	printf("Treeref T value: %d ",T);
+	if(get_value(T)==v)
+		return 1;
+	else
+		b_findc(heaparr[qfirst++],v);
+	
+	//printf("Treeref T value: %d ",T);
 	
 }
 
