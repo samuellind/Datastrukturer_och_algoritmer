@@ -34,138 +34,547 @@
  Enter choice =>  a 
  Enter a value:   1
  Enter choice =>  t 
+  [1]	
 
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (1 nodes, height 1) is inorder:   
+1
+ TREE (1 nodes, height 1) is preorder:  
+1
+ TREE (1 nodes, height 1) is postorder: 
+1
  Enter choice =>  a 
- Enter a value:   2
+ Enter a value:   2Build relationshop 
  Enter choice =>  t 
+    [2]	
+ [1]	[nil]	
 
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (2 nodes, height 2) is inorder:   
+1
+2
+ TREE (2 nodes, height 2) is preorder:  
+2
+1
+ TREE (2 nodes, height 2) is postorder: 
+1
+2
  Enter choice =>  a 
- Enter a value:   3
+ Enter a value:   3Deleting relationship for i: 2   Build relationshop 
  Enter choice =>  t 
+    [3]	
+ [1]	[2]	
 
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (3 nodes, height 2) is inorder:   
+1
+3
+2
+ TREE (3 nodes, height 2) is preorder:  
+3
+1
+2
+ TREE (3 nodes, height 2) is postorder: 
+1
+2
+3
  Enter choice =>  a 
- Enter a value:   4
+ Enter a value:   4Deleting relationship for i: 3   Build relationshop Build relationshop 
  Enter choice =>  t 
+        [4]	
+   [3]	[2]	
+[1]	[nil]	[nil]	[nil]	
 
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (4 nodes, height 3) is inorder:   
+1
+3
+4
+2
+ TREE (4 nodes, height 3) is preorder:  
+4
+3
+1
+2
+ TREE (4 nodes, height 3) is postorder: 
+1
+3
+2
+4
  Enter choice =>  a 
- Enter a value:   5
+ Enter a value:   5Deleting relationship for i: 4   Deleting relationship for i: 3   Build relationshop Build relationshop 
  Enter choice =>  t 
+        [5]	
+   [4]	[2]	
+[1]	[3]	[nil]	[nil]	
 
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (5 nodes, height 3) is inorder:   
+1
+4
+3
+5
+2
+ TREE (5 nodes, height 3) is preorder:  
+5
+4
+1
+3
+2
+ TREE (5 nodes, height 3) is postorder: 
+1
+3
+4
+2
+5
  Enter choice =>  a 
- Enter a value:   6
+ Enter a value:   6Deleting relationship for i: 4   Deleting relationship for i: 5   Build relationshop Build relationshop Build relationshop 
  Enter choice =>  t 
+        [6]	
+   [4]	[5]	
+[1]	[3]	[2]	[nil]	
 
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (6 nodes, height 3) is inorder:   
+1
+4
+3
+6
+2
+5
+ TREE (6 nodes, height 3) is preorder:  
+6
+4
+1
+3
+5
+2
+ TREE (6 nodes, height 3) is postorder: 
+1
+3
+4
+2
+5
+6
  Enter choice =>  a 
- Enter a value:   7
+ Enter a value:   7Deleting relationship for i: 4   Deleting relationship for i: 6   Deleting relationship for i: 5   Build relationshop Build relationshop Build relationshop 
  Enter choice =>  t 
+        [7]	
+   [4]	[6]	
+[1]	[3]	[2]	[5]	
 
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (7 nodes, height 3) is inorder:   
+1
+4
+3
+7
+2
+6
+5
+ TREE (7 nodes, height 3) is preorder:  
+7
+4
+1
+3
+6
+2
+5
+ TREE (7 nodes, height 3) is postorder: 
+1
+3
+4
+2
+5
+6
+7
  Enter choice =>  a 
- Enter a value:   8
+ Enter a value:   8Deleting relationship for i: 7   Deleting relationship for i: 6   Deleting relationship for i: 4   Build relationshop Build relationshop Build relationshop Build relationshop 
  Enter choice =>  t 
+                [8]	
+       [7]	[6]	
+  [4]	[3]	[2]	[5]	
+[1]	[nil]	[nil]	[nil]	[nil]	[nil]	[nil]	[nil]	
 
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (8 nodes, height 4) is inorder:   
+1
+4
+7
+3
+8
+2
+6
+5
+ TREE (8 nodes, height 4) is preorder:  
+8
+7
+4
+1
+3
+6
+2
+5
+ TREE (8 nodes, height 4) is postorder: 
+1
+4
+3
+7
+2
+5
+6
+8
  Enter choice =>  a 
- Enter a value:   9
+ Enter a value:   9Deleting relationship for i: 8   Deleting relationship for i: 6   Deleting relationship for i: 7   Deleting relationship for i: 4   Build relationshop Build relationshop Build relationshop Build relationshop 
  Enter choice =>  t 
+                [9]	
+       [8]	[6]	
+  [7]	[3]	[2]	[5]	
+[1]	[4]	[nil]	[nil]	[nil]	[nil]	[nil]	[nil]	
 
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (9 nodes, height 4) is inorder:   
+1
+7
+4
+8
+3
+9
+2
+6
+5
+ TREE (9 nodes, height 4) is preorder:  
+9
+8
+7
+1
+4
+3
+6
+2
+5
+ TREE (9 nodes, height 4) is postorder: 
+1
+4
+7
+3
+8
+2
+5
+6
+9
  Enter choice =>  a 
- Enter a value:   10
+ Enter a value:   10Deleting relationship for i: 9   Deleting relationship for i: 6   Deleting relationship for i: 7   Deleting relationship for i: 8   Build relationshop Build relationshop Build relationshop Build relationshop Build relationshop 
  Enter choice =>  t 
+                [10]	
+       [9]	[6]	
+  [7]	[8]	[2]	[5]	
+[1]	[4]	[3]	[nil]	[nil]	[nil]	[nil]	[nil]	
 
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (10 nodes, height 4) is inorder:   
+1
+7
+4
+9
+3
+8
+10
+2
+6
+5
+ TREE (10 nodes, height 4) is preorder:  
+10
+9
+7
+1
+4
+8
+3
+6
+2
+5
+ TREE (10 nodes, height 4) is postorder: 
+1
+4
+7
+3
+8
+9
+2
+5
+6
+10
  Enter choice =>  a 
- Enter a value:   11
+ Enter a value:   11Deleting relationship for i: 10   Deleting relationship for i: 6   Deleting relationship for i: 7   Deleting relationship for i: 9   Deleting relationship for i: 8   Build relationshop Build relationshop Build relationshop Build relationshop Build relationshop 
  Enter choice =>  t 
+                [11]	
+       [10]	[6]	
+  [7]	[9]	[2]	[5]	
+[1]	[4]	[3]	[8]	[nil]	[nil]	[nil]	[nil]	
 
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (11 nodes, height 4) is inorder:   
+1
+7
+4
+10
+3
+9
+8
+11
+2
+6
+5
+ TREE (11 nodes, height 4) is preorder:  
+11
+10
+7
+1
+4
+9
+3
+8
+6
+2
+5
+ TREE (11 nodes, height 4) is postorder: 
+1
+4
+7
+3
+8
+9
+10
+2
+5
+6
+11
  Enter choice =>  a 
- Enter a value:   12
+ Enter a value:   12Deleting relationship for i: 10   Deleting relationship for i: 11   Deleting relationship for i: 7   Deleting relationship for i: 9   Deleting relationship for i: 6   Build relationshop Build relationshop Build relationshop Build relationshop Build relationshop Build relationshop 
  Enter choice =>  t 
+                [12]	
+       [10]	[11]	
+  [7]	[9]	[6]	[5]	
+[1]	[4]	[3]	[8]	[2]	[nil]	[nil]	[nil]	
 
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (12 nodes, height 4) is inorder:   
+1
+7
+4
+10
+3
+9
+8
+12
+2
+6
+11
+5
+ TREE (12 nodes, height 4) is preorder:  
+12
+10
+7
+1
+4
+9
+3
+8
+11
+6
+2
+5
+ TREE (12 nodes, height 4) is postorder: 
+1
+4
+7
+3
+8
+9
+10
+2
+6
+5
+11
+12
  Enter choice =>  a 
- Enter a value:   13
+ Enter a value:   13Deleting relationship for i: 10   Deleting relationship for i: 12   Deleting relationship for i: 7   Deleting relationship for i: 9   Deleting relationship for i: 11   Deleting relationship for i: 6   Build relationshop Build relationshop Build relationshop Build relationshop Build relationshop Build relationshop 
  Enter choice =>  t 
+                [13]	
+       [10]	[12]	
+  [7]	[9]	[11]	[5]	
+[1]	[4]	[3]	[8]	[2]	[6]	[nil]	[nil]	
 
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (13 nodes, height 4) is inorder:   
+1
+7
+4
+10
+3
+9
+8
+13
+2
+11
+6
+12
+5
+ TREE (13 nodes, height 4) is preorder:  
+13
+10
+7
+1
+4
+9
+3
+8
+12
+11
+2
+6
+5
+ TREE (13 nodes, height 4) is postorder: 
+1
+4
+7
+3
+8
+9
+10
+2
+6
+11
+5
+12
+13
  Enter choice =>  a 
- Enter a value:   14
+ Enter a value:   14Deleting relationship for i: 10   Deleting relationship for i: 13   Deleting relationship for i: 7   Deleting relationship for i: 9   Deleting relationship for i: 11   Deleting relationship for i: 12   Build relationshop Build relationshop Build relationshop Build relationshop Build relationshop Build relationshop Build relationshop 
  Enter choice =>  t 
+                [14]	
+       [10]	[13]	
+  [7]	[9]	[11]	[12]	
+[1]	[4]	[3]	[8]	[2]	[6]	[5]	[nil]	
 
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (14 nodes, height 4) is inorder:   
+1
+7
+4
+10
+3
+9
+8
+14
+2
+11
+6
+13
+5
+12
+ TREE (14 nodes, height 4) is preorder:  
+14
+10
+7
+1
+4
+9
+3
+8
+13
+11
+2
+6
+12
+5
+ TREE (14 nodes, height 4) is postorder: 
+1
+4
+7
+3
+8
+9
+10
+2
+6
+11
+5
+12
+13
+14
  Enter choice =>  a 
- Enter a value:   15
+ Enter a value:   15Deleting relationship for i: 10   Deleting relationship for i: 14   Deleting relationship for i: 7   Deleting relationship for i: 9   Deleting relationship for i: 11   Deleting relationship for i: 13   Deleting relationship for i: 12   Build relationshop Build relationshop Build relationshop Build relationshop Build relationshop Build relationshop Build relationshop 
  Enter choice =>  t 
+                [15]	
+       [10]	[14]	
+  [7]	[9]	[11]	[13]	
+[1]	[4]	[3]	[8]	[2]	[6]	[5]	[12]	
 
  Enter choice =>  d 
 
- TREE (0 nodes, height 0) is inorder:   
- TREE (0 nodes, height 0) is preorder:  
- TREE (0 nodes, height 0) is postorder: 
+ TREE (15 nodes, height 4) is inorder:   
+1
+7
+4
+10
+3
+9
+8
+15
+2
+11
+6
+14
+5
+13
+12
+ TREE (15 nodes, height 4) is preorder:  
+15
+10
+7
+1
+4
+9
+3
+8
+14
+11
+2
+6
+13
+5
+12
+ TREE (15 nodes, height 4) is postorder: 
+1
+4
+7
+3
+8
+9
+10
+2
+6
+11
+5
+12
+13
+14
+15
  Enter choice =>  q 
  *** BYE BYE! ***
  *** End of Tree program 

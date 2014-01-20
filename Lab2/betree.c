@@ -370,6 +370,7 @@ static treeref b_addh(treeref T, int qpos) {
 	//printf("Heap array add %d\n", qpos);
 	if(is_empty(heaparr[qpos])){
 		heaparr[qpos]= T;
+		printf("qpos: %d", qpos);
 		qlast++;
 		//printf("Lägger till på pos %d, qlast är: %d \n",qpos,qlast);
 	}
