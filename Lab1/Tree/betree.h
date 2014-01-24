@@ -23,6 +23,8 @@ void add(int v);
 void rem(int v);
 void addh(int v);
 void remh(int v);
+void insertAVL(int v);
+void delAVL(int v);
 
 int is_memberb(int v);
 int is_memberc(int v);
@@ -31,6 +33,7 @@ int bheight();
 
 void bheapify();
 void prntHeap();
+
 
 #endif
 /**************************************************************/

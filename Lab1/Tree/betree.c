@@ -43,7 +43,7 @@ static treeref T     = (treeref) NULL;
 /* define heap array instance                                 */
 /**************************************************************/
 
-static int first=NILL,  last=NILL;
+//static int first=NILL,  last=NILL;
 static int qfirst=0, qlast=0;
 
 static treeref heaparr[ARRLEN];
@@ -117,9 +117,11 @@ static treeref create_node(int v) {
 /* LC, Node, RC - a RECURSIVE view of the tree                              */
 /****************************************************************************/
 
-static treeref node(treeref T)             { /* TO DO */ return NULL; }
-static treeref LC(treeref T)               { /* TO DO */ return NULL; }
-static treeref RC(treeref T)               { /* TO DO */ return NULL; }
+//static treeref node(treeref T)             { return T; }
+static treeref LC(treeref T)               { if(!is_empty(get_LC(T)))return get_LC(T);
+																		return (treeref)NULL;}
+static treeref RC(treeref T)               { if(!is_empty(get_RC(T)))return get_RC(T);
+																	return (treeref)NULL;}
 
 /****************************************************************************/
 /* CONStruct a new tree from a LC, Node and RC                              */
@@ -175,10 +177,10 @@ static int b_card(treeref T) { if(is_empty(T)) return 0 ;
 /****************************************************************************/
 
 static void fillqueue(){
-	
+	printf("Fillque \n");
 	int i=0,j=(int)(pow(2,b_height(T))-1);
-	while(i<j){
-		queue[i]=NILL;
+	while(i<=j){
+		queue[i]=(treeref)NULL;
 		i++;
 	}
 }
@@ -209,6 +211,7 @@ for(i=1;i<=j;i++){
 	printf("[%d] ",get_value(queue[i]));
 	else printf("[nil]");
 	}
+printf("\n");
 }
 
 /****************************************************************************/
@@ -226,7 +229,7 @@ for(i=1;i<=j;i++){
 static void b_disp_2D() { 
 	fillqueue();
 	T2Q(T,1);
-	//prntT2Q();
+	prntT2Q();
 
     int a=b_height(T),b,c,x,d=a;
     qfirst=1;
@@ -302,6 +305,8 @@ static treeref b_add(treeref T, treeref N) {
 	if(is_empty(T)){
 		return N;
 	}
+	if(is_empty(N))
+		return T;
 	else if(get_value(N)>get_value(T)){
 		set_height(N,get_height(N)+1);
 		return cons(get_LC(T),T,b_add(get_RC(T),N));
@@ -322,16 +327,27 @@ static treeref b_add(treeref T, treeref N) {
 static treeref b_rem(treeref T, int v) { 
 	
 	if(is_empty(T)){
-		free(T);
 		return T;
 	}
 	else if(v<get_value(T))
 		return cons(b_rem(get_LC(T),v),T,get_RC(T));
 	else if(v>get_value(T))
 		return cons(get_LC(T),T,b_rem(get_RC(T),v));
-	else
-		return b_add(get_LC(T),get_RC(T));
+	else{
+		printf("Else i remove \n");
+		if(!is_empty(LC(T))){
+			printf("If \n");
+			return b_add(LC(T),RC(T));
+		}
+		else if(!is_empty(RC(T)))
+			return b_add(RC(T),LC(T));
+		else{
+			printf("Else \n");
+			return T;
+		}
+	}
 }
+
 /****************************************************************************/
 /* display the heap array                                                    */
 /****************************************************************************/
@@ -392,14 +408,7 @@ static treeref b_heapify(treeref T, int oka) {
 	}
 	printf("kommer hit ");
 	fflush(stdout);
-	/*
-	printf("r: %d",get_value(heaparr[r]) );
-	fflush(stdout);
-	printf("qlast: %d",get_value(heaparr[qlast-1]) );
-	fflush(stdout);
-	printf("qlast: %d",get_value(heaparr[largest]) );
-	fflush(stdout);
-	*/
+
 	if (r <= qlast && get_value(heaparr[r]) > get_value(heaparr[largest])){
 		//printf("R: %d, i: %d    ",get_value(heaparr[r]),get_value(heaparr[i]));
 		largest = r;
@@ -425,13 +434,9 @@ static void delRel(){
 	treeref N;
 	
 	while(qpos<=qlast){
-		
 		N=heaparr[qpos];
-		
-		if(!is_empty(get_LC(N)) || !is_empty(get_RC(N))){
-				printf("Deleting relationship for i: %d   ", get_value(N));
-				cons((treeref)NULL,N,(treeref)NULL);
-		}
+		printf("Deleting relationship for i: %d   ", get_value(N));
+		cons((treeref)NULL,heaparr[qpos],(treeref)NULL);
 		qpos++;
 	}
 	
@@ -447,8 +452,8 @@ static void buildRel(){
 	int qpos=1;
 	
 	if(!is_empty(T)){
-		while(qpos<=ceil(qlast/2)){
-			printf("Build relationshop ");
+		while(qpos<=qlast){
+			printf("Build relationship %d ",qpos);
 			cons(heaparr[qpos*2],heaparr[qpos],heaparr[(qpos*2)+1]);
 			qpos++;
 		}
@@ -463,12 +468,11 @@ static void buildRel(){
 static void buildHeap(treeref T){
 	
 	int i;
-	
+	delRel();
 	for(i=ceil(qlast/2);i>=1;i--){
 		printf("***i: %d ***", i);
 		b_heapify(T,i);
 	}
-	delRel();
 	buildRel();
 	
 }
@@ -481,13 +485,16 @@ static treeref b_addh(treeref T, treeref N) {
 	
 	qlast++;
 	int i = qlast,parent=i/2;
-
+	
+	//b_disp_array();
+	
 		while(i>1 && get_value(heaparr[parent])<get_value(N)){
 			parent = i/2;
+			printf("går in i while, parent: %d, value: %d \n", get_value(heaparr[parent]),get_value(N));
 			heaparr[i]= heaparr[parent];
-			i = parent;
+			if(get_value(heaparr[parent])<get_value(N))
+				i = parent;
 		}
-
 	heaparr[i] = N;
 	
 	delRel();
@@ -500,21 +507,21 @@ static treeref b_addh(treeref T, treeref N) {
 /* REMove an element from the tree in heap order                            */
 /****************************************************************************/
 
-static treeref b_remh(int v,int qpos) { 
+static treeref b_remh(int qpos) { 
+
+printf("Return qpos: %d ", qpos);
 	
-heaparr[v]=(treeref)NULL;
-	
-	if(is_empty(heaparr[v])){
-		heaparr[v] = heaparr[qlast];
+	if(qlast>0 && qpos!=0){
+		heaparr[qpos]=heaparr[qlast];
 		heaparr[qlast]= (treeref)NULL;
 		qlast--;
+		printf("***QLAST: %d \n", qlast);
 		buildHeap(T);
 	}
-	else{
-		printf("Element not found\n");
-	}
-	delRel();
-	buildRel();
+	
+	else
+		printf("Array is empty or element not found");
+	
 	return heaparr[1]; }
 
 /****************************************************************************/
@@ -524,7 +531,7 @@ heaparr[v]=(treeref)NULL;
 static int b_findb(treeref T, int v) { 
 	
 	if(is_empty(T))
-		return 0;
+		return 0; 
 	else if(v>get_value(T))
 		return b_findb(get_RC(T),v);
 	else if(v<get_value(T))
@@ -541,17 +548,150 @@ static int b_findb(treeref T, int v) {
 static int b_findc(treeref T, int v, int qpos) { 
 	if(is_empty(T))
 		return 0;
-	if(get_value(T)==v)
+	if(get_value(T)==v){
+		printf("Qpos: %d ", qpos);
 		return qpos;
+	}
 	else { 
 		qpos++;
 		return b_findc(heaparr[qpos],v, qpos);
 		}
 	
-	
 	//printf("Treeref T value: %d ",T);
 	
 }
+
+/****************************************************************************/
+/****************************************************************************/
+/* AVL Right Rotate					                                             */
+/****************************************************************************/
+/****************************************************************************/
+
+treeref right_Rot(treeref T){
+	treeref N;
+	N=LC(T);
+	set_LC(T,RC(N));
+	set_RC(N,T);
+	//balFact(T);
+	//balFact(N);
+	T=N;
+	return N;
+}
+
+/****************************************************************************/
+/****************************************************************************/
+/* AVL Left Rotate					                                             */
+/****************************************************************************/
+/****************************************************************************/
+
+treeref left_Rot(treeref T){	
+	treeref N;
+	N=RC(T);
+	set_RC(T,LC(N));
+	set_LC(N,T);
+	//balFact(T);
+	//balFact(N);
+	T=N;
+	return N;
+}
+
+/****************************************************************************/
+/****************************************************************************/
+/* AVL Double Right Rotate		                                             */
+/****************************************************************************/
+/****************************************************************************/
+
+treeref dbl_RightRot(treeref T){
+	set_LC(T,left_Rot(LC(T)));
+	T=right_Rot(T);
+	return T;
+}
+
+/****************************************************************************/
+/****************************************************************************/
+/* AVL Double Left Rotate		                                             */
+/****************************************************************************/
+/****************************************************************************/
+
+treeref dbl_LeftRot(treeref T){
+	set_RC(T,right_Rot(RC(T)));
+	T=left_Rot(T);
+	return T;
+}
+
+/****************************************************************************/
+/****************************************************************************/
+/* Determine longest road from current node                          */
+/****************************************************************************/
+/****************************************************************************/
+
+
+int path(treeref p, int max, int length){ 
+	
+	if (p!=NULL){ 
+		path(get_RC(p),max,length+1); 
+
+		if ((get_LC(p)==NULL)&&(get_RC(p)==NULL)&&(max<length)) 
+			max=length; 
+		printf("max=%d", max);
+		path(get_LC(p),max,length+1); 
+	} 
+} 
+
+/****************************************************************************/
+/****************************************************************************/
+/* Determine balance factor							                          */
+/****************************************************************************/
+/****************************************************************************/
+
+treeref balFact(treeref p){ 
+	
+	 int max1,max2; 					//max1=vänster, max2=höger.
+	 max1=1; max2=1; 
+
+	 if(LC(p)!=NULL) 
+		max1 =  b_height(LC(p)); 
+	 else 
+		max1=0; 
+	 if(RC(p)!=NULL)
+		 max2 = b_height(RC(p)); 
+	 else 
+		max2=0; 
+	printf("max1 %d, max2 %d", max1,max2);
+	 if(abs(max2-max1)>1)					//om obalans
+		 { printf("obalans");
+			fflush(stdout);
+		if(max2>max1){	
+								printf("högertungt");				//kolla om det är höger- eller vänster-tungt.
+								fflush(stdout);
+			if (b_height(RC(RC(p)))>b_height(RC(LC(p)))){		//kolla om det är höger höger eller höger vänster.
+				printf("höger-höger");	
+				left_Rot(p);
+				}
+			else
+				dbl_LeftRot(p);
+		}
+		else 
+			printf("vänstertungt");
+	 }
+	 else
+			return p;
+			
+		
+			 
+} 
+treeref b_addAVL(treeref T, int v){	
+	T= b_add(T, create_node(v));
+	balFact(T);
+return T;
+}
+
+
+treeref b_remAVL(treeref T, int v)
+{
+	return T;
+}
+
 
 /****************************************************************************/
 /****************************************************************************/
@@ -570,7 +710,10 @@ void add(int v)               { T = b_add(T, create_node(v)); }
 void rem(int v)               { T = b_rem(T, v); }
 
 void addh(int v)              { T = b_addh(T,create_node(v)); }
-void remh(int v)              { T = b_remh(1,b_findc(T,v,1)); }
+void remh(int v)              { T = b_remh(b_findc(T,v,1)); }
+
+void insertAVL(int v) {T=b_addAVL(T,v) ;}
+void delAVL(int v) {T = b_remAVL(T,v);}
 
 int is_memberb(int v)         { return b_findb(T, v); }
 int is_memberc(int v)         { return b_findc(T, v,1); }

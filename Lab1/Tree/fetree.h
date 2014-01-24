@@ -23,6 +23,8 @@ void addval(int v);
 void remval(int v);
 void addhval(int v);
 void remhval(int v);
+void addAVL(int v);
+void remAVL(int v);
 void memberb(int v);
 void memberc(int v);
 

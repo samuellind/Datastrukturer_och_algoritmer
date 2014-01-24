@@ -41,6 +41,8 @@ void addval (int v) { add(v);  }
 void remval (int v) { rem(v);  }
 void addhval(int v) { addh(v); }
 void remhval(int v) { remh(v); }
+void addAVL(int v) {insertAVL(v); }
+void remAVL(int v) {delAVL(v); }
 void prntHp(){prntHeap();}
 
 void memberb(int v) {

@@ -65,6 +65,7 @@ static void uadd()
    switch (treemode) {
       case 0: addval(dialog());               break;
       case 1: addhval(dialog());              break;
+	  case 2: addAVL(dialog());				break;
       }
 }
 
@@ -73,14 +74,16 @@ static void uremove()
    switch (treemode) {
       case 0: remval(dialog());               break;
       case 1: remhval(dialog());              break;
+	  case 2: remAVL(dialog());				break;
       }
 }
 
 static void ufind()
 {
    switch (treemode) {
-      case 0: memberb(dialog("number"));      break;
-      case 1: memberc(dialog("number"));      break;
+      case 0: memberb(dialog());      break;
+      case 1: memberc(dialog());      break;
+	  case 2: memberb(dialog());		break;
       }
 }
 
@@ -89,6 +92,7 @@ static void showmode()
    switch (treemode) {
       case 0: printf(" BST  mode ");          break;
       case 1: printf(" Complete Tree mode "); break;
+	  case 2: printf("AVL BT mode");			break;
       }
 }
 
@@ -130,6 +134,7 @@ static void dispmenu()
    printf("***   k:   display current mode (BST/Complete Tree)         ***\n");
    printf("***   p:   display the READ_ME text (program documentation) ***\n");
    printf("***                                                         ***\n");
+   printf("***   b:   tree is a AVL                                    ***\n");
    printf("***   w:   tree is a BST                                    ***\n");
    printf("***   x:   tree is a Complete Tree (CT)                     ***\n");
    printf("***                                                         ***\n");
@@ -185,6 +190,7 @@ void runmenu()
          case 't': case 'T': display2D();                       break;
 
          case 'a': case 'A': uadd();                            break;
+		 case 'b': case 'B': treemode=2;					break;
          case 'r': case 'R': uremove();                         break;
          case 'f': case 'F': ufind();                           break;
          case 'h': case 'H': height();                          break;
