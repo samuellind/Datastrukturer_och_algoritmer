@@ -1,0 +1,69 @@
+
+ *** Start of Graph program 
+***************************************************************
+***                                                         ***
+***   h:   display this menu                                ***
+***   p:   display the READ_ME text (program documentation) ***
+***   u:   set the mode to undirected graph                 ***
+***   i:   set the mode to   directed graph                 ***
+***   k:   display the mode (directed / undirected)         ***
+***                                                         ***
+***   d:   display the graph                                ***
+***   m:   display the matrix                               ***
+***                                                         ***
+***   a:   add a  node to the graph                         ***
+***   b:   add an edge to the graph                         ***
+***   r:   remove a  node from the graph                    ***
+***   s:   remove an edge from the graph                    ***
+***                                                         ***
+***   n:   find a  node in the graph                        ***
+***   e:   find an edge in the graph                        ***
+***                                                         ***
+***   t:   Dijkstra + SPT                                   ***
+***   v:   Floyd                                            ***
+***   w:   Warshall                                         ***
+***   x:   Prim                                             ***
+***   y:   Kruskal                                          ***
+***                                                         ***
+***   q:   quit the program                                 ***
+***                                                         ***
+***************************************************************
+
+
+ Enter choice => 
+ Enter choice =>  i 
+
+ Enter choice =>  k 
+ directed graph mode 
+ Enter choice =>  a 
+ enter name:  a
+ Enter choice =>  a 
+ enter name:  b
+ Enter choice =>  a 
+ enter name:  c
+ Enter choice =>  b 
+ enter node 1:    a enter node 2:    b enter a weight:  1
+ Enter choice =>  b 
+ enter node 1:    a enter node 2:    c enter a weight:  2
+ Enter choice =>  b 
+ enter node 1:    c enter node 2:    b enter a weight:  4
+ Enter choice =>  d 
+
+ GRAPH  (3 nodes) is: 
+-a--b--c-EOF
+-b-EOF
+-c--b-EOF
+EOF
+ Enter choice =>  m 
+
+ MATRIX (3 nodes) is: 
+	 0	 1	 2
+	 a	 b	 c
+--------------------------------
+a |	 0	 1	 2
+b |	 0	 0	 0
+c |	 0	 4	 0
+
+ Enter choice =>  q 
+ *** BYE BYE! ***
+ *** End of Graph program 
