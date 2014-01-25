@@ -1,0 +1,141 @@
+
+ *** Start of Tree program 
+***************************************************************
+***                                                         ***
+***   m:   display this menu                                ***
+***   k:   display current mode (BST/Complete Tree)         ***
+***   p:   display the READ_ME text (program documentation) ***
+***                                                         ***
+***   b:   tree is a AVL                                    ***
+***   w:   tree is a BST                                    ***
+***   x:   tree is a Complete Tree (CT)                     ***
+***                                                         ***
+***   y:   display the tree array                           ***
+***   d:   display the tree (in/pre/post)                   ***
+***   e:   display the tree (pre_order)                     ***
+***   i:   display the tree (in_order)                      ***
+***   o:   display the tree (post_order)                    ***
+***   t:   display the tree (2D)                            ***
+***                                                         ***
+***   a:   add a value to the tree                          ***
+***   r:   remove a value from the tree                     ***
+***   f:   find a value in the tree                         ***
+***   h:   find the height of the tree                      ***
+***   g:   heapify the tree (must be a Complete Tree)       ***
+***                                                         ***
+***   q:   quit the program                                 ***
+***                                                         ***
+***************************************************************
+
+
+ Enter choice =>  x 
+
+ Enter choice =>  r 
+ Enter a value:   4Array is empty or element not found
+ Enter choice =>  a 
+ Enter a value:   1
+ Enter choice =>  t 
+  [1]	
+
+ Enter choice =>  a 
+ Enter a value:   2
+ Enter choice =>  t 
+    [2]	
+ [1]	[nil]	
+
+ Enter choice =>  a 
+ Enter a value:   3
+ Enter choice =>  t 
+    [3]	
+ [1]	[2]	
+
+ Enter choice =>  a 
+ Enter a value:   4
+ Enter choice =>  t 
+        [4]	
+   [3]	[2]	
+[1]	[nil]	[nil]	[nil]	
+
+ Enter choice =>  a 
+ Enter a value:   5
+ Enter choice =>  t 
+        [5]	
+   [4]	[2]	
+[1]	[3]	[nil]	[nil]	
+
+ Enter choice =>  r 
+ Enter a value:   3Qpos: 5 
+ Enter choice =>  t 
+        [5]	
+   [4]	[2]	
+[1]	[nil]	[nil]	[nil]	
+
+ Enter choice =>  r 
+ Enter a value:   5Qpos: 1 
+ Enter choice =>  t 
+    [4]	
+ [1]	[2]	
+
+ Enter choice =>  r 
+ Enter a value:   1Qpos: 2 
+ Enter choice =>  r 
+ Enter a value:   2Qpos: 2 
+ Enter choice =>  r 
+ Enter a value:   4Qpos: 1 
+ Enter choice =>  b 
+
+ Enter choice =>  r 
+ Enter a value:   5
+ Enter choice =>  a 
+ Enter a value:   1
+ Enter choice =>  t 
+  [1]	
+
+ Enter choice =>  a 
+ Enter a value:   2
+ Enter choice =>  t 
+    [1]	
+ [nil]	[2]	
+
+ Enter choice =>  a 
+ Enter a value:   3
+ Enter choice =>  t 
+    [2]	
+ [1]	[3]	
+
+ Enter choice =>  a 
+ Enter a value:   4
+ Enter choice =>  t 
+        [2]	
+   [1]	[3]	
+[nil]	[nil]	[nil]	[4]	
+
+ Enter choice =>  a 
+ Enter a value:   5
+ Enter choice =>  t 
+        [3]	
+   [2]	[4]	
+[1]	[nil]	[nil]	[5]	
+
+ Enter choice =>  r 
+ Enter a value:   3
+ Enter choice =>  t 
+        [4]	
+   [2]	[5]	
+[1]	[nil]	[nil]	[nil]	
+
+ Enter choice =>  r 
+ Enter a value:   4
+ Enter choice =>  t 
+    [2]	
+ [1]	[5]	
+
+ Enter choice =>  r 
+ Enter a value:   5
+ Enter choice =>  t 
+    [2]	
+ [1]	[nil]	
+
+ Enter choice =>  q 
+ *** BYE BYE! ***
+ *** End of Tree program 
