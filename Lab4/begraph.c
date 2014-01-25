@@ -405,10 +405,54 @@ static void b_mdisp(noderef G) {
 }
 
 /****************************************************************************/
+/* GRAPH HELP ALGORITHMS                                              */
+/****************************************************************************/
+
+noderef node_sel()
+{
+	char c;
+	printf("Select start node: \n");
+	scanf(" %c", &c);
+	
+	if(c!='0'){
+		noderef N=b_findn(c, G);
+		if(!is_empty(N))
+			return N;
+		else{
+			printf("Node not found. Try again.\n");
+			return node_sel();
+		}
+	}
+	else
+		exit(1);
+}
+
+
+noderef fill_S(noderef S[], noderef T){
+	int i =0;
+	while(i< b_card(G)){
+		S[i]=T;
+		i++;
+		T= get_nodes(T);
+		printf("%c", get_nname(T));
+	}
+	return S;
+}
+
+/****************************************************************************/
 /* GRAPH ALGORITHMS                                                         */
 /****************************************************************************/
 
-void b_Dijkstra() { /* TO DO */ }
+void b_Dijkstra() { 
+	int size =b_card(G);
+	noderef start=node_sel();
+	noderef S[size];
+	S = fill_S(S, start);
+	
+	
+	
+	
+}
 void b_Floyd()    { /* TO DO */ }
 void b_Warshall() { /* TO DO */ }
 void b_Prim()     { /* TO DO */ }
