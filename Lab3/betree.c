@@ -465,16 +465,30 @@ static void buildHeap(treeref T){
 	buildRel();
 	
 }
+/****************************************************************************/
+/* FIND an element in the complete tree                                     */
+/****************************************************************************/
 
+static int b_findc(treeref T, int v, int qpos) { 
+	if(is_empty(T))
+		return 0;
+	if(get_value(T)==v){
+		return qpos;
+	}
+	else { 
+		qpos++;
+		return b_findc(heaparr[qpos],v, qpos);
+		}
+}
 /****************************************************************************/
 /* ADD to the tree in heap order                                            */
 /****************************************************************************/
 
 static treeref b_addh(treeref T, treeref N) {
-	
+	//IF sats som begränsar duplikat
 	qlast++;
 	int i = qlast,parent=i/2;
-		
+			
 		while(i>1 && get_value(heaparr[parent])<get_value(N)){
 			parent = i/2;
 			heaparr[i]= heaparr[parent];
@@ -485,9 +499,9 @@ static treeref b_addh(treeref T, treeref N) {
 	
 	delRel();
 	buildRel();
-	
 	return heaparr[1];
-	}
+	
+}
 	
 /****************************************************************************/
 /* REMove an element from the tree in heap order                            */
@@ -523,22 +537,6 @@ static int b_findb(treeref T, int v) {
 		return 1; 
 }
 
-
-/****************************************************************************/
-/* FIND an element in the complete tree                                     */
-/****************************************************************************/
-
-static int b_findc(treeref T, int v, int qpos) { 
-	if(is_empty(T))
-		return 0;
-	if(get_value(T)==v){
-		return qpos;
-	}
-	else { 
-		qpos++;
-		return b_findc(heaparr[qpos],v, qpos);
-		}
-}
 
 /****************************************************************************/
 /****************************************************************************/
@@ -672,7 +670,7 @@ void disp_post()              { b_disp_post(T); }
 void add(int v)               { T = b_add(T, create_node(v)); }
 void rem(int v)               { T = b_rem(T, v); }
 
-void addh(int v)              { T = b_addh(T,create_node(v)); }
+void addh(int v)              { if(!b_findc(T,v,1)){T = b_addh(T,create_node(v));} else printf("Value already in tree"); }
 void remh(int v)              { T = b_remh(b_findc(T,v,1)); }
 
 void insertAVL(int v) {T=b_addAVL(T,v) ;}
