@@ -371,7 +371,7 @@ static treeref b_rem(treeref T, int v) {
 
 static void prntHeaparr(){
 
-int i,j=9;
+int i,j=10;
 for(i=1;i<=j;i++){
 	if(!is_empty(heaparr[i])){
 		printf("[%d] ", get_value(heaparr[i]));
@@ -411,6 +411,7 @@ static treeref b_heapify(treeref T, int oka) {
 	}
 	if (largest != oka){ 
 		swap(oka, largest);
+		b_heapify(T,largest);
 	}
 	return T; 
 }
@@ -455,12 +456,16 @@ static void buildRel(){
 /* ADD to the tree in heap order                                            */
 /****************************************************************************/
 
-static void buildHeap(treeref T){
+static void buildHeap(){
 	
 	int i;
 	delRel();
-	for(i=ceil(qlast/2);i>=1;i--){
+	i=qlast/2;
+	
+	while(i>=1){
+		printf("Heap array: %d   ",i);
 		b_heapify(T,i);
+		i--;
 	}
 	buildRel();
 	
@@ -513,7 +518,7 @@ static treeref b_remh(int qpos) {
 		heaparr[qpos]=heaparr[qlast];
 		heaparr[qlast]= (treeref)NULL;
 		qlast--;
-		buildHeap(T);
+		buildHeap();
 	}
 	
 	else
@@ -602,6 +607,11 @@ int balFact(treeref N){
     return b_height(LC(N)) - b_height(RC(N)); 
 } 
 
+/****************************************************************************/
+/****************************************************************************/
+/* ADD AVL Order									                          */
+/****************************************************************************/
+/****************************************************************************/
 
 treeref b_addAVL(treeref T, int v){	
 	
@@ -624,6 +634,12 @@ treeref b_addAVL(treeref T, int v){
     }
 	return T;
 }
+
+/****************************************************************************/
+/****************************************************************************/
+/* REMOVE AVL Order						    		                          */
+/****************************************************************************/
+/****************************************************************************/
 
 
 treeref b_remAVL(treeref T, int v)
@@ -682,7 +698,7 @@ int is_memberc(int v)         { return b_findc(T, v,1); }
 int cardinality()             { return b_card(T); }
 int bheight()                 { return b_height(T); }
 
-void bheapify()               { T = b_heapify(T,1); }
+void bheapify()               { buildHeap(); }
 void prntHeap()				{prntHeaparr();}
 
 /****************************************************************************/
