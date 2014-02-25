@@ -1,0 +1,1 @@
+gcc -Wall -o graph Dmenu.c menu.c fegraph.c begraph.c

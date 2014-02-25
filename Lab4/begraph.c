@@ -19,6 +19,8 @@
 
 #define MAXNOD 20
 #define NULLREF NULL
+#define true 1
+#define false 0
 
 /**************************************************************/
 /* node element definition (this is hidden!)                  */
@@ -375,7 +377,7 @@ for(i=0;i<b_card(G);i++)
 /****************************************************************************/
 
 static void cre_adjmat(noderef G) {
-	
+	if(!is_empty(G)){
 	noderef e;
 
 	int i,j;
@@ -404,7 +406,7 @@ static void cre_adjmat(noderef G) {
 		
 	}
 	
-
+}
  }
 /****************************************************************************/
 /* DISPLAY top level of adjacency matrix                                    */
@@ -624,7 +626,45 @@ void b_Dijkstra() {
 }
 
 void b_Floyd()    { /* TO DO */ }
-void b_Warshall() { /* TO DO */ }
+int b_Warshall(noderef G) {
+	if(is_empty(G))					// is there a graph
+		return 0;
+	fflush(stdout);
+	
+	int TC[MAXNOD][MAXNOD];
+	int max = b_card(G);
+	fflush(stdout);
+	int i,j,k;
+	
+	for(i=0;i<max;i++){				// enter all immidiate connections
+		for(j=0;j<max;j++){
+			if (adjmat[i][j]>0)
+				TC[i][j]=1;
+			else 
+				TC[i][j]= 0;}}
+	
+	for (k = 0; k < max; k++)			// find all connections through
+        {								// neighbouring nodes
+            for (i = 0; i < max; i++)
+            {
+                for (j = 0; j < max; j++)
+                    TC[i][j] = (TC[i][j] || (TC[i][k] && TC[k][j]));
+            }
+        }
+	printf("\n");
+
+	b_mtopdisp(G);						//print warshall matrix
+	for(i=0;!is_empty(G);i++){
+		printf("%c |",get_nname(G));
+		
+			for(j=0;j!=max;j++){
+				printf("	 %d",TC[i][j]);
+			}
+		printf("\n");
+		G=ntail(G); 
+		}
+	return 1;
+	}
 void b_Prim()     { /* TO DO */ }
 void b_Kruskal()  { /* TO DO */ }
 
@@ -668,7 +708,7 @@ int cardinality() { return b_card(G); }
 
 void bDijkstra()  { b_Dijkstra(); b_dispSPT(); }
 void bFloyd()     { b_Floyd();    b_dispFm();  }
-void bWarshall()  { b_Warshall(); b_dispTC();  }
+void bWarshall()  { cre_adjmat(G); b_Warshall(G); b_dispTC();  }
 void bPrim()      { b_Prim();     b_dispMST(); }
 void bKruskal()   { b_Kruskal();  b_dispMST(); }
 
