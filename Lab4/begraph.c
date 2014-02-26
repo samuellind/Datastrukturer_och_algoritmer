@@ -21,6 +21,7 @@
 #define NULLREF NULL
 #define true 1
 #define false 0
+#define INF 999
 
 /**************************************************************/
 /* node element definition (this is hidden!)                  */
@@ -59,6 +60,7 @@ typedef struct dStruct {
 static noderef G     = (noderef) NULL;
 
 static int adjmat[MAXNOD][MAXNOD];
+static int Fm[MAXNOD][MAXNOD];
 static int nnodes;
 
 /****************************************************************************/
@@ -625,15 +627,39 @@ void b_Dijkstra() {
 
 }
 
-void b_Floyd()    { /* TO DO */ }
+int b_Floyd(noderef G)    { 
+	if(is_empty(G))					// is there a graph
+		return 0;
+	
+		int max= b_card(G);
+		int i,j,k;
+		
+		for(i=0;i<max;i++){				// enter all immidiate connections
+			for(j=0;j<max;j++){
+				if (adjmat[i][j]>0)
+					Fm[i][j]=adjmat[i][j];
+				else 
+					Fm[i][j]= INF;
+			}
+		}
+		for (k = 0; k < max; k++){
+			for (i = 0; i < max; i++){
+				for (j = 0; j < max; j++){
+					if (Fm[i][k] + Fm[k][j] < Fm[i][j])
+						Fm[i][j] = Fm[i][k] + Fm[k][j];
+				}
+			}
+		}
+			
+		
+		
+		 return 1;}
 int b_Warshall(noderef G) {
 	if(is_empty(G))					// is there a graph
 		return 0;
-	fflush(stdout);
 	
 	int TC[MAXNOD][MAXNOD];
 	int max = b_card(G);
-	fflush(stdout);
 	int i,j,k;
 	
 	for(i=0;i<max;i++){				// enter all immidiate connections
@@ -641,16 +667,16 @@ int b_Warshall(noderef G) {
 			if (adjmat[i][j]>0)
 				TC[i][j]=1;
 			else 
-				TC[i][j]= 0;}}
+				TC[i][j]= 0;
+		}
+	}
 	
-	for (k = 0; k < max; k++)			// find all connections through
-        {								// neighbouring nodes
-            for (i = 0; i < max; i++)
-            {
+	for (k = 0; k < max; k++){			// find all connections through	
+            for (i = 0; i < max; i++){	// neighbouring nodes
                 for (j = 0; j < max; j++)
                     TC[i][j] = (TC[i][j] || (TC[i][k] && TC[k][j]));
             }
-        }
+     }
 	printf("\n");
 
 	b_mtopdisp(G);						//print warshall matrix
@@ -658,7 +684,7 @@ int b_Warshall(noderef G) {
 		printf("%c |",get_nname(G));
 		
 			for(j=0;j!=max;j++){
-				printf("	 %d",TC[i][j]);
+				printf("	 %i",TC[i][j]);
 			}
 		printf("\n");
 		G=ntail(G); 
@@ -669,7 +695,22 @@ void b_Prim()     { /* TO DO */ }
 void b_Kruskal()  { /* TO DO */ }
 
 void b_dispSPT()  { /* TO DO */ }
-void b_dispFm()   { /* TO DO */ }
+void b_dispFm(noderef G)   { 
+	int i,j;
+	int max = b_card(G);
+	b_mtopdisp(G);						//print warshall matrix
+	for(i=0;!is_empty(G);i++){
+		printf("%c |",get_nname(G));
+		
+			for(j=0;j!=max;j++){
+				if(Fm[i][j] < INF)
+				printf("	 %i",Fm[i][j]);
+				else 
+				printf("	INF");
+			}
+		printf("\n");
+		G=ntail(G); 
+		}}
 void b_dispTC()   { /* TO DO */ }
 void b_dispMST()  { /* TO DO */ }
 
@@ -707,7 +748,7 @@ int cardinality() { return b_card(G); }
 /****************************************************************************/
 
 void bDijkstra()  { b_Dijkstra(); b_dispSPT(); }
-void bFloyd()     { b_Floyd();    b_dispFm();  }
+void bFloyd()     { cre_adjmat(G); b_Floyd(G);    b_dispFm(G);  }
 void bWarshall()  { cre_adjmat(G); b_Warshall(G); b_dispTC();  }
 void bPrim()      { b_Prim();     b_dispMST(); }
 void bKruskal()   { b_Kruskal();  b_dispMST(); }
